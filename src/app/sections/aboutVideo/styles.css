@@ -1,0 +1,22 @@
+.about-video{
+    @apply
+    bg-primary flex items-center justify-center px-4 lg:px-0
+}
+
+.about-video div{
+    @apply
+    w-full max-w-5xl
+}
+
+.about-video iframe{
+    height:631px;
+
+    @apply
+    w-full
+}
+
+@media(max-width:768px){
+    .about-video iframe{
+        height:203px;
+    }
+}

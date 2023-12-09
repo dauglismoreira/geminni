@@ -1,0 +1,26 @@
+.anchor-menu-container{
+    @apply
+    -mb-4 bg-ultralight mt-4 overflow-auto pb-4 lg:pb-0
+}
+
+@media(min-width:1024px){
+    .anchor-menu-container.fixe{
+        top:80px;
+        @apply
+        w-full fixed z-30 py-2 shadow-md
+    }
+}
+
+@media(max-width:1024px){
+    .anchor-menu-container.fixe{
+        top:60px;
+        @apply
+        w-full fixed z-30 py-2 shadow-md
+    }
+}
+
+.anchor-menu-width{
+    max-width:1560px;
+    @apply
+    m-auto flex gap-2
+}

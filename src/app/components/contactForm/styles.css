@@ -1,0 +1,100 @@
+form{
+    @apply
+    w-full
+}
+
+form.secondary{
+    @apply
+    flex flex-col gap-4 -my-4
+}
+
+form .form-row{
+    @apply
+    flex flex-wrap gap-4
+}
+
+form .form-row .form-col{
+    @apply
+    flex-1
+}
+
+form .form-row .form-col fieldset{
+    @apply
+    flex flex-col gap-2
+}
+
+form .form-row .form-col fieldset label{
+    @apply
+    text-xs text-light uppercase font-novelinBold
+}
+
+form.secondary .form-row .form-col fieldset label{
+    @apply
+    text-primary
+}
+
+form .form-row .form-col fieldset input{
+    @apply
+    h-10 px-2 border border-white bg-transparent outline-none text-white
+}
+
+form.secondary .form-row .form-col fieldset input{
+    @apply
+    border-primary text-primary
+}
+
+form .form-row .form-col .container-input{
+    @apply
+    h-10 px-2 border border-white bg-transparent outline-none text-white lg:max-w-xs
+}
+
+form .form-row .form-col select{
+    @apply
+    h-10 lg:h-full text-base w-full font-novelinBold bg-transparent outline-none
+}
+
+
+form .form-row .form-col fieldset textarea{
+    @apply
+    px-2 border border-white bg-transparent outline-none text-white
+}
+
+form.secondary .form-row .form-col fieldset textarea{
+    @apply
+    border-primary text-primary
+}
+
+form .checkbox-input{
+    @apply
+    text-white flex gap-2 lg:items-center text-xs
+}
+
+form .checkbox-input input{
+    @apply
+    w-5 h-5
+}
+
+form .form-row.checkbox{
+    @apply
+    justify-between
+}
+
+form.secondary .form-row.checkbox label{
+    @apply
+    text-primary
+}
+
+form .form-row.checkbox button{
+    @apply
+    border border-light text-light text-base w-full lg:w-auto px-4 h-10 font-novelinBold hover:text-primary hover:bg-light
+}
+
+form.secondary .form-row.checkbox button{
+    @apply
+    border-primary text-primary hover:bg-primary hover:text-white
+}
+
+form .form-row.checkbox button[disabled]{
+    @apply
+    bg-gray-300 text-gray-400 border-gray-300 cursor-not-allowed
+}

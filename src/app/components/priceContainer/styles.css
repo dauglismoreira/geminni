@@ -1,0 +1,77 @@
+.price-box{
+    @apply
+    relative max-w-full
+}
+
+.price-container{
+    @apply
+    bg-light px-4 py-6
+}
+
+@media(min-width:1024px){
+    .price-container.fixe{
+        top:150px;
+        @apply
+        fixed z-30
+    }
+}
+
+.price-container .price-label{
+    @apply
+    flex justify-between text-xs text-white uppercase font-novelinBold
+}
+
+.price-container h3{
+    @apply
+    text-3xl font-novelinBold text-white py-3
+}
+
+.price-container .line{
+    @apply
+    bg-white w-full h-px
+}
+
+.price-container .contact-buttons{
+    @apply
+    flex flex-col gap-2 py-4
+}
+
+.price-container .contact-buttons button{
+    @apply
+    w-full h-14 text-white font-novelinBold uppercase transition
+}
+
+.price-container .contact-buttons button.info-button{
+    @apply
+    border border-white hover:bg-white hover:text-light
+}
+
+.price-container .contact-buttons button.wht-button{
+    @apply
+    bg-wht text-white flex items-center justify-center gap-2 hover:bg-white hover:text-wht
+}
+
+.price-container .contact-buttons button.wht-button svg{
+    @apply
+    h-6 w-6
+}
+
+.price-container .share-container{
+    @apply
+    flex gap-4 items-center flex-col
+}
+
+.price-container .share-container .share-icons{
+    @apply
+    flex gap-4
+}
+
+.price-container .share-container p{
+    @apply
+    font-novelinBold uppercase text-white text-xs
+}
+
+.price-container .share-container svg{
+    @apply
+    fill-white w-6 h-6 transition hover:scale-125 cursor-pointer
+}

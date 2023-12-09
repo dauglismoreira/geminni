@@ -1,0 +1,51 @@
+.enterprise-skills-container{
+    @apply
+    w-full py-12
+}
+
+.enterprise-skills-container h3{
+    @apply
+    text-2xl font-novelinBold text-primary border-b pb-4 border-primary
+}
+
+.enterprise-skills-container h5{
+    @apply
+    text-xs font-novelinBold text-gray-700 uppercase py-4
+}
+
+.enterprise-skills-container .enterprise-skills{
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    @apply
+    w-full grid gap-4
+}
+
+.enterprise-skills-container .enterprise-skills span{
+    @apply
+    text-sm lg:text-base text-gray-700 flex items-start lg:items-center gap-2 w-full
+}
+
+.enterprise-skills-container .enterprise-description{
+    @apply
+    pt-12 h-36 overflow-hidden transition
+}
+
+.enterprise-skills-container .enterprise-description p{
+    @apply
+    mb-4
+}
+
+.enterprise-skills-container .enterprise-description.expand{
+    @apply
+    h-auto
+}
+
+.enterprise-skills-container .view-more{
+    @apply
+    font-novelinBold text-primary underline pt-4 cursor-pointer hover:text-light
+}
+
+@media(max-width:1024px){
+    .enterprise-skills-container .enterprise-skills{
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    }
+}

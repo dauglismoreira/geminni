@@ -1,0 +1,87 @@
+.footer{
+    @apply
+    bg-primary pb-4 pt-12
+}
+
+.footer-info{
+    max-width:1600px;
+
+    @apply
+    mx-auto pt-12 pb-8 lg:pt-4 lg:pb-16 flex flex-wrap lg:gap-4 justify-between
+}
+
+.footer-right{
+    max-width:1600px;
+
+    @apply
+    border-t mx-auto flex justify-between py-4 px-4 lg:py-4 lg:px-0 text-white text-xs flex-col lg:flex-row
+    gap-4 lg:gap-0
+}
+
+.footer-logo p{
+    @apply
+    text-right text-xs mt-8 text-white
+}
+
+.footer-info .footer-label{
+    @apply
+    text-xs text-light mb-4 mt-8 lg:mt-0 uppercase
+}
+
+.footer-info p{
+    @apply
+    text-base text-white
+}
+
+.footer-info .footer-phone{
+    @apply
+    text-xl font-novelinBold
+}
+
+.footer-info .footer-instagram{
+    @apply
+    flex items-center gap-2 cursor-pointer my-6 lg:m-0 font-novelinLight
+}
+
+.footer-info  li{
+    @apply
+    p-0 text-base text-white cursor-pointer pb-1 uppercase hover:text-light
+}
+
+.footer-address p{
+    @apply
+    font-novelinLight
+}
+
+@media(max-width:1024px){
+    .footer-logo svg{
+        @apply
+        w-64
+    }
+    .footer-logo{
+        @apply
+        w-full justify-center flex flex-col items-center
+    }
+    .footer-logo p{
+        @apply
+        mt-0 text-xs
+    }
+    .footer-address, .contact, .menu{
+        @apply
+        w-full justify-center flex px-2 flex-col items-center text-center
+    }
+    .menu{
+        @apply
+        mt-4
+    }
+    .menu ul{
+        @apply
+        gap-4 flex flex-col
+    }
+    .footer-right{
+        text-align:center
+    }
+    .footer-right p{
+        white-space: pre-line;
+    }
+}

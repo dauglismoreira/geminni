@@ -1,0 +1,21 @@
+.gallery-container{
+    @apply
+    relative
+}
+
+.gallery-container .gallery{
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    @apply
+    grid gap-2 w-full py-8
+}
+
+.gallery-container .gallery img{
+    @apply
+    h-64 object-cover hover:scale-105 cursor-pointer transition
+}
+
+.gallery-container button{
+    @apply
+    absolute bottom-10 left-2 bg-gray-100 flex items-center px-4 gap-2 py-2 font-novelinBold text-primary
+    hover:bg-light hover:text-white
+}

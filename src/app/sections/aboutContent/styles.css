@@ -1,0 +1,19 @@
+.about-content{
+    @apply
+    bg-primary flex flex-col items-center justify-start
+}
+
+.about-content .vertical-line{
+    @apply
+    h-12 lg:h-32 w-px bg-mediumLight
+}
+
+.about-text{
+    @apply
+    max-w-5xl mx-auto text-mediumLight text-center py-8 lg:py-20 
+}
+
+.about-text p{
+    @apply
+    m-4 text-xl
+}

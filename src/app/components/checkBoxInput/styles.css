@@ -1,0 +1,14 @@
+.checkbox-container{
+    @apply
+    flex w-full items-center gap-2
+}
+
+.checkbox-container input{
+    @apply
+    w-4 h-4
+}
+
+.checkbox-container label{
+    @apply
+    mt-2
+}

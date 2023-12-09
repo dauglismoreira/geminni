@@ -1,0 +1,14 @@
+.enterprise-form-container{
+    @apply
+    w-full py-12
+}
+
+.enterprise-form-container h3{
+    @apply
+    text-xl lg:text-2xl font-novelinBold text-primary border-b pb-4 border-primary mb-4
+}
+
+.enterprise-form-container p{
+    @apply
+    text-gray-700
+}

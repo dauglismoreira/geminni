@@ -1,0 +1,34 @@
+.search-bar-container{
+    @apply
+    w-11/12 lg:w-full h-auto lg:h-40 py-4 px-8 bg-white m-auto -mt-28 absolute z-20 max-w-6xl mx-auto left-2/4 -translate-x-1/2
+}
+
+.search-bar-title{
+    @apply
+    border-b border-primary h-auto lg:h-12 flex items-center
+}
+
+.search-bar-title h4{
+    @apply
+    text-xl lg:text-2xl text-primary text-center lg:text-left font-novelinBold
+}
+
+.search-bar-inputs{
+    @apply
+    flex gap-2 lg:gap-2 flex-wrap py-4 flex-col lg:flex-row w-full
+}
+
+.search-bar-inputs .container-input{
+    @apply
+    lg:h-10
+}
+
+.search-bar-inputs .select-container{
+    @apply
+    lg:flex-1
+}
+
+.search-bar-inputs button{
+    @apply
+    mt-6 lg:flex-1 border-primary
+}

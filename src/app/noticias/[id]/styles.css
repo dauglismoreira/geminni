@@ -1,0 +1,74 @@
+.post-container{
+    @apply
+    w-full bg-ultralight
+}
+
+.post-content{
+    max-width:1600px;
+    @apply
+    mx-auto py-12 px-4
+}
+
+.post-city{
+    @apply
+    text-xs lg:text-base border-b border-primary pb-4 text-primary lg:text-light uppercase font-novelinBold
+}
+
+.post-content .post{
+    @apply
+    flex gap-20
+}
+
+.post-content .post-body{
+    flex:2;
+}
+
+.post-content .post-sidebar{
+    flex:1;
+}
+
+.post-content .post-sidebar h4{
+    @apply
+    font-novelinBold text-primary uppercase mt-4 mb-6 pb-2 border-b border-primary
+}
+
+.post-content .post-body h1{
+    @apply
+    text-xl lg:text-2xl my-4 text-primary font-novelinBold
+}
+
+.post-body .post-image{
+    height:770px;
+    @apply
+    w-full bg-center bg-cover
+}
+
+.post-body .share-container{
+    @apply
+    flex gap-4 py-8 items-center mt-8 border-y border-primary
+}
+
+.post-body .share-container p{
+    @apply
+    font-novelinBold uppercase text-gray-700
+}
+
+.post-body .share-container svg{
+    @apply
+    fill-primary w-6 h-6 transition hover:scale-125 cursor-pointer
+}
+
+.carousel-container .related-title{
+    @apply
+    text-xl lg:text-2xl font-novelinBold uppercase text-primary mt-8 lg:mt-16 mb-8
+}
+
+@media(max-width:1024px){
+    .post-body .post-image{
+        height:280px;
+    }
+    .post-content .post-sidebar{
+        @apply
+        hidden
+    }
+}

@@ -1,0 +1,49 @@
+.not-found-container{
+    height:800px;
+    @apply
+    w-full overflow-hidden flex items-center justify-center
+}
+
+.not-found-container svg{
+    @apply
+    absolute w-full overflow-hidden
+}
+
+.not-found-content{
+    @apply
+    flex items-center w-full justify-center flex-col relative z-20 pb-20
+}
+
+.not-found-content h1{
+    @apply
+    text-3xl lg:text-7xl text-primary uppercase
+}
+
+.not-found-content p{
+    @apply
+    text-center px-16 lg:px-0
+}
+
+.not-found-content .horizontal-line{
+    width:700px;
+    @apply
+    h-px max-w-full bg-primary my-6 
+}
+
+.not-found-content .container-buttons{
+    @apply
+    flex gap-4 pt-4 flex-col lg:flex-row
+}
+
+@media(max-width:1024px){
+    .not-found-content .horizontal-line{
+        width:90%;
+        max-width:90%;
+    }
+    .not-found-container{
+        height:500px;
+    }
+    .not-found-container svg{
+        top:0;
+    }
+}

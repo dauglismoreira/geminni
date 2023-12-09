@@ -1,0 +1,39 @@
+.card-mini-container{
+    @apply
+    bg-white w-full lg:w-52
+}
+
+.card-mini-image{
+    @apply
+    h-40 bg-center bg-cover relative
+}
+
+.card-mini-info{
+    @apply
+    p-2 flex justify-between flex-col
+}
+
+.card-mini-info h3{
+    @apply
+    text-gray-700 text-base
+}
+
+.card-mini-info h5{
+    @apply
+    text-primary text-base font-bold
+}
+
+.card-mini-footer{
+    @apply
+    flex justify-between items-end
+}
+
+.card-mini-footer span{
+    @apply
+    text-xs text-gray-500
+}
+
+.card-mini-footer button{
+    @apply
+    border-none p-0 underline
+}

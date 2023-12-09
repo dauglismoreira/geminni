@@ -1,0 +1,105 @@
+.full-search.close{
+    height:calc(100% - 96px);
+    border-radius:0 0 0 100%;
+    transition: width 0.3s ease-out, height 0.3s ease-out, border-radius 0.1s ease-in;
+    @apply
+    flex w-0 h-0 fixed bg-white top-0 lg:top-24 bottom-0 z-40 lg:right-0 items-center
+}
+
+.full-search.open{
+    height:calc(100% - 96px);
+    transition: width 0.3s ease-in, height 0.3s ease-in, border-radius 0.5s ease-in;
+    @apply
+    flex pt-8 lg:pt-0 w-full fixed bg-white top-0 lg:top-24 bottom-0 z-40 lg:right-0
+    items-start lg:items-center rounded-none
+}
+
+.container-search{
+    max-width:1600px;
+    height:473px;
+    @apply
+    w-full mx-auto px-4 lg:px-0 pt-12 lg:pt-0
+}
+
+.full-search-bar{
+    @apply
+    h-12 w-full max-w-lg flex items-center border-b border-primary 
+}
+
+.full-search-bar.close{
+    @apply
+    delay-0 opacity-0 transition
+}
+
+.full-search-bar.open{
+    @apply
+    delay-500 opacity-100 transition
+}
+
+.full-search-bar input{
+    @apply
+    w-full h-10 px-2 outline-none
+}
+
+.full-search-bar input::placeholder {
+    @apply
+    text-primary
+}
+
+.full-search-bar svg{
+    @apply
+    w-6 h-6 stroke-primary
+}
+
+.container-properties{
+    @apply
+    flex gap-4 flex-col lg:flex-row
+}
+
+.full-search-close.close{
+    @apply
+    hidden
+}
+
+.container-result.close, .full-search-close.close{
+    @apply
+    delay-0 opacity-0 transition
+}
+
+.container-result.open, .full-search-close.open{
+    @apply
+    delay-500 opacity-100 transition
+}
+
+.container-result h3{
+    @apply
+    text-xl text-primary pt-4 pb-2 font-novelinBold
+}
+
+.container-result a{
+    @apply
+    text-base text-gray-400 cursor-pointer pb-4 block  font-novelinRegular
+}
+
+.full-search-close{
+    @apply
+    flex w-11 h-11 absolute top-8 left-4 lg:right-8 lg:left-auto cursor-pointer
+}
+
+.full-search-close svg{
+    @apply
+    w-11 h-11 fill-primary
+}
+
+@media(max-width:1024px){
+    .full-search.open{
+        height:100%;
+        overflow: auto;
+    }
+    .full-search.close{
+        height:100%;
+    }
+    .full-search.close{
+        border-radius:0 0 100% 0;
+    }
+}

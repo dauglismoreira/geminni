@@ -1,0 +1,78 @@
+.header{
+    @apply
+    w-full h-20 lg:h-24 border-b border-primary fixed z-40 bg-white px-4 lg:px-0
+}
+
+.header-container{
+    max-width:1600px;
+
+    @apply
+    flex pb-2 lg:pb-0 items-end lg:items-center mx-auto justify-between h-full
+}
+
+.header .col-right{
+    @apply
+     gap-2 w-60 justify-end hidden lg:flex
+}
+
+.header .instagram-link, .full-search-action{
+    @apply
+    w-6 h-6 cursor-pointer transition fill-light stroke-light hover:scale-125
+}
+
+.header .col-center .menu-desktop{
+    @apply
+    hidden gap-6 lg:flex font-novelinBold
+}
+
+.header .col-center a{
+    @apply
+    list-none p-0 text-primary text-base cursor-pointer flex items-center gap-2
+}
+
+.header .col-center a svg{
+    @apply
+    w-6 h-6
+}
+
+.header .col-center a{
+    @apply
+    hover:text-light
+}
+
+.header .header-menu{
+    @apply
+    fixed top-20 bg-white w-64 border-t border-gray-700
+}
+
+.header .header-menu a{
+    @apply
+    border-b w-full p-2 border-gray-700 hover:bg-primary hover:text-white font-novelinBold
+}
+
+.header .col-left{
+    @apply
+    flex lg:block justify-center w-full lg:w-auto items-center
+}
+
+.header .col-left .full-search-action{
+    @apply
+    flex lg:hidden absolute left-4
+}
+
+.header .toogle{
+    @apply
+    m-2 lg:m-0 w-6 h-6 flex justify-around flex-col cursor-pointer lg:hidden
+}
+
+.header .toogle span{
+    @apply
+    w-full bg-light h-0.5
+}
+
+@media(max-width:1024px){
+    .header .header-logo{
+        @apply
+        w-40 -mr-6
+    }
+}

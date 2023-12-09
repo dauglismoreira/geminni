@@ -1,0 +1,26 @@
+.banner-section-container{
+    height:525px;
+
+    @apply
+    w-full flex items-center justify-center flex-col relative bg-cover bg-center gap-12 px-4 text-center
+}
+
+.banner-section-container .content{
+    @apply
+    relative z-10 flex items-center justify-center flex-col gap-4 text-white
+}
+
+.banner-section-container h3{
+    @apply
+    text-xl lg:text-3xl font-novelinBold
+}
+
+.banner-section-container button{
+    @apply
+    relative z-10
+}
+
+.banner-section-container .overlay{
+    @apply
+    bg-primary w-full h-full absolute opacity-70 inset-0
+}

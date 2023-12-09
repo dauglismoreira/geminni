@@ -1,0 +1,10 @@
+.section-container{
+    @apply
+    w-full px-4 pt-20 pb-0 lg:p-20 relative
+}
+
+.section-container .content{
+    max-width:1600px;
+    @apply
+    mx-auto
+}

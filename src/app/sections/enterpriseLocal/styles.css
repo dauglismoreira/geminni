@@ -1,0 +1,47 @@
+.enterprise-local-container{
+    @apply
+    w-full py-0 lg:py-12
+}
+
+.enterprise-local-container h3{
+    @apply
+    text-xl lg:text-2xl font-novelinBold text-primary border-b pb-4 border-primary mb-4
+}
+
+.enterprise-local-container p{
+    @apply
+    text-gray-700
+}
+
+.enterprise-local-container h5{
+    @apply
+    text-xs font-novelinBold text-gray-700 uppercase py-4
+}
+
+.enterprise-local-container .enterprise-places{
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    @apply
+    w-full grid gap-2 lg:gap-4 mt-8
+}
+
+.enterprise-local-container .enterprise-places span{
+    @apply
+    text-gray-700 flex items-start lg:items-center gap-2
+}
+
+.enterprise-local-container .container-local-map{
+    @apply
+    mt-4 mb-2
+}
+
+.enterprise-local-container .container-local-map iframe{
+    height:416px;
+    @apply
+    w-full
+}
+
+@media(max-width:1024px){
+    .enterprise-local-container .enterprise-places{
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}

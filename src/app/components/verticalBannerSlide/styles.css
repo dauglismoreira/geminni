@@ -1,0 +1,44 @@
+.slide-container {
+    @apply
+    relative w-full overflow-hidden
+  }
+  
+  .slide-wrapper {
+    height: 630px;
+
+    @apply
+    w-full flex flex-col transition duration-1000
+  }
+  
+  .slide-image {
+    min-height: 630px;
+    
+    @apply
+    w-full bg-center bg-cover
+  }
+
+  .slide-navigation{
+    height:630px;
+
+    @apply
+    absolute flex flex-col justify-center gap-2 z-20 right-6
+  }
+
+  .slide-navigation span{
+    @apply
+    w-3 h-3 rounded-full bg-gray-800 transition duration-500 cursor-pointer bg-white
+  }
+
+  .slide-navigation span.active{
+    @apply
+    bg-primary
+  }
+
+  @media(max-width:1024px){
+    .slide-wrapper,  .slide-navigation {
+      height: 493px;
+    }
+    .slide-image{
+      min-height: 493px;
+    }
+  }

@@ -1,0 +1,41 @@
+.enterprise-title-container{
+    @apply
+    w-full
+}
+
+.enterprise-title-container h1{
+    @apply
+    text-xl lg:text-2xl font-novelinBold text-primary
+}
+
+.enterprise-title-container .enterprise-high{
+    @apply
+    lg:flex lg:gap-2 font-novelinBold text-light uppercase text-sm items-center py-4
+}
+
+.enterprise-title-container .enterprise-high span{
+    @apply
+    mr-4 lg:mr-0
+}
+
+.enterprise-title-container .enterprise-high .high{
+    @apply
+    text-xs
+}
+
+.enterprise-title-container .enterprise-details{
+    @apply
+    w-full border-y border-gray-300 py-6 my-4 flex justify-between items-center
+}
+
+.enterprise-title-container .enterprise-details span{
+    @apply
+    text-xl font-novelinBold text-primary w-2/4 lg:w-auto
+}
+
+@media(max-width:1024px){
+    .enterprise-title-container .enterprise-details{
+        flex-wrap: wrap;
+        gap:10px 0;
+    }
+}

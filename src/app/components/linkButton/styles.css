@@ -1,0 +1,4 @@
+.primary-button{
+    @apply
+    border h-10 px-4 lg:px-8 text-base transition lg:w-auto font-novelinBold
+}

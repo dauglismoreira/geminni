@@ -1,0 +1,22 @@
+.about-banner{
+    height:880px;
+
+    @apply
+    w-full bg-center bg-cover flex flex-col justify-end items-center gap-4
+}
+
+.about-banner h1{
+    @apply
+    text-3xl lg:text-6xl font-novelinBold text-white whitespace-pre-line text-center pb-20 lg:pb-60
+}
+
+.about-banner .vertical-line{
+    @apply
+    w-px h-12 lg:h-24 bg-mediumLight mt-12 lg:mt-0
+}
+
+@media(max-width:768px){
+    .about-banner{
+        height:493px;
+    }
+}

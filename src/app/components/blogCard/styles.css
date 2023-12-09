@@ -1,0 +1,33 @@
+.card-container{
+    height:504px;
+
+    @apply
+    bg-white max-w-sm
+}
+
+.card-image{
+    @apply
+    h-72 bg-center bg-cover relative
+}
+
+.card-info{
+    height:calc(504px - 18rem);
+
+    @apply
+    p-4 flex justify-between flex-col
+}
+
+.card-info h3{
+    @apply
+    text-light text-base font-novelinBold p-0 text-xs
+}
+
+.card-info p{
+    @apply
+    text-gray-700
+}
+
+.card-footer{
+    @apply
+    flex justify-between items-end
+}

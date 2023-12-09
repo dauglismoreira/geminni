@@ -1,0 +1,16 @@
+.enterprise-plant-container h3{
+    @apply
+    text-xs font-novelinBold text-gray-700 uppercase py-4
+}
+
+.enterprise-plant-container img{
+    height:663px;
+    @apply
+    object-cover
+}
+
+@media(max-width:1024px){
+    .enterprise-plant-container img{
+        height:240px;
+    }
+}

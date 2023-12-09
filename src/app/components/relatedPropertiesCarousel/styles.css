@@ -1,0 +1,61 @@
+.related-title{
+    @apply
+    text-xl lg:text-2xl font-novelinBold uppercase text-primary -mt-4 lg:mt-8 lg:mt-16 mb-8
+    border-b border-primary pb-4
+}
+
+.related-carousel-container{
+    @apply
+    flex gap-8 py-12
+}
+
+.relatedPropertiesSwiper .button-container-left{
+    @apply
+    absolute z-20 lg:inset-y-0 w-16 lg:bg-ultralight left-0
+}
+
+.relatedPropertiesSwiper .button-container-right{
+    @apply
+    absolute z-20 lg:inset-y-0 w-16 lg:bg-ultralight right-0
+}
+
+.relatedPropertiesSwiper .custom-button{
+    @apply
+    cursor-pointer absolute  inset-y-1/4 lg:inset-y-2/4
+}
+
+.relatedPropertiesSwiper .custom-button svg{
+    @apply
+    fill-light w-8 h-8 transition bg-primary lg:bg-ultralight rounded-full p-1 lg:p-0
+}
+
+.relatedPropertiesSwiper .custom-button svg:hover{
+    @apply
+    scale-125
+}
+
+.relatedPropertiesSwiper .custom-prev-button{
+    @apply
+    left-0
+}
+
+.relatedPropertiesSwiper .custom-next-button{
+    @apply
+    right-0
+}
+
+.relatedPropertiesSwiper{
+    @apply
+    px-4 lg:px-16 max-w-full
+}
+
+.relatedPropertiesSwiper .swiper-wrapper{
+    max-width:1600px;
+}
+
+@media(max-width:768px){
+    .relatedPropertiesSwiper .button-container-left,
+    .relatedPropertiesSwiper .button-container-right{
+        top: 130px;
+    }
+}

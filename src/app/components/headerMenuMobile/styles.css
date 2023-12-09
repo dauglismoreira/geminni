@@ -1,0 +1,59 @@
+.menu-mobile.open{
+    border-radius:0 0 0 0;
+    transition: width 0.3s ease-in, height 0.3s ease-in, border-radius 0.5s ease-in;
+    @apply
+    flex lg:hidden fixed top-0 w-full bg-white h-full bottom-0 z-40 right-0
+}
+
+.menu-mobile.close{
+    border-radius:0 0 0 100%;
+    transition: width 0.3s ease-out, height 0.3s ease-out, border-radius 0.1s ease-in;
+    @apply
+    flex lg:hidden fixed w-0 h-0 top-0 bg-white bottom-0 z-40 right-0
+}
+
+.menu-mobile-close{
+    @apply
+    flex w-11 h-11 absolute top-8 right-8
+}
+
+.menu-mobile-close svg{
+    @apply
+    w-11 h-11 fill-primary
+}
+
+.menu-mobile-body{
+    @apply
+    flex justify-between flex-col pt-32 pb-4 items-center w-full
+}
+
+.menu-mobile-body .menu-mobile-primary,
+.menu-mobile-body .menu-mobile-secondary{
+    @apply
+    list-none flex flex-col gap-8 uppercase text-primary text-center
+}
+
+.menu-mobile-body .menu-mobile-primary{
+    @apply
+    text-2xl
+}
+
+.menu-mobile-body .menu-mobile-secondary{
+    @apply
+    text-base
+}
+
+.menu-mobile-body.close, .menu-mobile-close.close{
+    @apply
+    delay-0 opacity-0 transition
+}
+
+.menu-mobile-body.open, .menu-mobile-close.open{
+    @apply
+    delay-500 opacity-100 transition
+}
+
+.menu-mobile-foot p{
+    @apply
+    flex gap-2 items-center text-primary
+}

@@ -1,0 +1,71 @@
+.about-posts .vertical-line{
+    @apply
+    w-px h-24 bg-mediumLight
+}
+
+.about-posts{
+    @apply
+    bg-primary flex justify-center flex-col items-center pt-16 pb-0 lg:pb-12 lg:border-b lg:border-light
+}
+
+.about-posts .subtitle{
+    @apply
+    text-light font-novelinBold max-w-xl text-xl lg:text-2xl text-center pt-16 pb-4 px-4 lg:px-0
+}
+
+.container-posts{
+    max-width:1600px;
+    @apply
+    lg:border-t border-light w-full py-8 flex gap-4
+}
+
+.aboutSwiper .button-container-left{
+    @apply
+    absolute z-20 lg:inset-y-0 w-16 lg:bg-primary left-0
+}
+
+.aboutSwiper .button-container-right{
+    @apply
+    absolute z-20 lg:inset-y-0 w-16 lg:bg-primary right-0
+}
+
+.aboutSwiper .custom-button{
+    @apply
+    cursor-pointer absolute  inset-y-1/4 lg:inset-y-2/4
+}
+
+.aboutSwiper .custom-button svg{
+    @apply
+    fill-light w-8 h-8 transition bg-primary lg:bg-ultralight rounded-full p-1 lg:p-0
+}
+
+.aboutSwiper .custom-button svg:hover{
+    @apply
+    scale-125
+}
+
+.aboutSwiper .custom-prev-button{
+    @apply
+    left-0
+}
+
+.aboutSwiper .custom-next-button{
+    @apply
+    right-0
+}
+
+.aboutSwiper{
+    @apply
+    px-4 lg:px-16 max-w-full
+}
+
+.aboutSwiper .swiper-wrapper{
+    max-width:1600px;
+}
+
+@media(max-width:768px){
+    .aboutSwiper .button-container-left,
+    .aboutSwiper .button-container-right{
+        top: 130px;
+    }
+}

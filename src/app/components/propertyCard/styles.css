@@ -1,0 +1,63 @@
+.card-container{
+    height:587px;
+
+    @apply
+    bg-white max-w-sm
+}
+
+.card-image{
+    @apply
+    h-72 bg-center bg-cover relative
+}
+
+.card-info{
+    height:calc(587px - 18rem);
+
+    @apply
+    p-4 flex justify-between flex-col
+}
+
+.card-info h4{
+    @apply
+    text-light whitespace-pre-line text-sm uppercase font-novelinBold
+}
+
+.card-info h3{
+    @apply
+    text-gray-700 text-base font-novelinBold
+}
+
+.card-info h5{
+    @apply
+    text-primary text-xl font-novelinBold
+}
+
+.container-details{
+    @apply
+    flex gap-2
+}
+
+.container-details span{
+    @apply
+    text-sm border-r pr-3 text-gray-500
+}
+
+.container-details span:last-child{
+    @apply
+    border-0
+}
+
+.card-footer{
+    @apply
+    flex justify-between items-end
+}
+
+.card-footer span{
+    @apply
+    text-xs text-gray-500
+}
+
+.card-tag{
+    @apply
+    bg-primary rounded-sm absolute py-1 px-2 top-2 left-2 text-white text-xs
+}

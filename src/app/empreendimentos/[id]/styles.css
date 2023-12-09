@@ -1,0 +1,30 @@
+.enterprise-container{
+    @apply
+    w-full bg-ultralight
+}
+
+.enterprise-content{
+    max-width:1600px;
+    @apply
+    mx-auto py-12 px-4
+}
+
+.enterprise-content .enterprise{
+    @apply
+    flex gap-8 lg:gap-20 flex-col-reverse lg:flex-row
+}
+
+.enterprise-content .enterprise-body{
+    flex:2;
+}
+
+.enterprise-content .enterprise-sidebar{
+    flex:1;
+    @apply
+    relative
+}
+
+.enterprise-anchor{
+    @apply
+    bg-ultralight
+}

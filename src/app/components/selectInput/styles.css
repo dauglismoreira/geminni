@@ -1,0 +1,9 @@
+.container-input{
+    @apply
+    px-2 border border-primary flex-1
+}
+
+.container-input select{
+    @apply
+    h-10 lg:h-full text-base w-full font-novelinBold
+}

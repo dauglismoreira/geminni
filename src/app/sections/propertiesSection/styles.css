@@ -1,0 +1,71 @@
+.carousel-container{
+    @apply
+    flex gap-8 py-12
+}
+
+.container-region-filter{
+    max-width:1600px;
+    @apply
+    m-auto
+}
+
+.container-region-filter .region-filter-title{
+    @apply
+    py-6 text-gray-700
+}
+
+.container-region-filter .region-buttons{
+    @apply
+    flex gap-4 overflow-x-auto lg:overflow-hidden pb-4 lg:pb-0
+}
+
+.propertiesSwiper .button-container-left{
+    @apply
+    absolute z-20 lg:inset-y-0 w-16 lg:bg-ultralight left-0
+}
+
+.propertiesSwiper .button-container-right{
+    @apply
+    absolute z-20 lg:inset-y-0 w-16 lg:bg-ultralight right-0
+}
+
+.propertiesSwiper .custom-button{
+    @apply
+    cursor-pointer absolute  inset-y-1/4 lg:inset-y-2/4
+}
+
+.propertiesSwiper .custom-button svg{
+    @apply
+    fill-light w-8 h-8 transition bg-primary lg:bg-ultralight rounded-full p-1 lg:p-0
+}
+
+.propertiesSwiper .custom-button svg:hover{
+    @apply
+    scale-125
+}
+
+.propertiesSwiper .custom-prev-button{
+    @apply
+    left-0
+}
+
+.propertiesSwiper .custom-next-button{
+    @apply
+    right-0
+}
+
+.propertiesSwiper{
+    @apply
+    px-4 lg:px-16 max-w-full
+}
+
+.propertiesSwiper .swiper-wrapper{
+    max-width:1600px;
+}
+
+@media(max-width:768px){
+    .propertiesSwiper .button-container-left,
+    .propertiesSwiper .button-container-right{
+        top: 130px;
+    }
+}

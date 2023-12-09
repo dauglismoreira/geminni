@@ -1,0 +1,4 @@
+.error {
+    @apply
+    text-red-600 text-sm mb-0
+}

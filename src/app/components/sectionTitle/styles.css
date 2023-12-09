@@ -1,0 +1,14 @@
+.section-title-container{
+    @apply
+    flex w-full justify-between border-b pb-4 lg:pb-8 items-end
+}
+
+.section-title-container span{
+    @apply
+    text-base border-b h-6 cursor-pointer font-novelinBold
+}
+
+.section-title-container h3{
+    @apply
+    text-2xl lg:text-3xl  font-novelinBold
+}

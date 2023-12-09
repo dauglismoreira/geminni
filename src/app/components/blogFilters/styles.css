@@ -1,0 +1,60 @@
+.filter-container{
+    @apply
+    flex justify-end flex-col lg:flex-row gap-4
+}
+
+.filter-container .container-input{
+    @apply
+    border-primary text-primary font-novelinBold h-10
+}
+
+.filter-container .container-options{
+    @apply
+    flex gap-1 flex-1
+}
+
+.filter-container .container-options .option{
+    @apply
+    w-10 h-10 flex items-center justify-center border border-primary font-novelinBold text-primary cursor-pointer hover:bg-primary hover:text-white
+}
+
+.filter-container .container-options .option.active{
+    @apply
+    bg-primary text-white
+}
+
+.filter-container-high button{
+    @apply
+    bg-primary text-white flex h-10 px-4 justify-between uppercase font-novelinBold items-center mt-6 flex-1
+    hover:bg-light hover:text-primary
+}
+
+.filter-container label{
+    @apply
+    uppercase text-xs text-primary font-novelinBold mb-2 block
+}
+
+.filter-container select{
+    @apply
+    h-10 border-primary outline-none bg-transparent w-full
+}
+
+.filter-container .select-container{
+    @apply
+    flex-1
+}
+
+.filter-container-high{
+    @apply
+    w-full flex gap-2
+}
+
+.filter-blog .full-search-bar{
+    @apply
+    lg:mt-4 lg:ml-2
+}
+
+.filter-blog{
+    @apply
+    flex gap-2 flex-col lg:flex-row
+}

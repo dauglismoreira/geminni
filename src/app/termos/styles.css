@@ -1,0 +1,40 @@
+.terms-container{
+    max-width:1600px;
+    @apply
+    w-full mx-auto py-8 lg:py-20
+}
+
+.terms-title{
+    @apply
+    border-b border-primary pb-4 mx-4
+}
+
+.terms-title h3{
+    @apply
+    text-xl lg:text-3xl font-novelinBold text-light uppercase
+}
+
+.terms-content{
+    @apply
+    px-4
+}
+
+.terms-content h4{
+    @apply
+    text-2xl pt-8 pb-4 text-light font-novelinBold
+}
+
+.terms-content p{
+    @apply
+    mb-2
+}
+
+.terms-content ul{
+    @apply
+    pl-4 lg:pl-20
+}
+
+.terms-content ul li{
+    @apply
+    py-1
+}

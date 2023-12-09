@@ -1,0 +1,58 @@
+.more-filter-modal{
+    width:700px;
+    @apply
+    max-w-full fixed bg-white shadow-lg z-40 top-2/4 left-2/4 -translate-y-1/2 -translate-x-1/2 px-4 py-12
+    lg:px-20 lg:py-12 rounded-md overflow-auto h-full lg:h-auto
+}
+
+.more-filter-modal .modal-header{
+    @apply
+    flex justify-between w-full items-center font-novelinBold text-primary
+}
+
+.more-filter-modal .modal-header svg{
+    @apply
+    w-6 h-6 cursor-pointer hover:scale-125 transition
+}
+
+.more-filter-modal .modal-body{
+    @apply
+    flex flex-col gap-4 py-6 w-full
+}
+
+.more-filter-modal .modal-body .checkbox-list{
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    @apply
+    grid
+}
+
+.more-filter-modal-overlay{
+    @apply
+    bg-primary fixed inset-0 z-30 opacity-50
+}
+
+.modal-footer{
+    @apply
+    flex gap-2 lg:mt-8
+}
+
+.modal-footer .clear{
+    @apply
+    border border-primary text-primary hover:bg-primary hover:text-white
+}
+
+.modal-footer .accept{
+    @apply
+    border border-primary bg-primary text-white hover:bg-white hover:text-primary
+}
+
+.modal-footer button{
+    @apply
+    px-2 lg:px-4 h-10 font-novelinBold
+}
+
+@media(max-width:1024px){
+    .more-filter-modal .modal-body .checkbox-list{
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}

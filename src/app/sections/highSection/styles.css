@@ -1,0 +1,53 @@
+.carousel-container{
+    @apply
+    flex gap-8 py-12
+}
+
+.highPropertiesSwiper .button-container-left{
+    @apply
+    absolute z-20 inset-y-0 w-16 lg:bg-secondary left-0
+}
+
+.highPropertiesSwiper .button-container-right{
+    @apply
+    absolute z-20 inset-y-0 w-16 lg:bg-secondary right-0
+}
+
+.highPropertiesSwiper .custom-button{
+    @apply
+    cursor-pointer absolute inset-y-1/4 lg:inset-y-2/4
+}
+
+.highPropertiesSwiper .custom-button svg{
+    @apply
+    fill-light w-8 h-8 transition bg-primary rounded-full p-1 lg:p-0
+}
+
+.highPropertiesSwiper .custom-button svg:hover{
+    @apply
+    scale-125
+}
+
+.highPropertiesSwiper .custom-prev-button{
+    @apply
+    left-0
+}
+
+.highPropertiesSwiper .custom-next-button{
+    @apply
+    right-0
+}
+
+.highPropertiesSwiper{
+    @apply
+    px-0 lg:px-16 max-w-full
+}
+
+.highPropertiesSwiper .swiper-wrapper{
+    max-width:1600px;
+}
+
+.mobile-link{
+    @apply
+    flex lg:hidden w-full justify-center -mt-4 pb-8 text-light uppercase underline hover:text-white cursor-pointer
+}

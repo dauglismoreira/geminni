@@ -1,0 +1,52 @@
+.enterprise-container{
+    @apply
+    w-full bg-ultralight
+}
+
+.enterprise-content{
+    max-width:1600px;
+    @apply
+    mx-auto py-12 px-4
+}
+
+.enterprise-title h1{
+    @apply
+    text-xl lg:text-3xl font-novelinBold text-primary
+}
+
+.enterprise-title .line{
+    @apply
+    w-full h-px bg-primary block my-6
+}
+
+.enterprise-search-list{
+    @apply
+    flex flex-wrap gap-4 justify-between pt-8
+}
+
+.enterprise-search-list .card-container{
+    width:calc(25% - 20px);
+}
+
+@media(max-width:1400px){
+    .enterprise-search-list .card-container{
+        width:calc(33% - 20px);
+    }
+}
+
+@media(max-width:1024px){
+    .enterprise-search-list .card-container{
+        width:calc(50% - 20px);
+    }
+}
+
+@media(max-width:560px){
+    .enterprise-search-list .card-container{
+        width:100%;
+    }
+}
+
+.enterprise-search-bar{
+    @apply
+    w-full
+}

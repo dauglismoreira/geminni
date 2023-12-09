@@ -1,0 +1,70 @@
+.contact-page{
+    @apply
+    w-full bg-primary
+}
+
+.contact-container{
+    max-width:1600px;
+    @apply
+    mx-auto py-8 lg:py-28 flex gap-20 px-4
+}
+
+.contact-content{
+    flex:2;
+}
+
+.contact-form .contact-form-title{
+    @apply
+    text-xl lg:text-2xl text-light font-novelinBold border-b border-light pb-4
+}
+
+.contact-form p{
+    @apply
+    text-white text-base py-6
+}
+
+.contact-slogan-container{
+    @apply
+    flex items-center flex-col
+}
+
+.contact-slogan{
+    @apply
+    -rotate-90 text-light text-2xl flex items-center whitespace-nowrap mt-60
+}
+
+.contact-slogan .line{
+    @apply
+    w-px h-12 bg-light block -rotate-90 mr-12
+}
+
+.contact-form form{
+    @apply
+    flex gap-4 w-full flex-col
+}
+
+.map-container{
+    height:639px;
+    @apply
+    w-full bg-gray-400
+}
+
+.contact-slogan-container{
+    flex:1;
+    @apply
+    hidden lg:flex
+}
+
+@media(max-width:1540px){
+    .contact-slogan-container{
+        width:150px;
+        max-width: 150px;
+    }
+}
+
+@media(max-width:1240px){
+    .contact-slogan-container{
+        width:60px;
+        max-width: 60px;
+    }
+}

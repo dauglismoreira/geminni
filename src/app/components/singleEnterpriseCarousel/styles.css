@@ -1,0 +1,48 @@
+.enterprise-photo{
+    width:792px;
+    @apply
+    h-full object-cover
+}
+
+.singlePropertySwiper{
+    height:614px;
+}
+
+.singlePropertySwiper .swiper-slide{
+    @apply
+    w-auto
+}
+
+.singlePropertySwiper .custom-button{
+    @apply
+    hidden lg:block cursor-pointer absolute inset-y-1/4 lg:inset-y-2/4 z-30
+}
+
+.singlePropertySwiper .custom-button svg{
+    @apply
+    fill-white w-8 h-8 transition rounded-full p-1 lg:p-0
+}
+
+.singlePropertySwiper .custom-button svg:hover{
+    @apply
+    scale-125
+}
+
+.singlePropertySwiper .custom-prev-button{
+    @apply
+    left-4
+}
+
+.singlePropertySwiper .custom-next-button{
+    @apply
+    right-4
+}
+
+@media(max-width:1024px){
+    .singlePropertySwiper{
+        height:265px;
+    }
+    .enterprise-photo{
+        width:342px;
+    }
+}
