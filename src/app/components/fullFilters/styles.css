@@ -16,7 +16,7 @@
 .filter-container .container-options .option{
     @apply
     w-12 h-12 flex items-center justify-center border border-primary font-novelinBold
-    text-primary cursor-pointer bg-white hover:bg-primary hover:text-white
+    text-primary cursor-pointer hover:bg-primary hover:text-white
 }
 
 .filter-container .container-options .option.active{
