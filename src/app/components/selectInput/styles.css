@@ -1,9 +1,19 @@
 .container-input{
     @apply
-    px-2 border border-primary flex-1
+    px-2 border border-primary flex-1 bg-white
 }
 
 .container-input select{
     @apply
-    h-10 lg:h-full text-base w-full font-novelinBold
+    h-10 lg:h-full text-base w-full font-novelinBold outline-none bg-white
+}
+
+.container-input select option{
+    @apply
+    text-secondary
+}
+
+.select-container label{
+    @apply
+    uppercase text-soft text-xs font-semibold
 }

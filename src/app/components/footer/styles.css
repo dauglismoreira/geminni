@@ -25,7 +25,7 @@
 
 .footer-info .footer-label{
     @apply
-    text-xs text-light mb-4 mt-8 lg:mt-0 uppercase
+    text-xs text-soft mb-4 mt-8 lg:mt-0 uppercase
 }
 
 .footer-info p{
@@ -45,7 +45,7 @@
 
 .footer-info  li{
     @apply
-    p-0 text-base text-white cursor-pointer pb-1 uppercase hover:text-light
+    p-0 text-base text-white cursor-pointer pb-1 uppercase hover:text-soft
 }
 
 .footer-address p{

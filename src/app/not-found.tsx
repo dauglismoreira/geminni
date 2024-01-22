@@ -22,13 +22,13 @@ const NotFound = () => {
                 <div className="container-buttons">
                     <LinkButton
                         text="Volte para o início"
-                        link="#"
+                        link="/"
                         color={`bg-white text-primary border-primary`}
                         hover={`hover:bg-primary hover:text-white`}
                     />
                     <LinkButton
                         text="Veja nossos imóveis"
-                        link="#"
+                        link="/empreendimentos"
                         color={`bg-white text-primary border-primary`}
                         hover={`hover:bg-primary hover:text-white`}
                     />

@@ -5,7 +5,7 @@
 
 .price-container{
     @apply
-    bg-light px-4 py-6
+    bg-soft px-4 py-6
 }
 
 @media(min-width:1024px){
@@ -43,7 +43,7 @@
 
 .price-container .contact-buttons button.info-button{
     @apply
-    border border-white hover:bg-white hover:text-light
+    border border-white hover:bg-white hover:text-soft
 }
 
 .price-container .contact-buttons button.wht-button{

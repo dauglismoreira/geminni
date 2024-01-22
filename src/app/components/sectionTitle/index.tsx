@@ -8,15 +8,16 @@ interface SectionContainerProps {
     };
     color?:string;
     hover?:string;
+    border?:string
 }
 
-export const SectionTitle = ({ title, color, hover }: SectionContainerProps) => {
+export const SectionTitle = ({ title, color, border, hover }: SectionContainerProps) => {
     return (
-        <div className={`section-title-container border-${color}`}>
-            <h3 className={`text-${color}`}>{title.title}</h3>
+        <div className={`section-title-container ${color}`}>
+            <h3 className={`${color}`}>{title.title}</h3>
             {title.linkText &&
             <span
-                className={`text-${color} border-${color} hover:text-${hover} hidden lg:block`}
+                className={`${color} ${border} hover:${hover} hidden lg:block`}
             >{title.linkText}</span>
             }
         </div>

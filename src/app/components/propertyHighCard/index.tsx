@@ -29,8 +29,8 @@ export const PropertyHighCard = ({data}: PropertyHighCard) => {
                     <LinkButton
                         text="Detalhes"
                         link="#"
-                        color={`bg-light text-white`}
-                        hover={`hover:bg-white hover:text-light`}
+                        color={`bg-soft text-white`}
+                        hover={`hover:bg-white hover:text-soft`}
                     />
                     <span>Cód. {data.cod}</span>
                 </div>

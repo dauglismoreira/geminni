@@ -18,8 +18,9 @@ export const BlogSection = ({data, title}: BlogSectionProps) => {
         <SectionContainer
             extraClass={"-mt-8"}
             title={title}
-            color={"primary"}
-            hover={"light"}
+            color={"text-primary"}
+            hover={"soft"}
+            border={"border-primary"}
             bg={'bg-ultralight'}
         >
             <div className="region-blog">

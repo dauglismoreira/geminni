@@ -1,6 +1,7 @@
 import { IoLogoInstagram } from "react-icons/io5";
 import './styles.css';
 import Link from "next/link";
+import ImpacteIcon from '@/app/components/impacte/ImpacteIcon'
 
 interface FooterProps {
     data?:any;
@@ -76,7 +77,7 @@ export const Footer = ({data, menu1, menu2}: FooterProps) => {
             </div>
             <div className="footer-right">
                 <p>© GEMINNI IMÓVEIS. TODOS OS DIREITOS RESERVADOS.</p>
-                <p>{`PRIVACIDADE E SEGURANÇA.\n DESENVOLVIDO POR IMPACTE.`}</p>
+                <p>{`PRIVACIDADE E SEGURANÇA.\n DESENVOLVIDO POR`}<span className="ml-2"><ImpacteIcon color="fill-white"/></span></p>
             </div>
         </div>
     )

@@ -19,7 +19,7 @@
 
 .card-info h3{
     @apply
-    text-light text-base font-novelinBold p-0 text-xs
+    text-soft text-base font-novelinBold p-0 text-xs
 }
 
 .card-info p{

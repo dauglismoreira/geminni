@@ -4,6 +4,7 @@ import useFields from '@/app/hooks/useFields';
 import { LinkButton } from '../linkButton';
 import { SelectInput } from '../selectInput';
 import './styles.css';
+import { TextSearchInput } from '../textSearchInput';
 
 interface selectProps {
     name?:string;
@@ -24,12 +25,20 @@ export const SearchBar = ({data}: SearchBarProps) => {
         type: '',
         status: '',
         price:'',
+        search:'',
     })
 
     return(
         <div className="search-bar-container">
             <div className="search-bar-title">
-                <h4>Procure por nossos imóveis selecionados</h4>
+                <TextSearchInput
+                    id='text'
+                    label={''}
+                    old={fields.text}
+                    className='full-search'
+                    placeholder='Procure por nossos imóveis selecionados'
+                    sendInput={handleFields}
+                />
             </div>
             <div className="search-bar-inputs">
                 <SelectInput
@@ -64,7 +73,7 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     text="Procurar"
                     link="#"
                     color={`bg-primary text-white`}
-                    hover={`hover:bg-light hover:text-white`}
+                    hover={`hover:bg-soft hover:text-white`}
                 />
             </div>
         </div>

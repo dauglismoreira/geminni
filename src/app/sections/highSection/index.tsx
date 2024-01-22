@@ -38,8 +38,9 @@ export const HighSection = ({data, title}: HighSectionProps) => {
             extraClass={"pt-52 lg:pt-16"}
             title={title}
             bg="bg-secondary"
-            color={"light"}
-            hover={"white"}
+            color={"text-soft"}
+            hover={"text-white"}
+            border={"border-soft"}
         >
             <div className="carousel-container">
                 <Swiper

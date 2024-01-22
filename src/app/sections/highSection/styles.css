@@ -20,7 +20,7 @@
 
 .highPropertiesSwiper .custom-button svg{
     @apply
-    fill-light w-8 h-8 transition bg-primary rounded-full p-1 lg:p-0
+    fill-soft w-8 h-8 transition bg-primary rounded-full p-1 lg:p-0
 }
 
 .highPropertiesSwiper .custom-button svg:hover{
@@ -49,5 +49,5 @@
 
 .mobile-link{
     @apply
-    flex lg:hidden w-full justify-center -mt-4 pb-8 text-light uppercase underline hover:text-white cursor-pointer
+    flex lg:hidden w-full justify-center -mt-4 pb-8 text-soft uppercase underline hover:text-white cursor-pointer
 }

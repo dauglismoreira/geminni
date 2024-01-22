@@ -5,7 +5,7 @@
 
 .filter-container .container-input{
     @apply
-    border-primary text-primary font-novelinBold h-10
+    border-primary text-primary font-novelinBold h-12
 }
 
 .filter-container .container-options{
@@ -15,7 +15,7 @@
 
 .filter-container .container-options .option{
     @apply
-    w-10 h-10 flex items-center justify-center border border-primary font-novelinBold text-primary cursor-pointer hover:bg-primary hover:text-white
+    w-12 h-12 flex items-center justify-center border border-primary font-novelinBold text-primary cursor-pointer hover:bg-primary hover:text-white
 }
 
 .filter-container .container-options .option.active{
@@ -25,8 +25,8 @@
 
 .filter-container-high button{
     @apply
-    bg-primary text-white flex h-10 px-4 justify-between uppercase font-novelinBold items-center mt-6 flex-1
-    hover:bg-light hover:text-primary
+    bg-primary text-white flex h-12 px-4 justify-between uppercase font-novelinBold items-center mt-6 flex-1
+    hover:bg-soft hover:text-primary
 }
 
 .filter-container label{

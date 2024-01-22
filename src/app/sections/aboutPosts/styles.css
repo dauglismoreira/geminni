@@ -5,18 +5,18 @@
 
 .about-posts{
     @apply
-    bg-primary flex justify-center flex-col items-center pt-16 pb-0 lg:pb-12 lg:border-b lg:border-light
+    bg-primary flex justify-center flex-col items-center pt-16 pb-0 lg:pb-12 lg:border-b lg:border-soft
 }
 
 .about-posts .subtitle{
     @apply
-    text-light font-novelinBold max-w-xl text-xl lg:text-2xl text-center pt-16 pb-4 px-4 lg:px-0
+    text-soft font-novelinBold max-w-xl text-xl lg:text-2xl text-center pt-16 pb-4 px-4 lg:px-0
 }
 
 .container-posts{
     max-width:1600px;
     @apply
-    lg:border-t border-light w-full py-8 flex gap-4
+    lg:border-t border-soft w-full py-8 flex gap-4
 }
 
 .aboutSwiper .button-container-left{
@@ -36,7 +36,7 @@
 
 .aboutSwiper .custom-button svg{
     @apply
-    fill-light w-8 h-8 transition bg-primary lg:bg-ultralight rounded-full p-1 lg:p-0
+    fill-soft w-8 h-8 transition bg-primary lg:bg-ultralight rounded-full p-1 lg:p-0
 }
 
 .aboutSwiper .custom-button svg:hover{

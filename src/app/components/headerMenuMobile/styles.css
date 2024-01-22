@@ -9,7 +9,7 @@
     border-radius:0 0 0 100%;
     transition: width 0.3s ease-out, height 0.3s ease-out, border-radius 0.1s ease-in;
     @apply
-    flex lg:hidden fixed w-0 h-0 top-0 bg-white bottom-0 z-40 right-0
+    flex lg:hidden fixed w-0 h-0 top-0 bg-white bottom-0 z-40 -right-full
 }
 
 .menu-mobile-close{

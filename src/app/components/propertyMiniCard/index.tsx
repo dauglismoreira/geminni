@@ -21,7 +21,7 @@ export const PropertyMiniCard = ({data}: PropertyCard) => {
                         text="Detalhes"
                         link="#"
                         color={`text-primary`}
-                        hover={`hover:text-light`}
+                        hover={`hover:text-soft`}
                     />
                 </div>
             </div>

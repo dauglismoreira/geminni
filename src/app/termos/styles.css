@@ -11,7 +11,7 @@
 
 .terms-title h3{
     @apply
-    text-xl lg:text-3xl font-novelinBold text-light uppercase
+    text-xl lg:text-3xl font-novelinBold text-soft uppercase
 }
 
 .terms-content{
@@ -21,7 +21,7 @@
 
 .terms-content h4{
     @apply
-    text-2xl pt-8 pb-4 text-light font-novelinBold
+    text-2xl pt-8 pb-4 text-soft font-novelinBold
 }
 
 .terms-content p{

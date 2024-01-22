@@ -11,7 +11,7 @@
 
 .post-city{
     @apply
-    text-xs lg:text-base border-b border-primary pb-4 text-primary lg:text-light uppercase font-novelinBold
+    text-xs lg:text-base border-b border-primary pb-4 text-primary lg:text-soft uppercase font-novelinBold
 }
 
 .post-content .post{

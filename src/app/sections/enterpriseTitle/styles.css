@@ -10,7 +10,7 @@
 
 .enterprise-title-container .enterprise-high{
     @apply
-    lg:flex lg:gap-2 font-novelinBold text-light uppercase text-sm items-center py-4
+    lg:flex lg:gap-2 font-novelinBold text-soft uppercase text-sm items-center py-4
 }
 
 .enterprise-title-container .enterprise-high span{

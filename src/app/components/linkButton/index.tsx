@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import './styles.css';
 
 interface ButtonCard {
@@ -15,6 +16,6 @@ export const LinkButton = ({color, hover, text, link, extraClasse}: ButtonCard) 
             <button
                 className={`primary-button ${color} ${hover} ${extraClasse}`}
                 // onClick={link}
-            >{text}</button>
+            ><Link href={link}>{text}</Link></button>
     )
 }

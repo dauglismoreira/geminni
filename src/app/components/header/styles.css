@@ -17,7 +17,7 @@
 
 .header .instagram-link, .full-search-action{
     @apply
-    w-6 h-6 cursor-pointer transition fill-light stroke-light hover:scale-125
+    w-6 h-6 cursor-pointer transition fill-soft stroke-soft hover:scale-125
 }
 
 .header .col-center .menu-desktop{
@@ -37,7 +37,7 @@
 
 .header .col-center a{
     @apply
-    hover:text-light
+    hover:text-soft
 }
 
 .header .header-menu{
@@ -67,7 +67,7 @@
 
 .header .toogle span{
     @apply
-    w-full bg-light h-0.5
+    w-full bg-soft h-0.5
 }
 
 @media(max-width:1024px){

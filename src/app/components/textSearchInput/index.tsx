@@ -15,9 +15,10 @@ interface TextInputProps {
   disabled?: boolean
   old?: any
   placeholder: string
+  className?:string
 }
 
-export const TextSearchInput = ({id, placeholder, label, sendInput, disabled, errors, old}: TextInputProps) => {
+export const TextSearchInput = ({id, className, placeholder, label, sendInput, disabled, errors, old}: TextInputProps) => {
   const [inputValue, setInputValue] = useState<string>(old || '');
 
   function handleChange(value: string) {
@@ -30,7 +31,7 @@ export const TextSearchInput = ({id, placeholder, label, sendInput, disabled, er
   }
 
   return (
-    <fieldset>
+    <fieldset className={className}>
       {label && <label>{label}</label>}
 
       <div className={`full-search-bar`}>
@@ -39,6 +40,7 @@ export const TextSearchInput = ({id, placeholder, label, sendInput, disabled, er
           type="text"
           value={inputValue}
           placeholder={placeholder}
+          className={className}
           onChange={e => handleChange(e.target.value)}
           disabled={disabled}
         />

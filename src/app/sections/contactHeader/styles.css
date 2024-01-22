@@ -1,11 +1,11 @@
 .contact-title{
     @apply
-    pb-4 border-b border-light w-full
+    pb-4 border-b border-soft w-full
 }
 
 .contact-title h1{
     @apply
-    text-xl lg:text-6xl text-light font-novelinBold
+    text-xl lg:text-6xl text-soft font-novelinBold
 }
 
 .contact-info{
@@ -15,7 +15,7 @@
 
 .contact-info label{
     @apply
-    text-light font-novelinBold text-xs uppercase mb-4 block
+    text-soft font-novelinBold text-xs uppercase mb-4 block
 }
 
 .contact-info p{

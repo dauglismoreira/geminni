@@ -26,7 +26,7 @@
 
 .relatedPropertiesSwiper .custom-button svg{
     @apply
-    fill-light w-8 h-8 transition bg-primary lg:bg-ultralight rounded-full p-1 lg:p-0
+    fill-soft w-8 h-8 transition bg-primary lg:bg-ultralight rounded-full p-1 lg:p-0
 }
 
 .relatedPropertiesSwiper .custom-button svg:hover{
@@ -46,7 +46,12 @@
 
 .relatedPropertiesSwiper{
     @apply
-    px-4 lg:px-16 max-w-full
+    max-w-full
+}
+
+.relatedPropertiesSwiper .swiper-slide{
+    @apply
+    flex justify-center
 }
 
 .relatedPropertiesSwiper .swiper-wrapper{
@@ -57,5 +62,12 @@
     .relatedPropertiesSwiper .button-container-left,
     .relatedPropertiesSwiper .button-container-right{
         top: 130px;
+    }
+}
+
+@media(min-width:1024px){
+    .relatedPropertiesSwiper{
+        padding-left: 4rem!important;
+        padding-right: 4rem!important;
     }
 }

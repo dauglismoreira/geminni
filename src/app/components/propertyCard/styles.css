@@ -19,7 +19,7 @@
 
 .card-info h4{
     @apply
-    text-light whitespace-pre-line text-sm uppercase font-novelinBold
+    text-soft whitespace-pre-line text-sm uppercase font-novelinBold
 }
 
 .card-info h3{

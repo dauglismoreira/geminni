@@ -15,7 +15,7 @@
 
 .contact-form .contact-form-title{
     @apply
-    text-xl lg:text-2xl text-light font-novelinBold border-b border-light pb-4
+    text-xl lg:text-2xl text-soft font-novelinBold border-b border-soft pb-4
 }
 
 .contact-form p{
@@ -30,12 +30,12 @@
 
 .contact-slogan{
     @apply
-    -rotate-90 text-light text-2xl flex items-center whitespace-nowrap mt-60
+    -rotate-90 text-soft text-2xl flex items-center whitespace-nowrap mt-60
 }
 
 .contact-slogan .line{
     @apply
-    w-px h-12 bg-light block -rotate-90 mr-12
+    w-px h-12 bg-soft block -rotate-90 mr-12
 }
 
 .contact-form form{

@@ -25,7 +25,7 @@ form .form-row .form-col fieldset{
 
 form .form-row .form-col fieldset label{
     @apply
-    text-xs text-light uppercase font-novelinBold
+    text-xs text-soft uppercase font-novelinBold
 }
 
 form.secondary .form-row .form-col fieldset label{
@@ -86,7 +86,7 @@ form.secondary .form-row.checkbox label{
 
 form .form-row.checkbox button{
     @apply
-    border border-light text-light text-base w-full lg:w-auto px-4 h-10 font-novelinBold hover:text-primary hover:bg-light
+    border border-soft text-soft text-base w-full lg:w-auto px-4 h-10 font-novelinBold hover:text-primary hover:bg-soft
 }
 
 form.secondary .form-row.checkbox button{

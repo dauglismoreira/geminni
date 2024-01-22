@@ -32,6 +32,7 @@ export default function BlogFilters() {
             label={''}
             old={fields.text}
             placeholder='O que você procura?'
+            className="bg-ultralight"
             sendInput={handleFields}
         />
     </div>

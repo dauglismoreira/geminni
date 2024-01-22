@@ -24,8 +24,8 @@
 
 .regions-list span{
     @apply
-    text-2xl text-light w-full border-b border-light py-8 flex justify-between items-center
-    hover:bg-light hover:text-white cursor-pointer hover:px-4 transition font-novelinBold
+    text-2xl text-soft w-full border-b border-soft py-8 flex justify-between items-center
+    hover:bg-soft hover:text-white cursor-pointer hover:px-4 transition font-novelinBold
 }
 
 .region-blog-footer{
@@ -38,7 +38,7 @@
 
 .region-blog-footer .slogan{
     @apply
-    pt-40 lg:pt-80 flex gap-4 items-center text-2xl text-light flex-col lg:flex-row
+    pt-40 lg:pt-80 flex gap-4 items-center text-2xl text-soft flex-col lg:flex-row
 }
 
 .svg-bg-detail{

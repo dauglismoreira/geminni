@@ -32,3 +32,15 @@
     @apply
     mt-6 lg:flex-1 border-primary
 }
+
+.search-bar-container fieldset.full-search {
+    @apply
+    w-full
+}
+
+.search-bar-container fieldset.full-search .full-search-bar{
+    max-width: none!important;
+
+    @apply
+    text-base lg:text-2xl
+}

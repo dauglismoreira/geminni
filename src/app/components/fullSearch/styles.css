@@ -3,7 +3,7 @@
     border-radius:0 0 0 100%;
     transition: width 0.3s ease-out, height 0.3s ease-out, border-radius 0.1s ease-in;
     @apply
-    flex w-0 h-0 fixed bg-white top-0 lg:top-24 bottom-0 z-40 lg:right-0 items-center
+    flex w-0 h-0 fixed bg-white top-0 lg:top-24 bottom-0 z-40 lg:right-0 items-center -left-full
 }
 
 .full-search.open{

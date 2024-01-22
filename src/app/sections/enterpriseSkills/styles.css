@@ -41,7 +41,7 @@
 
 .enterprise-skills-container .view-more{
     @apply
-    font-novelinBold text-primary underline pt-4 cursor-pointer hover:text-light
+    font-novelinBold text-primary underline pt-4 cursor-pointer hover:text-soft
 }
 
 @media(max-width:1024px){

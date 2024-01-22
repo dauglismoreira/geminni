@@ -46,9 +46,10 @@ export const PropertiesSection = ({data, title, filterButtons}: PropertiesSectio
         <SectionContainer
             extraClass={"pt-0 lg:pt-16"}
             title={title}
-            color={"primary"}
-            hover={"light"}
+            color={"text-primary"}
+            hover={"text-soft"}
             bg={'bg-ultralight'}
+            border={"border-primary"}
         >
             {filterButtons && <div className="container-region-filter">
                 <div className="region-filter-title">
@@ -81,7 +82,15 @@ export const PropertiesSection = ({data, title, filterButtons}: PropertiesSectio
                         slidesPerView: 1,
                         spaceBetween: 20,
                         },
-                        1024: {
+                        768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                        },
+                        1360: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                        },
+                        1620: {
                         slidesPerView: 4,
                         spaceBetween: 20,
                         },
