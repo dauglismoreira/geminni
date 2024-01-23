@@ -25,3 +25,31 @@
     font-style: normal;
     font-display: swap;
   }
+
+::-moz-selection { /* Code for Firefox */
+    color: #987F6A;
+    background: #382020;
+}
+
+::selection {
+    color: #987F6A;
+    background: #382020;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: .5em;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #987F6A;
+    outline: none;
+}
