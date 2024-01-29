@@ -25,3 +25,11 @@
     font-style: normal;
     font-display: swap;
   }
+
+  @font-face {
+    font-family: 'Novelin Heavy';
+    src: url('./fonts/novelin/Novelin-Black.woff2') format('woff2');
+    font-weight: black;
+    font-style: normal;
+    font-display: swap;
+  }

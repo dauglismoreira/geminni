@@ -2,8 +2,28 @@ import './styles.css'
 import {properties} from './mock'
 import { PropertyCard } from '../components/propertyCard';
 import FullFilters from '../components/fullFilters';
+import fetchData from '../helpers/fetchData';
+import getStorageFile from '../helpers/getStorageFile';
 
-export default function Enterprises() {
+export async function generateMetadata() {
+    const data = await  fetchData('property')
+  
+      return {
+        title: data?.data?.page?.name_pt_br ?? '',
+        description: data?.data?.page?.description_pt_br ?? '',
+          openGraph: {
+            title: data?.data?.page?.name_pt_br ?? '',
+            description: data?.data?.page?.description_pt_br ?? '',
+            images: [{
+              url: getStorageFile(data?.data?.page?.square_image?.src) ?? '',
+            },]
+          },
+      }
+    }
+
+export default async function Enterprises() {
+    const data = await  fetchData('property')
+
   return (
     <main>
         <div className="enterprise-container">
@@ -16,7 +36,7 @@ export default function Enterprises() {
                     <FullFilters/>
                 </div>
                 <div className="enterprise-search-list">
-                    {properties.map((post, index) => (
+                    {data.data?.properties?.data.map((post:any, index:number) => (
                         <PropertyCard key={index} data={post}/>
                     ))}
                 </div>

@@ -1,5 +1,7 @@
+import getStorageFile from '@/app/helpers/getStorageFile';
 import { LinkButton } from '../linkButton';
 import './styles.css';
+import Link from 'next/link';
 
 interface PropertyCard {
     data?:any;
@@ -8,32 +10,32 @@ interface PropertyCard {
 export const PropertyCard = ({data}: PropertyCard) => {
 
     return(
-        <div className="card-container">
+        <Link className="card-container" href={`/imoveis/${data?.slug_pt_br}`}>
             <div className="card-image" style={{
-                backgroundImage: `url("${data.image}")`
+                backgroundImage: `url("${getStorageFile(data.image_primary?.src)}")`
             }}>
-                {data.tag && <div className="card-tag">{data.tag}</div>}
+                {data?.residential_property_status?.name_pt_br && <div className="card-tag">{data?.residential_property_status?.name_pt_br}</div>}
             </div>
             <div className="card-info">
-                <h4>{data.subtitle}</h4>
-                <h3>{data.title}</h3>
+                {data?.residential_property_type?.name_pt_br && <h4>{data?.residential_property_type?.name_pt_br}</h4>}
+                <h3>{data.name_pt_br}</h3>
                 <div className="container-details">
-                    <span>{data.details.size} m²</span>
-                    <span>{data.details.bedrooms} dorm</span>
-                    <span>{data.details.suites} suíte</span>
-                    <span>{data.details.garages} vagas</span>
+                    <span>{data.util_area} m²</span>
+                    <span>{data.rooms} dorm</span>
+                    <span>{data.suites} suíte</span>
+                    <span>{data.parking_spaces} vagas</span>
                 </div>
-                <h5>{data.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h5>
+                <h5>{parseFloat(data.value).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h5>
                 <div className="card-footer">
                     <LinkButton
                         text="Detalhes"
-                        link="#"
+                        link={`/imoveis/${data?.slug_pt_br}`}
                         color={`bg-white text-primary border-primary`}
                         hover={`hover:bg-primary hover:text-white`}
                     />
-                    <span>Cód. {data.cod}</span>
+                    <span>Cód. {data.sku}</span>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

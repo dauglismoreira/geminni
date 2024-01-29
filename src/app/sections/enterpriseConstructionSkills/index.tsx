@@ -11,15 +11,22 @@ import 'swiper/css/navigation';
 import Fancybox from '@/app/utils/Fancybox';
 
 interface EnterpriseConstructionProps{
-    enterprise:{
-        skillsEnterprise:string[];
-        galleryEnterprise:{
-            image:string;
-        }[]
-    }
+    data:{
+        enumeration:{
+            items:{
+                name_pt_br:string;
+                link:string;
+              }[]
+        },
+        gallery:{
+            images:{
+                src:string;
+            }[]
+        }
+    };
 }
 
-export default function EnterpriseConstructionSkills({enterprise}: EnterpriseConstructionProps) {
+export default function EnterpriseConstructionSkills({data}: EnterpriseConstructionProps) {
     const swiper = useSwiper();
 
     const handlePrevClick = () => {
@@ -36,57 +43,65 @@ export default function EnterpriseConstructionSkills({enterprise}: EnterpriseCon
 
     return (
         <div className="enterprise-skills-container">
-            <h3>O empreendimento</h3>
+            {data?.enumeration?.items?.length > 0 || data?.gallery?.images?.length && <h3>O empreendimento</h3>}
+            {data?.enumeration?.items?.length > 0 &&
+            <>
             <h5>Características</h5>
             <div className="enterprise-skills">
-                {enterprise.skillsEnterprise.map((skill, index) => (
-                    <span key={index}><IoMdCheckmark />{skill}</span>
+                {data.enumeration.items.map((skill, index) => (
+                    <span key={index}><IoMdCheckmark />{skill.name_pt_br}</span>
                 ))}
             </div>
-            <div className="gallery-construction-container desktop">
-                <ConstructionGallery gallery={enterprise.galleryEnterprise}/>
-            </div>
-            <div className="gallery-construction-container mobile">
-            <Swiper
-                slidesPerView={'auto'}
-                spaceBetween={20}
-                centeredSlides={false}
-                loop={true}
-                navigation={{
-                    prevEl: '.custom-prev-button',
-                    nextEl: '.custom-next-button',
-                }}
-                modules={[Navigation, Mousewheel, Keyboard]}
-                className="singlePropertySwiper"
-            >
-                {enterprise.galleryEnterprise.map((photo: any, index: number) => (
-                    <SwiperSlide key={index}>
-                        <Fancybox
-                            key={index}
-                            options={{ infinite: false }}
-                            href={photo.image}
-                            delegate="[data-fancybox='gallery']"
-                        >
-                            <img
-                                className="enterprise-photo"
-                                src={photo.image}
-                                data-fancybox="gallery"
-                                data-src={photo.image}
-                            ></img>
-                        </Fancybox>
+            </>
+            }
+            {data?.gallery?.images?.length > 0 &&
+                <>
+                <div className="gallery-construction-container desktop">
+                    <ConstructionGallery gallery={data.gallery?.images}/>
+                </div>
+                <div className="gallery-construction-container mobile">
+                <Swiper
+                    slidesPerView={'auto'}
+                    spaceBetween={20}
+                    centeredSlides={false}
+                    loop={true}
+                    navigation={{
+                        prevEl: '.custom-prev-button',
+                        nextEl: '.custom-next-button',
+                    }}
+                    modules={[Navigation, Mousewheel, Keyboard]}
+                    className="singlePropertySwiper"
+                >
+                    {data.gallery?.images.map((photo: any, index: number) => (
+                        <SwiperSlide key={index}>
+                            <Fancybox
+                                key={index}
+                                options={{ infinite: false }}
+                                href={photo.image}
+                                delegate="[data-fancybox='gallery']"
+                            >
+                                <img
+                                    className="enterprise-photo"
+                                    src={photo.image}
+                                    data-fancybox="gallery"
+                                    data-src={photo.image}
+                                ></img>
+                            </Fancybox>
 
-                    </SwiperSlide>
-                ))}
-                <div
-                    onClick={handlePrevClick}
-                    className="custom-button custom-prev-button"
-                ><MdOutlineArrowBackIosNew /></div>
-                <div
-                    onClick={handleNextClick}
-                    className="custom-button custom-next-button"
-                ><MdOutlineArrowForwardIos /></div>
-            </Swiper>
-            </div>
+                        </SwiperSlide>
+                    ))}
+                    <div
+                        onClick={handlePrevClick}
+                        className="custom-button custom-prev-button"
+                    ><MdOutlineArrowBackIosNew /></div>
+                    <div
+                        onClick={handleNextClick}
+                        className="custom-button custom-next-button"
+                    ><MdOutlineArrowForwardIos /></div>
+                </Swiper>
+                </div>
+                </>
+            }
         </div>
     )
 }

@@ -51,3 +51,8 @@
     @apply
     flex lg:hidden w-full justify-center -mt-4 pb-8 text-soft uppercase underline hover:text-white cursor-pointer
 }
+
+.section-container svg.bg-detail{
+    @apply
+    w-full h-full absolute inset-0
+}

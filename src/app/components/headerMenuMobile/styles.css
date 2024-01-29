@@ -14,7 +14,7 @@
 
 .menu-mobile-close{
     @apply
-    flex w-11 h-11 absolute top-8 right-8
+    flex w-11 h-11 absolute top-8 right-4
 }
 
 .menu-mobile-close svg{

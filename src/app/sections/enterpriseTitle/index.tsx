@@ -1,39 +1,45 @@
 import './styles.css'
 
 interface EnterpriseTitleProps{
-    enterprise:{
-        title:string;
-        city:string;
-        type:string;
-        high:string;
-        details:{
-            dorms:number;
-            size:number;
-            suite:number;
-            garage:number;
-            floor:number;
-            bath:number;
+    data:{
+        name_pt_br:string;
+        util_area:number;
+        rooms:number;
+        suites:number;
+        parking_spaces:number;
+        floor:number;
+        bathrooms:number;
+        address:{
+            city:{
+                name:string;
+            }
+        },
+        residential_property_type:{
+            name_pt_br:string;
+        },
+        residential_property_status:{
+            name_pt_br:string;
         }
-    }
+    };
 }
 
-export default function EnterpriseTitle({enterprise}: EnterpriseTitleProps) {
+export default function EnterpriseTitle({data}: EnterpriseTitleProps) {  
 
   return (
     <div className="enterprise-title-container">
-        <h1>{enterprise.title}</h1>
+        <h1>{data?.name_pt_br}</h1>
         <h3 className="enterprise-high">
-            <span>{enterprise.city}</span><span>·</span>
-            <span>{enterprise.type}</span><span>·</span>
-            <span className="high">{enterprise.high}</span>
+            {data?.address.city ? <span>{data.address.city.name}</span> : <></>}
+            {data?.residential_property_type?.name_pt_br ? <><span>·</span><span>{data.residential_property_type?.name_pt_br}</span></> : <></>}
+            {data?.residential_property_status?.name_pt_br ? <><span>·</span><span className="high">{data.residential_property_status?.name_pt_br}</span></> : <></>}
         </h3>
         <div className="enterprise-details">
-            <span>{enterprise.details.size} m²</span>
-            <span>{enterprise.details.dorms} dormitórios</span>
-            <span>{enterprise.details.suite} suíte</span>
-            <span>{enterprise.details.garage} vagas</span>
-            <span>{enterprise.details.floor}º andar</span>
-            <span>{enterprise.details.bath} banheiros</span>
+            {data?.util_area ? <span>{data.util_area} m²</span> : <></>}
+            {data?.rooms ? <span>{data.rooms} dormitórios</span> : <></>}
+            {data?.suites ? <span>{data.suites} suíte</span> : <></>}
+            {data?.parking_spaces ? <span>{data.parking_spaces} vagas</span> : <></>}
+            {data?.floor ? <span>{data.floor}º andar</span> : <></>}
+            {data?.bathrooms ? <span>{data.bathrooms} banheiros</span> : <></>}
         </div>
     </div>
   )

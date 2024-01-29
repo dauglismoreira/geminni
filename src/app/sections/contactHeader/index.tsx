@@ -1,5 +1,6 @@
 import { IoLogoInstagram } from "react-icons/io5";
 import './styles.css'
+import Link from "next/link";
 
 interface ContactHeaderProps{
     contactPage:{
@@ -30,7 +31,7 @@ export default function ContactHeader({contactPage}: ContactHeaderProps) {
             <p>{contactPage?.email}</p>
             </div>
             <div className="contact-instagram">
-            <a><IoLogoInstagram />{contactPage?.instagram}</a>
+                <Link href={`https://instagram.com/${contactPage?.instagram}`} target="_blank"><IoLogoInstagram />{contactPage?.instagram}</Link>
             </div>
         </div>
     </>

@@ -5,13 +5,23 @@ import './styles.css'
 import { MdOutlineContentCopy, MdOutlineEmail, MdOutlineWhatsapp } from 'react-icons/md'
 
 interface PriceContainerProps{
-    enterprise:{
-        cod:number,
-        price:number
+    data:{
+        sku:any,
+        value:any
     }
 }
 
-export default function PriceContainer({enterprise}: PriceContainerProps) {
+const scrollToSection = (id: string) => {
+  const targetElement = document.getElementById(id);
+  if (targetElement) {
+    window.scrollTo({
+      top: targetElement.offsetTop - 50,
+      behavior: 'smooth',
+    });
+  }
+};
+
+export default function PriceContainer({data}: PriceContainerProps) {
 
     const [isFixed, setIsFixed] = useState(false);
 
@@ -39,12 +49,12 @@ export default function PriceContainer({enterprise}: PriceContainerProps) {
         <div className={`price-container ${isFixed ? 'fixe' : ''}`}>
             <div className="price-label">
                 <p>Valor do imóvel</p>
-                <p>Cód.: {enterprise.cod}</p>
+                <p>Cód.: {data?.sku}</p>
             </div>
-            <h3>{(enterprise.price / 100).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h3>
+            <h3>{parseInt(data?.value)?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h3>
             <div className="line"></div>
             <div className="contact-buttons">
-                <button className="info-button">Receber mais informações</button>
+                <button className="info-button" onClick={() => scrollToSection('localizacao')}>Receber mais informações</button>
                 <button className="wht-button"><MdOutlineWhatsapp />Whatsapp</button>
             </div>
             <div className="share-container">

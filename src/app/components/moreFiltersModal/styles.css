@@ -1,8 +1,13 @@
 .more-filter-modal{
     width:700px;
+    transform:translate(100%,0);
     @apply
-    max-w-full fixed bg-white shadow-lg z-40 top-2/4 left-2/4 -translate-y-1/2 -translate-x-1/2 px-4 py-12
-    lg:px-20 lg:py-12 rounded-md overflow-auto h-full lg:h-auto
+    max-w-full fixed bg-white shadow-lg z-40 top-24 bottom-0 right-0 px-4 py-12
+    lg:px-20 lg:py-12 overflow-auto h-full lg:h-auto transition
+}
+
+.more-filter-modal.open{
+    transform:translate(0,0);
 }
 
 .more-filter-modal .modal-header{
@@ -28,7 +33,12 @@
 
 .more-filter-modal-overlay{
     @apply
-    bg-primary fixed inset-0 z-30 opacity-50
+    hidden
+}
+
+.more-filter-modal-overlay.open{
+    @apply
+    block bg-primary fixed inset-0 z-30 opacity-50
 }
 
 .modal-footer{
@@ -54,5 +64,10 @@
 @media(max-width:1024px){
     .more-filter-modal .modal-body .checkbox-list{
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    .more-filter-modal.open{
+        @apply
+        w-full max-w-full fixed bg-white shadow-lg z-40 top-0 left-2/4 -translate-x-1/2 px-4 py-12
+        lg:px-20 lg:py-12 rounded-md overflow-auto h-full lg:h-auto
     }
 }

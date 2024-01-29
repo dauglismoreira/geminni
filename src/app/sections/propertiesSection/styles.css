@@ -56,7 +56,7 @@
 
 .propertiesSwiper{
     @apply
-    px-4 lg:px-16 max-w-full
+    px-4 lg:px-16 max-w-full py-4
 }
 
 .propertiesSwiper .swiper-wrapper{

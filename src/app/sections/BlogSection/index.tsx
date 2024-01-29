@@ -1,39 +1,40 @@
 import { SectionContainer } from '../../components/sectionContainer';
 import { HiArrowLongRight } from "react-icons/hi2";
 import './styles.css';
+import Link from 'next/link';
+import getStorageFile from '@/app/helpers/getStorageFile';
 
 interface BlogSectionProps {
     data?:any;
-    title:{
-        title:string;
-        link?: string;
-        linkText?:string;
-    };
+    buttons?:{
+        name_pt_br:string;
+        link:string;
+    }[];
 }
 
-export const BlogSection = ({data, title}: BlogSectionProps) => {
+export const BlogSection = ({data, buttons}: BlogSectionProps) => {
 
     return(
         <>
         <SectionContainer
             extraClass={"-mt-8"}
-            title={title}
+            title={data}
             color={"text-primary"}
             hover={"soft"}
-            border={"border-primary"}
+            border={"border-secondary"}
             bg={'bg-ultralight'}
         >
             <div className="region-blog">
                 <div className="regions-list">
-                    <p>Fique por dentro de tudo que acontece nas regiões que escolhemos investir.</p>
-                    {data.regions.map((region: any, index: number) => (
-                        <span key={index}>{region.label}<HiArrowLongRight /></span>
+                    {data && <p>{data.description_pt_br}</p>}
+                    {buttons && buttons.map((region: any, index: number) => (
+                        <Link key={index} href={region.link || '#'}><span>{region.name_pt_br}<HiArrowLongRight /></span></Link>
                     ))}
                 </div>
                 <div
                     className="region-image"
                     style={{
-                        backgroundImage:`url("${data.image}")`
+                        backgroundImage:`url("${getStorageFile(data.square_image?.src)}")`
                     }}
                 ></div>
             </div>

@@ -12,7 +12,7 @@
     .price-container.fixe{
         top:150px;
         @apply
-        fixed z-30
+        fixed z-30 mt-4
     }
 }
 

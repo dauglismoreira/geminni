@@ -9,21 +9,23 @@ import 'swiper/css/navigation';
 import './styles.css';
 import { ActionButton } from '@/app/components/actionButton';
 import { PropertyCard } from '@/app/components/propertyCard';
+import { useEffect } from 'react';
 
 interface PropertiesSectionProps {
     data?:any;
-    filterButtons?:{
-        text:string;
-        action:string;
+    buttons?:{
+        name_pt_br:string;
+        link:string;
     }[];
     title:{
-        title:string;
-        link?: string;
-        linkText?:string;
+        name_pt_br:string;
+        link_label_pt_br?: string;
+        link?:string;
+        description_pt_br?:string;
     };
 }
 
-export const PropertiesSection = ({data, title, filterButtons}: PropertiesSectionProps) => {
+export const PropertiesSection = ({data, title, buttons}: PropertiesSectionProps) => {
     const swiper = useSwiper();
 
     const handlePrevClick = () => {
@@ -38,8 +40,8 @@ export const PropertiesSection = ({data, title, filterButtons}: PropertiesSectio
         }
     };
 
-    const teste = () => {
-        console.log('teste')
+    const action = (link:string) => {
+        console.log(link)
     }
 
     return(
@@ -51,16 +53,16 @@ export const PropertiesSection = ({data, title, filterButtons}: PropertiesSectio
             bg={'bg-ultralight'}
             border={"border-primary"}
         >
-            {filterButtons && <div className="container-region-filter">
+            {buttons && <div className="container-region-filter">
                 <div className="region-filter-title">
-                    <p>Escolha a região que você gostaria de estar</p>
+                    <p>{title?.description_pt_br}</p>
                 </div>
                 <div className="region-buttons">
-                    {filterButtons.map((button, index) => (
+                    {buttons.map((button, index) => (
                         <ActionButton
                             key={index}
-                            action={() => teste()}
-                            text={button.text}
+                            action={() => action(button.link)}
+                            text={button.name_pt_br}
                             color={"text-primary bg-transparent border-primary"}
                             hover={"hover:bg-primary hover:text-white"}
                         />
@@ -117,7 +119,7 @@ export const PropertiesSection = ({data, title, filterButtons}: PropertiesSectio
                     </div>
                 </Swiper>
             </div>
-            {title.linkText && <div className="mobile-link">{title.linkText}</div>}
+            {title?.link_label_pt_br && <div className="mobile-link">{title?.link_label_pt_br}</div>}
         </SectionContainer>
     )
 }

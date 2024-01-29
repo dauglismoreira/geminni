@@ -1,17 +1,19 @@
 import './styles.css'
 
 interface EnterpriseTourProps{
-    enterprise:{
-        tour:string;
-    }
+    data:string
 }
 
-export default function EnterpriseTour({enterprise}: EnterpriseTourProps) {
+export default function EnterpriseTour({data}: EnterpriseTourProps) {
 
   return (
-    <div className="enterprise-tour-container">
+    data && <div className="enterprise-tour-container">
         <h3>Tour virtual</h3>
-        <div dangerouslySetInnerHTML={{ __html: enterprise.tour }} />
+        {data.startsWith('http') ?
+          <iframe src={data}></iframe>
+        :
+        <div dangerouslySetInnerHTML={{ __html: data }} />
+      }
     </div>
   )
 }

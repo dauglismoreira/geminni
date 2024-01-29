@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { IoSearchOutline } from 'react-icons/io5';
 import { MdClose } from "react-icons/md";
-import {properties} from './mock.js';
 import './styles.css';
 import { PropertyMiniCard } from '../propertyMiniCard';
+import fetchData from '@/app/helpers/fetchData.js';
+import Link from 'next/link.js';
 
 interface FullSearchProps{
     openFullSearch:boolean;
@@ -11,6 +12,10 @@ interface FullSearchProps{
 }
 
 const FullSearch = ({ openFullSearch, onClose }:FullSearchProps) => {
+
+  const [search, setSearch] = useState<string>('')
+  const [properties, setProperties] = useState([])
+  const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
         const bodyElement = document.querySelector('body');
@@ -23,6 +28,17 @@ const FullSearch = ({ openFullSearch, onClose }:FullSearchProps) => {
         }
     }, [openFullSearch]);
 
+    useEffect(() => {
+      if(search.length > 2){
+        if (timeoutIdRef.current) {
+          clearTimeout(timeoutIdRef.current);
+        }
+        timeoutIdRef.current = setTimeout(() => {
+          fetchData(`property?search=${search}`)
+        }, 1000);
+      }
+    }, [search])
+
   return (
     <div className={`full-search ${openFullSearch ? 'open' : 'close'}`}>
       <div className={`full-search-close ${openFullSearch ? 'open' : 'close'}`}>
@@ -30,12 +46,17 @@ const FullSearch = ({ openFullSearch, onClose }:FullSearchProps) => {
       </div>
       <div className="container-search">
         <div className={`full-search-bar ${openFullSearch ? 'open' : 'close'}`}>
-          <input type="text" placeholder="O que você procura?" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="O que você procura?"
+          />
           <IoSearchOutline />
         </div>
         <div className={`container-result ${openFullSearch ? 'open' : 'close'}`}>
-            <h3>Apartamento frente mar(5)</h3>
-            <a>Clique aqui para ver todos os empreendimentos</a>
+            {properties.length > 0 && <h3>{search}({properties.length})</h3>}
+            <Link href="/empreendimentos" className="mt-4">Clique aqui para ver todos os empreendimentos</Link>
             <div className="container-properties">
                 {properties.map((property, index) => (
                     <PropertyMiniCard key={index} data={property}/>

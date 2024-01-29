@@ -10,7 +10,9 @@ import './styles.css';
 
 interface AboutPostsProps {
     blogCards:any;
-    subtitle:string;
+    subtitle:{
+        name_pt_br:string;
+    };
 }
 
 export const AboutPosts = ({ blogCards, subtitle }: AboutPostsProps) => {
@@ -31,7 +33,7 @@ export const AboutPosts = ({ blogCards, subtitle }: AboutPostsProps) => {
     return(
     <div className="about-posts">
         <div className="vertical-line"></div>
-        <h3 className="subtitle">{subtitle}</h3>
+        <h3 className="subtitle">{subtitle.name_pt_br}</h3>
         <div className="container-posts">
           <Swiper
               slidesPerView={4}

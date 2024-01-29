@@ -10,9 +10,9 @@ interface SectionContainerProps {
     hover?:string;
     border?:string;
     title:{
-        title:string;
+        name_pt_br:string;
+        link_label_pt_br?: string;
         link?:string;
-        linkText?:string;
     }
 }
 

@@ -3,14 +3,24 @@
     w-full bg-primary
 }
 
+.contact-page svg.bg-detail{
+    @apply
+    w-full h-full absolute inset-0
+}
+
 .contact-container{
     max-width:1600px;
     @apply
-    mx-auto py-8 lg:py-28 flex gap-20 px-4
+    mx-auto py-8 lg:py-28 flex gap-20 px-4 relative z-10
 }
 
 .contact-content{
     flex:2;
+}
+
+.contact-instagram svg{
+    @apply
+    fill-soft z-0
 }
 
 .contact-form .contact-form-title{

@@ -11,17 +11,9 @@ import Link from "next/link";
 
 interface FooterProps {
     data?:any;
-    menu?:{
-        label:string;
-        link:string;
-        subMenu?:{
-            label:string;
-            link:string;
-        }[],
-    }[];
 }
 
-export const Header = ({data, menu}: FooterProps) => {
+export const Header = ({data}: FooterProps) => {
 
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const [openFullSearch, setOpenFullSearch] = useState(false);
@@ -109,14 +101,14 @@ export const Header = ({data, menu}: FooterProps) => {
                         <span></span>
                     </div>
                     <DesktopMenu
-                        menu={menu}
+                        menu={data[1]?.configs}
                         openSubMenu={openSubMenu}
                         handleOpenSubMenu={handleOpenSubMenu}
                         handleCloseSubMenu={handleCloseSubMenu}
                     />
                 </div>
                 <div className="col-right">
-                    <IoLogoInstagram className="instagram-link" onClick={() => console.log(data.instagram)}/>
+                    <a href={`https://instagram.com/${data[0]?.configs[3].description}`} target="_blank"><IoLogoInstagram className="instagram-link"/></a>
                     <IoSearchOutline
                         className="full-search-action"
                         onClick={() => setOpenFullSearch(!openFullSearch)}

@@ -11,13 +11,14 @@ interface FullFiltersProps {
     handleFields: (input: { name: string; value: string }) => void;
     fields:any;
     setMoreFilters: React.Dispatch<React.SetStateAction<boolean>>;
+    open:string;
   }
 
-export default function MoreFilterModal({ handleFields, fields, setMoreFilters }: FullFiltersProps) {
+export default function MoreFilterModal({ open, handleFields, fields, setMoreFilters }: FullFiltersProps) {
     const {isLargeScreen} = useScreenSize(1024);
     return (
     <>
-        <div className="more-filter-modal">
+        <div className={`more-filter-modal ${open}`}>
             <div className="modal-header">
                 <h3>Mais filtros</h3><IoCloseOutline  onClick={() => setMoreFilters(false)}/>
             </div>
@@ -115,7 +116,7 @@ export default function MoreFilterModal({ handleFields, fields, setMoreFilters }
                 </div>
             </div>
         </div>
-        <div className="more-filter-modal-overlay"  onClick={() => setMoreFilters(false)}></div>
+        <div className={`more-filter-modal-overlay ${open}`}  onClick={() => setMoreFilters(false)}></div>
     </>            
   )
 }

@@ -5,13 +5,13 @@ import './styles.css'
 import { IoMdCheckmark } from "react-icons/io";
 
 interface EnterpriseTitleProps{
-    enterprise:{
-        skills:string[];
-        content:string;
-    }
+    data:{
+        name_pt_br:string;
+    }[]
+    description?:string;
 }
 
-export default function EnterpriseSkills({enterprise}: EnterpriseTitleProps) {
+export default function EnterpriseSkills({description, data}: EnterpriseTitleProps) {
 
     const [viewMore, setViewMore] = useState(false)
 
@@ -20,12 +20,12 @@ export default function EnterpriseSkills({enterprise}: EnterpriseTitleProps) {
             <h3>O apartamento</h3>
             <h5>Características</h5>
             <div className="enterprise-skills">
-                {enterprise.skills.map((skill, index) => (
-                    <span key={index}><IoMdCheckmark />{skill}</span>
+                {data && data.map((skill, index) => (
+                    <span key={index}><IoMdCheckmark />{skill.name_pt_br}</span>
                 ))}
             </div>
             <div className={`enterprise-description ${viewMore ? 'expand' : ''}`}>
-                <div dangerouslySetInnerHTML={{ __html: enterprise.content }} />
+                {description && <div dangerouslySetInnerHTML={{ __html: description }} />}
             </div>
             <div
                 className="view-more"

@@ -6,7 +6,7 @@ import Fancybox from '@/app/utils/Fancybox'
 
 interface ConstructionGalleryProps{
     gallery:{
-        image:string;
+        src:string;
     }[]
 }
 
@@ -21,14 +21,14 @@ export default function ConstructionGallery({gallery}: ConstructionGalleryProps)
                     <Fancybox
                         key={index}
                         options={{ infinite: false }}
-                        href={photo.image}
+                        href={photo.src}
                         delegate="[data-fancybox='gallery']"
                     >
-                        <img src={photo.image} data-fancybox="gallery" data-src={photo.image} />
+                        <img src={photo.src} data-fancybox="gallery" data-src={photo.src} />
                     </Fancybox>
                 ))}
             </div>
-            <button data-fancybox="gallery" data-src={limitedGallery[0].image}><IoImageOutline />Mais fotos</button>
+            <button data-fancybox="gallery" data-src={limitedGallery[0].src}><IoImageOutline />Mais fotos</button>
         </div>
     )
 }

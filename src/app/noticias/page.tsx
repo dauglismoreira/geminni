@@ -2,8 +2,28 @@ import './styles.css'
 import {blogCards} from './mock'
 import { BlogCard } from '../components/blogCard'
 import BlogFilters from '../components/blogFilters';
+import fetchData from '../helpers/fetchData';
+import getStorageFile from '../helpers/getStorageFile';
 
-export default function News() {
+export async function generateMetadata() {
+    const data = await  fetchData('post')
+  
+      return {
+        title: data?.data?.name_pt_br ?? '',
+        description: data?.data?.description_pt_br ?? '',
+          openGraph: {
+            title: data?.data?.name_pt_br ?? '',
+            description: data?.data?.description_pt_br ?? '',
+            images: [{
+              url: getStorageFile(data?.data?.square_image?.src) ?? '',
+            },]
+          },
+      }
+    }
+
+export default async function News() {
+    const data = await fetchData('post')
+
   return (
     <main>
         <div className="news-container">

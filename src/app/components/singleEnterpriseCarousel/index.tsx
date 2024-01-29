@@ -10,7 +10,7 @@ import Fancybox from '@/app/utils/Fancybox';
 
 interface SingleEnterpriseCarouselProps{
     gallery:{
-        image:string;
+        src:string;
     }[]
 }
 
@@ -30,6 +30,7 @@ export default function SingleEnterpriseCarousel({gallery}: SingleEnterpriseCaro
     };
 
   return (
+    gallery?.length > 0 &&
     <Swiper
         slidesPerView={'auto'}
         spaceBetween={20}
@@ -47,14 +48,15 @@ export default function SingleEnterpriseCarousel({gallery}: SingleEnterpriseCaro
                 <Fancybox
                     key={index}
                     options={{ infinite: false }}
-                    href={photo.image}
+                    href={photo.src}
                     delegate="[data-fancybox='gallery']"
                 >
                     <img
                         className="enterprise-photo"
-                        src={photo.image}
+                        src={photo.src}
+                        alt={photo.alt_pt_br}
                         data-fancybox="gallery"
-                        data-src={photo.image}
+                        data-src={photo.src}
                     ></img>
                 </Fancybox>
 

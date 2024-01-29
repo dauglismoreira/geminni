@@ -19,7 +19,7 @@
 
 .regions-list p{
     @apply
-    text-base text-gray-400 pb-4
+    text-base text-regularLight pb-4
 }
 
 .regions-list span{

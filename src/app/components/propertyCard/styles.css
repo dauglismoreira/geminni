@@ -2,7 +2,11 @@
     height:587px;
 
     @apply
-    bg-white max-w-sm
+    bg-white max-w-sm hover:shadow-md transition
+}
+
+.card-container:hover{
+    transform:scale(1.01);
 }
 
 .card-image{
@@ -29,7 +33,7 @@
 
 .card-info h5{
     @apply
-    text-primary text-xl font-novelinBold
+    text-primary text-xl font-novelinHeavy
 }
 
 .container-details{

@@ -1,3 +1,5 @@
+'use client'
+
 import { IoLogoInstagram } from "react-icons/io5";
 import './styles.css';
 import Link from "next/link";
@@ -6,11 +8,11 @@ import ImpacteIcon from '@/app/components/impacte/ImpacteIcon'
 interface FooterProps {
     data?:any;
     menu1?:{
-        label:string;
+        name_pt_br:string;
         link:string;
     }[];
     menu2?:{
-        label:string;
+        name_pt_br:string;
         link:string;
     }[];
 }
@@ -48,29 +50,36 @@ export const Footer = ({data, menu1, menu2}: FooterProps) => {
                         </clipPath>
                         </defs>
                     </svg>
-                    <p>CRECI - {data.creci}</p>
+                    <p>CRECI - {data[0]?.configs[0]?.description}</p>
                 </div>
                 <div className="footer-address">
                     <div className="footer-label">Endereço</div>
-                    <p>{data.address1}</p>
-                    <p>{data.address2}</p>
+                    <p>{data[0]?.configs[1]?.description}</p>
+                    {/* <p>{data.address2}</p> */}
                 </div>
                 <div className="contact">
                     <div className="footer-label">Contato</div>
-                    <p className="footer-phone">{data.phone}</p>
-                    <p className="footer-instagram"><IoLogoInstagram />{data.instagram}</p>
+                    <p className="footer-phone">{data[0]?.configs[2]?.description}</p>
+                    <p className="footer-instagram">
+                        <Link
+                            href={`https://instagram.com/${data[0]?.configs[3]?.description}`}
+                            target="_blank"
+                        >
+                            <IoLogoInstagram />{data[0]?.configs[3]?.description}
+                        </Link>
+                    </p>
                 </div>
                 <div className="menu">
                     <ul>
                         {menu1?.map((item, index) => (
-                            <li key={index}><Link href={item.link}>{item.label}</Link></li>
+                            <li key={index}><Link href={'./../' + item.link || ''}>{item.name_pt_br}</Link></li>
                         ))}
                     </ul>
                 </div>
                 <div className="menu">
                     <ul>
                         {menu2?.map((item, index) => (
-                            <li key={index}><Link href={item.link}>{item.label}</Link></li>
+                            <li key={index}><Link href={'./../' + item.link || ''}>{item.name_pt_br}</Link></li>
                         ))}
                     </ul>
                 </div>

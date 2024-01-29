@@ -38,9 +38,14 @@
     text-xl font-novelinBold
 }
 
-.footer-info .footer-instagram{
+.footer-info .footer-instagram a{
     @apply
     flex items-center gap-2 cursor-pointer my-6 lg:m-0 font-novelinLight
+}
+
+.footer-info .footer-instagram svg{
+    @apply
+    fill-soft
 }
 
 .footer-info  li{
@@ -49,8 +54,9 @@
 }
 
 .footer-address p{
+    max-width:280px;
     @apply
-    font-novelinLight
+    font-novelinLight 
 }
 
 @media(max-width:1024px){
@@ -64,7 +70,7 @@
     }
     .footer-logo p{
         @apply
-        mt-0 text-xs
+        mt-0 text-xs 
     }
     .footer-address, .contact, .menu{
         @apply

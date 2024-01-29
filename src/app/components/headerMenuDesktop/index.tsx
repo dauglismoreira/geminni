@@ -4,12 +4,14 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 
 interface DesktopMenuProps {
     menu?:{
-        label:string;
-        link:string;
-        subMenu?:{
-            label:string;
+        value:string;
+        key:string;
+        enumeration?:{
+          items:{
+            name_pt_br:string;
             link:string;
-        }[],
+          }[]
+        },
     }[];
     openSubMenu: string | null;
     handleOpenSubMenu: (menuLabel: string) => void;
@@ -22,22 +24,24 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
   handleOpenSubMenu,
   handleCloseSubMenu,
 }) => {
+
+  console.log(menu)
   return (
     <div className="menu-desktop">
       {menu?.map((item, index) => (
         <Link
-          href={item.link}
+          href={item.key}
           key={index}
-          onMouseOver={() => item.subMenu && handleOpenSubMenu(item.label)}
-          className={`relative ${openSubMenu === item.label ? "active" : ""}`}
+          onMouseOver={() => item.enumeration && handleOpenSubMenu(item.value)}
+          className={`relative ${openSubMenu === item.value ? "active" : ""}`}
         >
-          {item.label}
-          {item.subMenu && <MdKeyboardArrowDown />}
-          {item.subMenu && openSubMenu === item.label && (
+          {item.value}
+          {item.enumeration && <MdKeyboardArrowDown />}
+          {item.enumeration && openSubMenu === item.value && (
             <div className="header-menu" onMouseLeave={handleCloseSubMenu}>
-              {item.subMenu &&
-                item.subMenu.map((subItem: any, subIndex: number) => (
-                  <Link href={subItem.link} key={subIndex}>{subItem.label}</Link>
+              {item.enumeration &&
+                item.enumeration.items.map((subItem: any, subIndex: number) => (
+                  <Link href={subItem.link ? subItem.link : '#'} key={subIndex}>{subItem.name_pt_br}</Link>
                 ))}
             </div>
           )}

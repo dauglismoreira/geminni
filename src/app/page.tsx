@@ -1,36 +1,66 @@
 import { HighSection } from "./sections/highSection";
 import { SearchBar } from "./components/searchBar";
 import { BannerVerticalSlide } from "./components/verticalBannerSlide";
-import {images} from './components/verticalBannerSlide/mock';
-import {properties,
-  sellBanner,
-  highSection,
-  searchButtons,
-  contactBanner,
-  filterButtons,
-  propertiesRegion,
-  propertiesMore,
-  otherPropertiesSection,
-  blogSection,
-  blogSectionContent,} from './mock';
+import {searchButtons} from './mock';
 import { BannerSection } from "./sections/bannerSection";
 import { PropertiesSection } from "./sections/propertiesSection";
 import { BlogSection } from "./sections/BlogSection";
+import getStorageFile from '@/app/helpers/getStorageFile';
+import fetchData from "@/app/helpers/fetchData";
+import Dump from "@/app/components/impacte/Dump";
 
-export default function Home() {
+export async function generateMetadata() {
+  const data = await  fetchData('home')
+
+    return {
+      title: data?.data?.name_pt_br ?? '',
+      description: data?.data?.description_pt_br ?? '',
+        openGraph: {
+          title: data?.data?.name_pt_br ?? '',
+          description: data?.data?.description_pt_br ?? '',
+          images: [{
+            url: getStorageFile(data?.data?.square_image?.src) ?? '',
+          },]
+        },
+    }
+  }
+
+export default async function Home() {
+  const data = await fetchData('home')
+  const configs = await fetchData('configs')
+  const properties = await fetchData('property')
+
   return (
     <main>
       <BannerVerticalSlide
         autoPlayTime={5000}
         auto={true}
-        images={images}/>
-      <SearchBar data={searchButtons}/>
-      <HighSection data={properties} title={highSection}/>
-      <BannerSection data={sellBanner}/>
-      <PropertiesSection data={propertiesRegion} title={highSection} filterButtons={filterButtons}/>
-      <BannerSection data={contactBanner}/>
-      <PropertiesSection data={propertiesMore} title={otherPropertiesSection}/>
-      <BlogSection data={blogSectionContent} title={blogSection}/>
+        images={data.data.components[0].gallery_image?.images}/>
+      <SearchBar
+        data={searchButtons}
+      />
+      <HighSection
+        data={properties.data.properties.data}
+        title={data.data.components[1]}
+      />
+      <BannerSection
+        data={data.data.components[2]}/>
+      <PropertiesSection
+        data={properties.data.properties.data}
+        title={data.data.components[3]}
+        buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0].enumeration.items}
+      />
+      <BannerSection
+        data={data.data.components[4]}
+      />
+      <PropertiesSection
+        data={properties.data.properties.data}
+        title={data.data.components[5]}
+      />
+      <BlogSection
+        buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0].enumeration.items}
+        data={data.data.components[6]}
+      />
     </main>
   )
 }

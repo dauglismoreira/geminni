@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './styles.css'
+import getStorageFile from '@/app/helpers/getStorageFile';
 
 
 export interface BannerImageProps {
@@ -16,7 +17,7 @@ interface BannerProps {
 }
 
 export const BannerVerticalSlide: React.FC<BannerProps> = ({ autoPlayTime, auto, images = [] }) => {
-    
+
     const [activeIndex, setActiveIndex] = useState(0);
     const [autoPlay, setAutoPlay] = useState(auto ? auto : false);
     const autoPlayInterval = autoPlayTime;
@@ -44,8 +45,8 @@ export const BannerVerticalSlide: React.FC<BannerProps> = ({ autoPlayTime, auto,
     };
 
     return (
-        images.length > 0 &&
-        <div className="slide-container" onMouseEnter={handleBannerMouseEnter} onMouseLeave={handleBannerMouseLeave}>
+      images.length > 0 ?
+      <div className="slide-container" onMouseEnter={handleBannerMouseEnter} onMouseLeave={handleBannerMouseLeave}>
         <div className="slide-navigation">
           {images.map((image, index) => (
             <span
@@ -56,14 +57,16 @@ export const BannerVerticalSlide: React.FC<BannerProps> = ({ autoPlayTime, auto,
           ))}
         </div>
         <div className="slide-wrapper" style={{ transform: `translateY(-${activeIndex * 100}%)` }}>
-          {images.map((image, index) => (
+          {images.map((image:any, index) => (
             <div
               className={`slide-image ${index === activeIndex ? 'active' : ''}`}
               key={index}
-              style={{ backgroundImage: `url("${image.path}")` }}
+              style={{ backgroundImage: `url("${getStorageFile(image.src)}")` }}
             ></div>
           ))}
         </div>
       </div>
+      :
+      <div className="mt-40"></div>
     );
 }

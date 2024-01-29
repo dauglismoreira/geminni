@@ -94,9 +94,7 @@ export default function FullFilters() {
                 </svg>
                 Mais filtros</button>
         </div>
-        {moreFilters &&
-           <MoreFilterModal handleFields={handleFields} fields={fields} setMoreFilters={setMoreFilters} />
-        }
+        <MoreFilterModal open={moreFilters ? 'open' : ''} handleFields={handleFields} fields={fields} setMoreFilters={setMoreFilters} />
     </div>
   )
 }
