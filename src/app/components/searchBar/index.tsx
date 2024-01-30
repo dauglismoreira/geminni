@@ -15,7 +15,7 @@ interface selectProps {
 }
 
 interface SearchBarProps {
-    data?:selectProps[];
+    data?:any;
 }
 
 export const SearchBar = ({data}: SearchBarProps) => {
@@ -27,6 +27,9 @@ export const SearchBar = ({data}: SearchBarProps) => {
         price:'',
         search:'',
     })
+
+
+    console.log(data)
 
     return(
         <div className="search-bar-container">
@@ -46,28 +49,40 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     sendInput={handleFields}
                     label={'Região'}
                     old={fields.region}
-                    options={[{label:'Todas regiões', value:''}, {label:'teste', value:'teste'}]}
+                    options={
+                        data.configs.filter((configs:any) => configs.key === 'region')[0].enumeration.items
+                        // [{label:'Todas regiões', value:''}, {label:'teste', value:'teste'}]
+                    }
                 />
                 <SelectInput
                     id={'type'}
                     sendInput={handleFields}
                     label={'Tipo de imóvel'}
                     old={fields.type}
-                    options={[{label:'Todos tipos', value:''}, {label:'teste', value:'teste'}]}
+                    options={
+                        data.configs.filter((configs:any) => configs.key === 'localization-type')[0].enumeration.items
+                        // [{label:'Todos tipos', value:''}, {label:'teste', value:'teste'}]
+                    }
                 />
                 <SelectInput
                     id={'status'}
                     sendInput={handleFields}
                     label={'Status do imóvel'}
                     old={fields.status}
-                    options={[{label:'Todos status', value:''}, {label:'teste', value:'teste'}]}
+                    options={
+                        data.configs.filter((configs:any) => configs.key === 'state-property')[0].enumeration.items
+                        // [{label:'Todos status', value:''}, {label:'teste', value:'teste'}]
+                    }
                 />
                 <SelectInput
                     id={'price'}
                     sendInput={handleFields}
                     label={'Qual o preço'}
                     old={fields.price}
-                    options={[{label:'Todos preços', value:''}, {label:'teste', value:'teste'}]}
+                    options={
+                        data.configs.filter((configs:any) => configs.key === 'range-values')[0].enumeration.items
+                        // [{label:'Todos preços', value:''}, {label:'teste', value:'teste'}]
+                    }
                 />
                 <LinkButton
                     text="Procurar"

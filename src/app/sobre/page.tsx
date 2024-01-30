@@ -25,6 +25,7 @@ export async function generateMetadata() {
 
 export default async function About() {
   const data = await  fetchData('about')
+  const posts = await  fetchData('post')
 
   return (
     <main>
@@ -33,8 +34,8 @@ export default async function About() {
           highImage={getStorageFile(data.data.components[0]?.horizontal_image?.src)}
         />
         <AboutContent content={data.data.components[1]?.long_text_pt_br}/>
-        <AboutVideo iframeVideo={data.data.components[2].horizontal_video?.src}/>
-        <AboutPosts subtitle={data.data.components[3]} blogCards={about.blogCards}/>
+        {data.data.components[2].horizontal_video?.src && <AboutVideo iframeVideo={data.data.components[2].horizontal_video?.src}/>}
+        <AboutPosts subtitle={data.data.components[3]} blogCards={posts.data.posts.data}/>
     </main>
   )
 }

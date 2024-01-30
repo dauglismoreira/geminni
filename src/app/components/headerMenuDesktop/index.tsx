@@ -25,12 +25,11 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
   handleCloseSubMenu,
 }) => {
 
-  console.log(menu)
   return (
     <div className="menu-desktop">
       {menu?.map((item, index) => (
         <Link
-          href={item.key}
+          href={item.enumeration ? '#' : item.value.toLocaleLowerCase()}
           key={index}
           onMouseOver={() => item.enumeration && handleOpenSubMenu(item.value)}
           className={`relative ${openSubMenu === item.value ? "active" : ""}`}

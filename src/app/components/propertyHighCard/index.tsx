@@ -29,7 +29,7 @@ export const PropertyHighCard = ({data}: PropertyHighCard) => {
                 <div className="card-high-footer">
                     <LinkButton
                         text="Detalhes"
-                        link="#"
+                        link={`/imoveis/${data.slug_pt_br}`}
                         color={`bg-soft text-white`}
                         hover={`hover:bg-white hover:text-soft`}
                     />

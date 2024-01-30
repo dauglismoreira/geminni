@@ -37,7 +37,7 @@ export default async function Home() {
         auto={true}
         images={data.data.components[0].gallery_image?.images}/>
       <SearchBar
-        data={searchButtons}
+        data={configs.data.filter((configs:any) => configs.name === 'Filtro rápido')[0]}
       />
       <HighSection
         data={properties.data.properties.data}

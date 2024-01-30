@@ -39,11 +39,13 @@
 }
 
 .highPropertiesSwiper{
+    width: 100%;
     @apply
     px-0 lg:px-16 max-w-full
 }
 
 .highPropertiesSwiper .swiper-wrapper{
+    width: 100%;
     max-width:1600px;
 }
 

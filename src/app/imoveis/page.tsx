@@ -23,6 +23,7 @@ export async function generateMetadata() {
 
 export default async function Enterprises() {
     const data = await  fetchData('property')
+    const configs = await fetchData('configs')
 
   return (
     <main>
@@ -33,7 +34,9 @@ export default async function Enterprises() {
                     <span className="line"></span>
                 </div>
                 <div className="enterprise-search-bar">
-                    <FullFilters/>
+                    <FullFilters
+                      data={configs.data.filter((configs:any) => configs.name === 'Filtro rápido')[0]}
+                    />
                 </div>
                 <div className="enterprise-search-list">
                     {data.data?.properties?.data.map((post:any, index:number) => (

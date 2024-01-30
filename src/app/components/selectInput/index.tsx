@@ -14,14 +14,18 @@ interface SelectProps {
     errors?: ErrorProps
     disabled?: boolean
     placeholder?: string
+    defaultOption?:{
+        name_pt_br:string;
+        slug:string;
+    }
     old?:any
     options:{
-        label:string;
-        value:string;
+        name_pt_br:string;
+        slug:string;
     }[];
 }
 
-export const SelectInput = ({label, options, sendInput, id, old}: SelectProps) => {
+export const SelectInput = ({label, options,defaultOption, sendInput, id, old}: SelectProps) => {
     const [inputValue, setInputValue] = useState<string>(old || '');
 
     function handleChange(value: string) {
@@ -38,8 +42,9 @@ export const SelectInput = ({label, options, sendInput, id, old}: SelectProps) =
             <label>{label}</label>
             <div className="container-input">
                 <select value={inputValue} onChange={e => handleChange(e.target.value)}>
+                    {defaultOption && <option value={defaultOption.slug}>{defaultOption.name_pt_br}</option>}
                     {options.map((option : any, index : number) => (
-                        <option key={index} value={option.value}>{option.label}</option>
+                        <option key={index} value={option.slug ? option.slug : option.link}>{option.name_pt_br}</option>
                     ))}
                 </select>
             </div>

@@ -3,35 +3,31 @@ import './styles.css'
 import Link from "next/link";
 
 interface ContactHeaderProps{
-    contactPage:{
-        title:string;
-        address1:string;
-        address2:string;
-        phone:string;
-        email:string;
-        instagram:string;
-    }
+    data:{
+        name_pt_br:string;
+    };
+    info:any;
 }
 
-export default function ContactHeader({contactPage}: ContactHeaderProps) {
+export default function ContactHeader({data, info}: ContactHeaderProps) {
+
   return (
     <>
         <div className="contact-title">
-            <h1>{contactPage?.title}</h1>
+            <h1>{data?.name_pt_br}</h1>
         </div>
         <div className="contact-info">
             <div className="contact-address">
-            <label>Endereço</label>
-            <p>{contactPage?.address1}</p>
-            <p>{contactPage?.address2}</p>
+                <label>Endereço</label>
+                <p>{info[1].description}</p>
             </div>
             <div className="contact-phone">
-            <label>Contato</label>
-            <p className="phone">{contactPage?.phone}</p>
-            <p>{contactPage?.email}</p>
+                <label>Contato</label>
+                <p className="phone">{info[2].description}</p>
+                <p>email</p>
             </div>
             <div className="contact-instagram">
-                <Link href={`https://instagram.com/${contactPage?.instagram}`} target="_blank"><IoLogoInstagram />{contactPage?.instagram}</Link>
+                <Link href={`https://instagram.com/${info[3].description}`} target="_blank"><IoLogoInstagram />{info[3].description}</Link>
             </div>
         </div>
     </>

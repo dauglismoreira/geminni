@@ -21,7 +21,7 @@
 
 .news-search-list{
     @apply
-    flex flex-wrap gap-4 justify-between pt-8
+    flex flex-wrap gap-4 justify-start pt-8
 }
 
 .news-search-list .card-container{

@@ -55,6 +55,7 @@
 }
 
 .aboutSwiper{
+    width:100%;
     @apply
     px-4 lg:px-16 max-w-full
 }

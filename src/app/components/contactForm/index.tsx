@@ -13,9 +13,10 @@ interface ContactFormProps{
     data?:any;
     id?:number;
     style?:string;
+    accept?:any;
 }
 
-export default function ContactForm({data, id, style} : ContactFormProps) {
+export default function ContactForm({data, accept, id, style} : ContactFormProps) {
 
     const [acceptTems, setAcceptTerms] = useState(false)
 
@@ -89,7 +90,7 @@ export default function ContactForm({data, id, style} : ContactFormProps) {
                         type='checkbox'
                         onChange={(e) => setAcceptTerms(e.target.checked)}
                     ></input>
-                    <label>Eu concordo que meus dados enviados estão sendo coletados e armazenados.</label>
+                    <label dangerouslySetInnerHTML={{ __html: accept.long_text_pt_br }} />
                 </div>
                 {acceptTems ?
                     <button>Enviar Mensagem</button>

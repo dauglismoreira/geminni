@@ -65,7 +65,7 @@ export const AboutPosts = ({ blogCards, subtitle }: AboutPostsProps) => {
                   modules={[Navigation, Mousewheel, Keyboard]}
                   className="aboutSwiper"
               >
-                  {blogCards.map((post:any, index:number) => (
+                  {blogCards.slice(0, 5).map((post:any, index:number) => (
                       <SwiperSlide key={index}>
                           <BlogCard data={post}/>
                       </SwiperSlide>

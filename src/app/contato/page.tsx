@@ -23,19 +23,20 @@ export async function generateMetadata() {
 
 export default async function Contact() {
   const data = await  fetchData('contact')
+  const configs = await fetchData('configs')
 
   return (
     <main>
       <div className="contact-page">
         <div className="contact-container">
           <div className="contact-content">
-            <ContactHeader contactPage={contactPage}/>
+            <ContactHeader info={configs.data[0].configs} data={data.data.components[0]}/>
             <div className="contact-form">
               <div className="contact-form-title">
-                <h3>{contactPage?.sub_title}</h3>
+                <h3>{data.data.components[1]?.name_pt_br}</h3>
               </div>
-              <p>{contactPage?.text}</p>
-              <ContactForm data={form}/>
+              <p>{data.data.components[1]?.description_pt_br}</p>
+              <ContactForm data={form} accept={data.data.components[3]}/>
             </div>
           </div>
           <div className="contact-slogan-container">
@@ -51,7 +52,7 @@ export default async function Contact() {
             </svg>
             <div className="contact-slogan">
               <span className="line"></span>
-              <p>{contactPage?.slogan}</p>
+              <p>{data.data.components[2]?.name_pt_br}</p>
             </div>
           </div>
         </div>
@@ -68,7 +69,7 @@ export default async function Contact() {
         </svg>
       </div>
       <div className="map-container">
-
+        <div dangerouslySetInnerHTML={{ __html: data.data.components[4]?.iframe }} />
       </div>
     </main>
   )

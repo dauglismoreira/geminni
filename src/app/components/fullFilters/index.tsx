@@ -8,7 +8,11 @@ import { NumberToogleInput } from '../numberToogleInput';
 import MoreFilterModal from '../moreFiltersModal';
 import useScreenSize from '@/app/hooks/useScreenSize';
 
-export default function FullFilters() {
+interface FullFiltersProps {
+    data:any;
+}
+
+export default function FullFilters({data}: FullFiltersProps) {
     const {isLargeScreen} = useScreenSize(1024);
     const [ moreFilters, setMoreFilters] = useState(false)
 
@@ -52,21 +56,30 @@ export default function FullFilters() {
                 sendInput={handleFields}
                 label={'Região'}
                 old={fields.region}
-                options={[{label:'Todas regiões', value:''}, {label:'teste', value:'teste'}]}
+                options={
+                    data.configs.filter((configs:any) => configs.key === 'region')[0].enumeration.items
+                    // [{label:'Todas regiões', value:''}, {label:'teste', value:'teste'}]
+                }
             />
             {isLargeScreen && <SelectInput
                 id={'type'}
                 sendInput={handleFields}
                 label={'Tipo de imóvel'}
                 old={fields.type}
-                options={[{label:'Todos tipos', value:''}, {label:'teste', value:'teste'}]}
+                options={
+                    data.configs.filter((configs:any) => configs.key === 'localization-type')[0].enumeration.items
+                    // [{label:'Todos tipos', value:''}, {label:'teste', value:'teste'}]
+                }
             />}
             {isLargeScreen && <SelectInput
                 id={'status'}
                 sendInput={handleFields}
                 label={'Status do imóvel'}
                 old={fields.status}
-                options={[{label:'Todos status', value:''}, {label:'teste', value:'teste'}]}
+                options={
+                    data.configs.filter((configs:any) => configs.key === 'state-property')[0].enumeration.items
+                    // [{label:'Todos status', value:''}, {label:'teste', value:'teste'}]
+                }
             />}
             {isLargeScreen && <NumberToogleInput
                 id={'rooms'}
@@ -80,14 +93,20 @@ export default function FullFilters() {
                 sendInput={handleFields}
                 label={'Qual o preço'}
                 old={fields.price}
-                options={[{label:'Todos preços', value:''}, {label:'teste', value:'teste'}]}
+                options={
+                    data.configs.filter((configs:any) => configs.key === 'range-values')[0].enumeration.items
+                    // [{label:'Todos preços', value:''}, {label:'teste', value:'teste'}]
+                }
             />}
             {isLargeScreen && <SelectInput
                 id={'order'}
                 sendInput={handleFields}
                 label={'Ordenar por'}
                 old={fields.order}
-                options={[{label:'Recente', value:''}, {label:'teste', value:'teste'}]}
+                options={
+                    [{name_pt_br:'Recente', slug:'recent'}]
+                    // [{label:'Recente', value:''}, {label:'teste', value:'teste'}]
+                }
             />}
             <button onClick={() => setMoreFilters(true)}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 18V16H9V18H3ZM3 13V11H15V13H3ZM3 8V6H21V8H3Z" fill="#FAF8F7"/>

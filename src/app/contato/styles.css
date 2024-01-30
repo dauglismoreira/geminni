@@ -59,6 +59,12 @@
     w-full bg-gray-400
 }
 
+.map-container iframe{
+    height:639px;
+    @apply
+    w-full
+}
+
 .contact-slogan-container{
     flex:1;
     @apply

@@ -3,16 +3,16 @@ export const form = [
     name:'Qual seu interesse?',
     options:[
         {
-            label:'Comprar',
-            value:'comprar',
+            name_pt_br:'Comprar',
+            slug:'comprar',
         },
         {
-            label:'Vender',
-            value:'vender',
+          name_pt_br:'Vender',
+          slug:'vender',
         },
         {
-          label:'Alugar',
-          value:'alugar',
+          name_pt_br:'Alugar',
+          slug:'alugar',
       },
     ]
   },

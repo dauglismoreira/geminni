@@ -10,6 +10,7 @@ import './styles.css';
 import { ActionButton } from '@/app/components/actionButton';
 import { PropertyCard } from '@/app/components/propertyCard';
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface PropertiesSectionProps {
     data?:any;
@@ -26,6 +27,7 @@ interface PropertiesSectionProps {
 }
 
 export const PropertiesSection = ({data, title, buttons}: PropertiesSectionProps) => {
+    const router = useRouter()
     const swiper = useSwiper();
 
     const handlePrevClick = () => {
@@ -41,7 +43,7 @@ export const PropertiesSection = ({data, title, buttons}: PropertiesSectionProps
     };
 
     const action = (link:string) => {
-        console.log(link)
+        router.push(link)
     }
 
     return(

@@ -6,17 +6,21 @@ import useFields from '@/app/hooks/useFields'
 import { SelectInput } from '../selectInput';
 import { TextSearchInput } from '../textSearchInput';
 
-export default function BlogFilters() {
+interface BlogFiltersProps {
+    data:any;
+    fetchDataFields: (fields: any) => void;
+}
+
+export default function BlogFilters({data, fetchDataFields}:BlogFiltersProps) {
 
     const {fields, handleFields} = useFields({
         region: '',
-        text: '',
+        search: '',
     })
 
     useEffect(() => {
-        console.log(fields)
+        fetchDataFields(fields);
     }, [fields])
-
 
   return (
     <div className="filter-blog">
@@ -25,12 +29,14 @@ export default function BlogFilters() {
             sendInput={handleFields}
             label={'Região'}
             old={fields.region}
-            options={[{label:'Todas regiões', value:''}, {label:'teste', value:'teste'}]}
+            defaultOption={{name_pt_br:'Todas regiões', slug:''}}
+            options={
+                data.configs.filter((configs:any) => configs.key === 'region')[0].enumeration.items}
         />
         <TextSearchInput
-            id='text'
+            id='search'
             label={''}
-            old={fields.text}
+            old={fields.search}
             placeholder='O que você procura?'
             className="bg-ultralight"
             sendInput={handleFields}
