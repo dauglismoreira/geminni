@@ -5,7 +5,7 @@
 
 .container-input select{
     @apply
-    h-10 lg:h-full text-base w-full font-novelinBold outline-none
+    h-10 lg:h-full text-base w-full font-novelinBold outline-none bg-transparent
 }
 
 .container-input select option{
