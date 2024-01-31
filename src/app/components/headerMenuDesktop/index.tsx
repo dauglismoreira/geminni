@@ -1,29 +1,30 @@
 import Link from "next/link";
 import React from "react";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import {MdKeyboardArrowDown} from "react-icons/md";
 
 interface DesktopMenuProps {
-    menu?:{
-        value:string;
-        key:string;
-        enumeration?:{
-          items:{
-            name_pt_br:string;
-            link:string;
-          }[]
-        },
-    }[];
-    openSubMenu: string | null;
-    handleOpenSubMenu: (menuLabel: string) => void;
-    handleCloseSubMenu: () => void;
+  menu?: {
+    value: string;
+    key: string;
+    description: string
+    enumeration?: {
+      items: {
+        name_pt_br: string;
+        link: string;
+      }[]
+    },
+  }[];
+  openSubMenu: string | null;
+  handleOpenSubMenu: (menuLabel: string) => void;
+  handleCloseSubMenu: () => void;
 }
 
 const DesktopMenu: React.FC<DesktopMenuProps> = ({
-  menu,
-  openSubMenu,
-  handleOpenSubMenu,
-  handleCloseSubMenu,
-}) => {
+                                                   menu,
+                                                   openSubMenu,
+                                                   handleOpenSubMenu,
+                                                   handleCloseSubMenu,
+                                                 }) => {
 
   return (
     <div className="menu-desktop">
@@ -35,7 +36,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
           className={`relative ${openSubMenu === item.value ? "active" : ""}`}
         >
           {item.value}
-          {item.enumeration && <MdKeyboardArrowDown />}
+          {item.enumeration && <MdKeyboardArrowDown/>}
           {item.enumeration && openSubMenu === item.value && (
             <div className="header-menu" onMouseLeave={handleCloseSubMenu}>
               {item.enumeration &&
