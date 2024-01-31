@@ -48,7 +48,7 @@ export default async function Home() {
       <PropertiesSection
         data={properties.data.properties.data}
         title={data.data.components[3]}
-        buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0].enumeration.items}
+        buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0]?.enumeration.items}
       />
       <BannerSection
         data={data.data.components[4]}
@@ -58,7 +58,7 @@ export default async function Home() {
         title={data.data.components[5]}
       />
       <BlogSection
-        buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0].enumeration.items}
+        buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0]?.enumeration.items}
         data={data.data.components[6]}
       />
     </main>

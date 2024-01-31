@@ -36,6 +36,7 @@ export default function Blog({data, configs}:BlogFiltersProps) {
             />
         </div>
         <div className="news-search-list">
+            {posts.length === 0 && <p>Não foram encontrados resultados.</p>}
             {posts.length > 0 && posts.map((post:any, index:number) => (
                 <BlogCard key={index} data={post}/>
             ))}

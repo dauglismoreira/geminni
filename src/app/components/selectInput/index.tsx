@@ -43,7 +43,7 @@ export const SelectInput = ({label, options,defaultOption, sendInput, id, old}: 
             <div className="container-input">
                 <select value={inputValue} onChange={e => handleChange(e.target.value)}>
                     {defaultOption && <option value={defaultOption.slug}>{defaultOption.name_pt_br}</option>}
-                    {options.map((option : any, index : number) => (
+                    {options?.map((option : any, index : number) => (
                         <option key={index} value={option.slug ? option.slug : option.link}>{option.name_pt_br}</option>
                     ))}
                 </select>

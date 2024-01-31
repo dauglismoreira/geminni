@@ -12,9 +12,10 @@ interface FullFiltersProps {
     fields:any;
     setMoreFilters: React.Dispatch<React.SetStateAction<boolean>>;
     open:string;
+    data:any;
   }
 
-export default function MoreFilterModal({ open, handleFields, fields, setMoreFilters }: FullFiltersProps) {
+export default function MoreFilterModal({ data, open, handleFields, fields, setMoreFilters }: FullFiltersProps) {
     const {isLargeScreen} = useScreenSize(1024);
     return (
     <>
@@ -28,28 +29,40 @@ export default function MoreFilterModal({ open, handleFields, fields, setMoreFil
                     sendInput={handleFields}
                     label={'Tipo de imóvel'}
                     old={fields.type}
-                    options={[{label:'Todos tipos', value:''}, {label:'teste', value:'teste'}]}
+                    defaultOption={{name_pt_br:'Todos tipos', slug:''}}
+                    options={
+                        data.configs.filter((configs:any) => configs.key === 'localization_type')[0]?.enumeration.items
+                    }
                 />}
                 {!isLargeScreen && <SelectInput
                     id={'status'}
                     sendInput={handleFields}
                     label={'Status do imóvel'}
                     old={fields.status}
-                    options={[{label:'Todos status', value:''}, {label:'teste', value:'teste'}]}
+                    defaultOption={{name_pt_br:'Todos status', slug:''}}
+                    options={
+                        data.configs.filter((configs:any) => configs.key === 'property_status')[0]?.enumeration.items
+                    }
                 />}
                 {!isLargeScreen && <SelectInput
                     id={'price'}
                     sendInput={handleFields}
                     label={'Qual o preço'}
                     old={fields.price}
-                    options={[{label:'Todos preços', value:''}, {label:'teste', value:'teste'}]}
+                    defaultOption={{name_pt_br:'Todos preços', slug:''}}
+                    options={
+                        data.configs.filter((configs:any) => configs.key === 'min_value')[0]?.enumeration.items
+                    }
                 />}
                 {!isLargeScreen && <SelectInput
                     id={'order'}
                     sendInput={handleFields}
                     label={'Ordenar por'}
                     old={fields.order}
-                    options={[{label:'Recente', value:''}, {label:'teste', value:'teste'}]}
+                    options={
+                        [{name_pt_br:'Recente', slug:'recent'}]
+                        // [{label:'Recente', value:''}, {label:'teste', value:'teste'}]
+                    }
                 />}
                 {!isLargeScreen && <NumberToogleInput
                     id={'rooms'}

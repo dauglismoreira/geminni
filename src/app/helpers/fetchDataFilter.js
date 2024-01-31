@@ -1,15 +1,22 @@
-export default function fetchDataFilter(path, params) {
+export default function fetchDataFilter(path, params, page) {
     return new Promise((resolve, reject) => {
       try {
-        const queryString = new URLSearchParams(params).toString();
-  
         const queryParams = new URLSearchParams(window.location.search);
-        Object.keys(params).forEach((key) => {
-          queryParams.set(key, params[key]);
+
+        Object.entries(params).forEach(([key, value]) => {
+          if (value !== '') {
+            queryParams.set(key, encodeURIComponent(value));
+          } else {
+            queryParams.delete(key);
+          }
         });
+
+        queryParams.set('page', page);
   
         const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
         window.history.replaceState({}, '', newUrl);
+  
+        const queryString = queryParams.toString();
   
         fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}${path}?${queryString}`, {
           next: { revalidate: 10 },

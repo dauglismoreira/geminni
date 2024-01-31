@@ -49,9 +49,9 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     sendInput={handleFields}
                     label={'Região'}
                     old={fields.region}
+                    defaultOption={{name_pt_br:'Todas regiões', slug:''}}
                     options={
-                        data.configs.filter((configs:any) => configs.key === 'region')[0].enumeration.items
-                        // [{label:'Todas regiões', value:''}, {label:'teste', value:'teste'}]
+                        data.configs.filter((configs:any) => configs.key === 'region')[0]?.enumeration.items
                     }
                 />
                 <SelectInput
@@ -59,9 +59,9 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     sendInput={handleFields}
                     label={'Tipo de imóvel'}
                     old={fields.type}
+                    defaultOption={{name_pt_br:'Todos tipos', slug:''}}
                     options={
-                        data.configs.filter((configs:any) => configs.key === 'localization-type')[0].enumeration.items
-                        // [{label:'Todos tipos', value:''}, {label:'teste', value:'teste'}]
+                        data.configs.filter((configs:any) => configs.key === 'localization-type')[0]?.enumeration.items
                     }
                 />
                 <SelectInput
@@ -69,9 +69,9 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     sendInput={handleFields}
                     label={'Status do imóvel'}
                     old={fields.status}
+                    defaultOption={{name_pt_br:'Todos status', slug:''}}
                     options={
-                        data.configs.filter((configs:any) => configs.key === 'state-property')[0].enumeration.items
-                        // [{label:'Todos status', value:''}, {label:'teste', value:'teste'}]
+                        data.configs.filter((configs:any) => configs.key === 'state-property')[0]?.enumeration.items
                     }
                 />
                 <SelectInput
@@ -79,9 +79,9 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     sendInput={handleFields}
                     label={'Qual o preço'}
                     old={fields.price}
+                    defaultOption={{name_pt_br:'Todos preços', slug:''}}
                     options={
-                        data.configs.filter((configs:any) => configs.key === 'range-values')[0].enumeration.items
-                        // [{label:'Todos preços', value:''}, {label:'teste', value:'teste'}]
+                        data.configs.filter((configs:any) => configs.key === 'range-values')[0]?.enumeration.items
                     }
                 />
                 <LinkButton

@@ -13,9 +13,14 @@ interface BlogFiltersProps {
 
 export default function BlogFilters({data, fetchDataFields}:BlogFiltersProps) {
 
+    const getUrlParam = (name: string): string | null => {
+        const searchParams = new URLSearchParams(window.location.search);
+        return searchParams.get(name);
+      };
+
     const {fields, handleFields} = useFields({
-        region: '',
-        search: '',
+        region: getUrlParam('region') || '',
+        search: getUrlParam('search') || '',
     })
 
     useEffect(() => {
@@ -31,7 +36,7 @@ export default function BlogFilters({data, fetchDataFields}:BlogFiltersProps) {
             old={fields.region}
             defaultOption={{name_pt_br:'Todas regiões', slug:''}}
             options={
-                data.configs.filter((configs:any) => configs.key === 'region')[0].enumeration.items}
+                data.configs.filter((configs:any) => configs.key === 'region')[0]?.enumeration.items}
         />
         <TextSearchInput
             id='search'

@@ -1,9 +1,7 @@
 import './styles.css'
-import {properties} from './mock'
-import { PropertyCard } from '../components/propertyCard';
-import FullFilters from '../components/fullFilters';
 import fetchData from '../helpers/fetchData';
 import getStorageFile from '../helpers/getStorageFile';
+import Properties from '../components/propertiesList';
 
 export async function generateMetadata() {
     const data = await  fetchData('property')
@@ -21,8 +19,12 @@ export async function generateMetadata() {
       }
     }
 
-export default async function Enterprises() {
-    const data = await  fetchData('property')
+export default async function Enterprises(context: any) {
+    if (typeof context.searchParams === 'object' && context.searchParams !== null) {
+      const queryParams = Object.entries(context.searchParams)
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value as string)}`)
+        .join('&');
+    const data = await  fetchData(`property?${queryParams}`)
     const configs = await fetchData('configs')
 
   return (
@@ -33,18 +35,15 @@ export default async function Enterprises() {
                     <h1>Os melhores imóveis para você</h1>
                     <span className="line"></span>
                 </div>
-                <div className="enterprise-search-bar">
-                    <FullFilters
-                      data={configs.data.filter((configs:any) => configs.name === 'Filtro rápido')[0]}
-                    />
-                </div>
-                <div className="enterprise-search-list">
-                    {data.data?.properties?.data.map((post:any, index:number) => (
-                        <PropertyCard key={index} data={post}/>
-                    ))}
-                </div>
+                <Properties
+                  data={data}
+                  configs={configs}
+                />
             </div>
         </div>
     </main>
   )
+  } else {
+    return null;
+  }
 }

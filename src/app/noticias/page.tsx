@@ -20,7 +20,7 @@ export async function generateMetadata() {
     }
 
 export default async function News(context: any) {
-    const data = await fetchData(`post?region=${context.searchParams.region}`)
+    const data = await fetchData(`post?${context.searchParams}`)
     const configs = await fetchData('configs')
 
   return (

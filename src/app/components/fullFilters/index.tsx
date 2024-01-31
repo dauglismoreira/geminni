@@ -10,31 +10,38 @@ import useScreenSize from '@/app/hooks/useScreenSize';
 
 interface FullFiltersProps {
     data:any;
+    fetchDataFields: (fields: any) => void;
 }
 
-export default function FullFilters({data}: FullFiltersProps) {
+export default function FullFilters({data, fetchDataFields}: FullFiltersProps) {
     const {isLargeScreen} = useScreenSize(1024);
     const [ moreFilters, setMoreFilters] = useState(false)
 
+    const getUrlParam = (name: string): string | null => {
+        const searchParams = new URLSearchParams(window.location.search);
+        return searchParams.get(name);
+      };
+
     const {fields, handleFields} = useFields({
-        region: '',
-        type: '',
-        status: '',
-        rooms:'',
-        price:'',
-        order:'',
-        suites:'',
-        garage:'',
-        sala_de_estar:'',
-        chuveiro_a_gas:'',
-        sacada:'',
-        area_de_servico:'',
-        lavabo:'',
-        living:'',
+        search: getUrlParam('search') || '',
+        residential_characteristic_ids: getUrlParam('residential_characteristic_ids') || '',
+        property_type: getUrlParam('property_type') || '',
+        property_characteristics: getUrlParam('property_characteristics') || '',
+        enterprise_characteristics: getUrlParam('enterprise_characteristics') || '',
+        accept_pets: getUrlParam('accept_pets') || '',
+        property_location: getUrlParam('property_location') || '',
+        region: getUrlParam('region') || '',
+        property_status: getUrlParam('property_status') || '',
+        suites: getUrlParam('suites') || '',
+        rooms: getUrlParam('rooms') || '',
+        bathrooms: getUrlParam('bathrooms') || '',
+        parking_spaces: getUrlParam('parking_spaces') || '',
+        min_value: getUrlParam('min_value') || 0,
+        highlight: getUrlParam('highlight') || '',
     })
 
     useEffect(() => {
-        console.log(fields)
+        fetchDataFields(fields);
     }, [fields])
 
     useEffect(() => {
@@ -56,29 +63,29 @@ export default function FullFilters({data}: FullFiltersProps) {
                 sendInput={handleFields}
                 label={'Região'}
                 old={fields.region}
+                defaultOption={{name_pt_br:'Todas regiões', slug:''}}
                 options={
-                    data.configs.filter((configs:any) => configs.key === 'region')[0].enumeration.items
-                    // [{label:'Todas regiões', value:''}, {label:'teste', value:'teste'}]
+                    data.configs.filter((configs:any) => configs.key === 'region')[0]?.enumeration.items
                 }
             />
             {isLargeScreen && <SelectInput
-                id={'type'}
+                id={'property_type'}
                 sendInput={handleFields}
                 label={'Tipo de imóvel'}
-                old={fields.type}
+                old={fields.property_type}
+                defaultOption={{name_pt_br:'Todos tipos', slug:''}}
                 options={
-                    data.configs.filter((configs:any) => configs.key === 'localization-type')[0].enumeration.items
-                    // [{label:'Todos tipos', value:''}, {label:'teste', value:'teste'}]
+                    data.configs.filter((configs:any) => configs.key === 'localization_type')[0]?.enumeration.items
                 }
             />}
             {isLargeScreen && <SelectInput
-                id={'status'}
+                id={'property_status'}
                 sendInput={handleFields}
                 label={'Status do imóvel'}
-                old={fields.status}
+                old={fields.property_status}
+                defaultOption={{name_pt_br:'Todos status', slug:''}}
                 options={
-                    data.configs.filter((configs:any) => configs.key === 'state-property')[0].enumeration.items
-                    // [{label:'Todos status', value:''}, {label:'teste', value:'teste'}]
+                    data.configs.filter((configs:any) => configs.key === 'property_status')[0]?.enumeration.items
                 }
             />}
             {isLargeScreen && <NumberToogleInput
@@ -89,13 +96,13 @@ export default function FullFilters({data}: FullFiltersProps) {
                 options={['1', '2', '3', '4', '5', '+']}        
             />}
             {isLargeScreen && <SelectInput
-                id={'price'}
+                id={'min_value'}
                 sendInput={handleFields}
                 label={'Qual o preço'}
-                old={fields.price}
+                old={fields.min_value}
+                defaultOption={{name_pt_br:'Todos preços', slug:''}}
                 options={
-                    data.configs.filter((configs:any) => configs.key === 'range-values')[0].enumeration.items
-                    // [{label:'Todos preços', value:''}, {label:'teste', value:'teste'}]
+                    data.configs.filter((configs:any) => configs.key === 'min_value')[0]?.enumeration.items
                 }
             />}
             {isLargeScreen && <SelectInput
@@ -113,7 +120,7 @@ export default function FullFilters({data}: FullFiltersProps) {
                 </svg>
                 Mais filtros</button>
         </div>
-        <MoreFilterModal open={moreFilters ? 'open' : ''} handleFields={handleFields} fields={fields} setMoreFilters={setMoreFilters} />
+        <MoreFilterModal data={data} open={moreFilters ? 'open' : ''} handleFields={handleFields} fields={fields} setMoreFilters={setMoreFilters} />
     </div>
   )
 }
