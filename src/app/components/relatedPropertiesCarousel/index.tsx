@@ -7,13 +7,16 @@ import { Navigation, Mousewheel, Keyboard } from 'swiper/modules';
 import { MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew } from "react-icons/md";
 import 'swiper/css';
 import 'swiper/css/navigation';
+import fetchData from '@/app/helpers/fetchData';
+import {useEffect, useState} from 'react'
 
 interface RelatedPropertiesProps{
-    relatedProperties:any;
     title:string;
+    id:any;
 }
 
-export default function RelatedProperties({relatedProperties, title}: RelatedPropertiesProps) {
+export default function RelatedProperties({title, id}: RelatedPropertiesProps) {
+    const [relatedProperties, setRelatedProperties] = useState<any[]>([])
     const swiper = useSwiper();
 
     const handlePrevClick = () => {
@@ -27,6 +30,11 @@ export default function RelatedProperties({relatedProperties, title}: RelatedPro
             swiper.slideNext();
         }
     };
+
+    useEffect(() => {
+        fetchData(`property/related-property?region_id=1&residential_property_id=` + id)
+        .then((data) => setRelatedProperties(data.data))
+    }, [id])
 
   return (
     <>

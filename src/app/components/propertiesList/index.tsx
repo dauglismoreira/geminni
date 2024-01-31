@@ -12,8 +12,8 @@ interface PropertiesFiltersProps {
 }
 
 export default function Properties({data, configs}:PropertiesFiltersProps) {
-    const [properties, setProperties] = useState<any>([])
-    const [page, setPage] = useState(1)
+    const [properties, setProperties] = useState<any[]>([])
+    const [page, setPage] = useState(2)
     const [loading, setLoading] = useState(false);
     const [filters, setFilters] = useState([])
     const [finalPage, setFinalPage] = useState(false)

@@ -19,7 +19,7 @@ export default function EnterpriseLocal({data, nearby}: EnterpriseLocalProps) {
             <div className="container-local-map">
                 <div dangerouslySetInnerHTML={{ __html: data?.map_iframe ? data?.map_iframe : '' }} />
             </div>
-            {(nearby.length > 0 || data?.place) && <div className="enterprise-place">
+            {(nearby?.length > 0 || data?.place) && <div className="enterprise-place">
                 <h5>Proximidades</h5>
                 <p>{data?.place}</p>
             </div>}

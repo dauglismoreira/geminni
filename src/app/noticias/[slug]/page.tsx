@@ -36,7 +36,7 @@ export default function Post() {
                     </div>
                 </div>
                 <div className="carousel-container">
-                    <RelatedProperties title="Imóveis próximos a região" relatedProperties={relatedProperties}/>
+                    {/* <RelatedProperties title="Imóveis próximos a região" relatedProperties={relatedProperties}/> */}
                 </div>
             </div>
         </div>

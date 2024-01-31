@@ -58,7 +58,7 @@ export default async function Enterprise(context: any) {
                     </div>
                 </div>
                 <div className="carousel-container">
-                    <RelatedProperties title="Na mesma região" relatedProperties={relatedProperties}/>
+                    <RelatedProperties title="Na mesma região" id={data.data?.property?.id}/>
                 </div>
             </div>
         </div>

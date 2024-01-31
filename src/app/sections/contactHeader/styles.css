@@ -20,7 +20,7 @@
 
 .contact-info p{
     @apply
-    text-white font-novelinLight text-lg 
+    text-white font-novelinLight text-sm
 }
 
 .contact-info .phone{
@@ -45,4 +45,10 @@
 
 .contact-address{
     max-width:30%;
+}
+
+@media(max-width:768px){
+    .contact-address{
+        max-width:100%;
+    }
 }

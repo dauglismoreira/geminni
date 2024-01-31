@@ -29,7 +29,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
     <div className="menu-desktop">
       {menu?.map((item, index) => (
         <Link
-          href={item.enumeration ? '#' : item.value.toLocaleLowerCase()}
+          href={item.enumeration ? '#' : './../' + item.value.toLocaleLowerCase()}
           key={index}
           onMouseOver={() => item.enumeration && handleOpenSubMenu(item.value)}
           className={`relative ${openSubMenu === item.value ? "active" : ""}`}
@@ -40,7 +40,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
             <div className="header-menu" onMouseLeave={handleCloseSubMenu}>
               {item.enumeration &&
                 item.enumeration.items.map((subItem: any, subIndex: number) => (
-                  <Link href={subItem.link ? subItem.link : '#'} key={subIndex}>{subItem.name_pt_br}</Link>
+                  <Link href={subItem.link ? './../' + subItem.link : '#'} key={subIndex}>{subItem.name_pt_br}</Link>
                 ))}
             </div>
           )}

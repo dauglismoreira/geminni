@@ -28,3 +28,8 @@
     @apply
     bg-ultralight
 }
+
+.enterprise-container .carousel-container{
+    @apply
+    flex flex-col
+}

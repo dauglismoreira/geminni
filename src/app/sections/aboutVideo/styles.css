@@ -15,8 +15,14 @@
     w-full
 }
 
+.about-video video{
+    height:631px;
+    width:1100px;
+    max-width:100%;
+}
+
 @media(max-width:768px){
-    .about-video iframe{
+    .about-video iframe, .about-video video{
         height:203px;
     }
 }

@@ -90,7 +90,7 @@ export default function ContactForm({data, accept, id, style} : ContactFormProps
                         type='checkbox'
                         onChange={(e) => setAcceptTerms(e.target.checked)}
                     ></input>
-                    <label dangerouslySetInnerHTML={{ __html: accept.long_text_pt_br }} />
+                    {accept && <label dangerouslySetInnerHTML={{ __html: accept.long_text_pt_br }} />}
                 </div>
                 {acceptTems ?
                     <button>Enviar Mensagem</button>
