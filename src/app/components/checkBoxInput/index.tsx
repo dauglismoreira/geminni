@@ -20,8 +20,6 @@ interface CheckBoxProps {
 export const CheckBoxInput = ({label, sendInput, id, old}: CheckBoxProps) => {
     const [inputValue, setInputValue] = useState<string>(old || '');
 
-    console.log(old)
-
     function handleChange() {
         const newValue = inputValue === '1' ? '0' : '1';
         setInputValue(newValue);

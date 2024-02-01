@@ -10,8 +10,6 @@ interface EnterpriseLocalProps{
 
 export default function EnterpriseLocal({data, nearby}: EnterpriseLocalProps) {
 
-    console.log(data)
-
     return (
         <div className="enterprise-local-container">
             <h3>Localização</h3>

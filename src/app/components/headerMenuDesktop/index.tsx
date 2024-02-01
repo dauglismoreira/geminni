@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import {MdKeyboardArrowDown} from "react-icons/md";
 
@@ -17,10 +18,12 @@ interface DesktopMenuProps {
   openSubMenu: string | null;
   handleOpenSubMenu: (menuLabel: string) => void;
   handleCloseSubMenu: () => void;
+  fixedLink:any;
 }
 
 const DesktopMenu: React.FC<DesktopMenuProps> = ({
                                                    menu,
+                                                   fixedLink,
                                                    openSubMenu,
                                                    handleOpenSubMenu,
                                                    handleCloseSubMenu,
@@ -28,7 +31,7 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
 
   return (
     <div className="menu-desktop">
-      {menu?.map((item, index) => (
+      {/* {menu?.map((item, index) => (
         <Link
           href={item.enumeration ? '#' : './../' + item.value.toLocaleLowerCase()}
           key={index}
@@ -46,6 +49,26 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
             </div>
           )}
         </Link>
+      ))} */}
+      {fixedLink?.map((item:any, index:number) => (
+        <div
+          key={index}
+          onMouseOver={() => item.subMenu && handleOpenSubMenu(item.link)}
+          className={`relative flex justify-between items-center ${openSubMenu === item.value ? "active" : ""}`}
+        >
+          <Link href={'./../' + item.link}>{item.label}</Link>
+          {item.subMenu && <MdKeyboardArrowDown/>}
+          {item.subMenu && openSubMenu === item.link && (
+            <div className="header-menu" onMouseLeave={handleCloseSubMenu}>
+              {item.subMenu &&
+                item.subMenu.map((subItem: any, subIndex: number) => (
+                  <a
+                    href={subItem.link ? './../' + subItem.link : '#'} key={subIndex}
+                  >{subItem.label}</a>
+                ))}
+            </div>
+          )}
+        </div>
       ))}
     </div>
   );

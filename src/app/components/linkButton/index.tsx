@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import './styles.css';
 
 interface ButtonCard {
@@ -7,15 +6,16 @@ interface ButtonCard {
     text:string;
     link:string;
     extraClasse?:string;
+    params?:any;
 }
 
-export const LinkButton = ({color, hover, text, link, extraClasse}: ButtonCard) => {
+export const LinkButton = ({params, color, hover, text, link, extraClasse}: ButtonCard) => {
 
     return(
         text &&
             <button
                 className={`primary-button ${color} ${hover} ${extraClasse}`}
                 // onClick={link}
-            ><Link href={link}>{text}</Link></button>
+            ><a href={params ? `${link}?page=1&${params}` : link}>{text}</a></button>
     )
 }

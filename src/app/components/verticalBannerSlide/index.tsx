@@ -67,6 +67,6 @@ export const BannerVerticalSlide: React.FC<BannerProps> = ({ autoPlayTime, auto,
         </div>
       </div>
       :
-      <div className="mt-40"></div>
+      <div className="bg-gray-200" style={{marginTop: '520px'}}></div>
     );
 }

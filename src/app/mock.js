@@ -482,46 +482,46 @@ export const headerInfo = {
 export const headerMenu = [
     {
         label:'Imóveis',
-        link:'#',
+        link:'imoveis',
         subMenu:[
             {
                 label:'Pronto para morar',
-                link:'#'
+                link:`imoveis?page=1&property_status=Pronto%20para%20morar`
             },
             {
                 label:'Na planta',
-                link:'#'
+                link:`imoveis?page=1&property_status=Na%20planta`
             },
             {
                 label:'Lançamentos',
-                link:'#'
+                link:`imoveis?page=1&property_status=Lan%C3%A7amentos`
             },
         ]
     },
     {
         label:'Regiões',
-        link:'#',
+        link:'regioes',
         subMenu:[
             {
                 label:'Balneário Camboriú',
-                link:'#'
+                link:`regioes?region=Balne%C3%A1rio%20Cambori%C3%BA`
             },
             {
                 label:'Praia Brava',
-                link:'#'
+                link:`regioes?region=Praia%20Brava`
             },
             {
                 label:'Outras Regiões',
-                link:'#'
+                link:'regioes'
             },
         ]
     },
     {
         label:'Contato',
-        link:'/contato'
+        link:'contato'
     },
     {
         label:'Sobre',
-        link:'/sobre'
+        link:'sobre'
     },
 ]

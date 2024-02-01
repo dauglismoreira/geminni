@@ -36,9 +36,9 @@
 
   @media(max-width:1024px){
     .slide-wrapper,  .slide-navigation {
-      height: 493px;
+      height: 560px;
     }
     .slide-image{
-      min-height: 493px;
+      min-height: 560px;
     }
   }

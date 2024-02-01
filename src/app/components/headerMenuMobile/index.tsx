@@ -2,13 +2,15 @@ import React from "react";
 import { MdClose } from "react-icons/md";
 import { IoLogoInstagram } from "react-icons/io5";
 import "./styles.css";
+import Link from "next/link";
 
 interface MobileMenuProps {
   openMobileMenu: boolean;
   onClose: () => void;
+  fixedLink:any;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ openMobileMenu, onClose }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ openMobileMenu, onClose, fixedLink }) => {
   return (
     <div className={`menu-mobile ${openMobileMenu ? 'open' : 'close'}`}>
         <div className={`menu-mobile-close ${openMobileMenu ? 'open' : 'close'}`}>
@@ -45,18 +47,18 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ openMobileMenu, onClose }) => {
                 </svg>
             </div>
             <div className="menu-mobile-primary">
-                <li>Imóveis</li>
-                <li>Contato</li>
-                <li>Regiões</li>
-                <li>Sobre</li>
+                <li onClick={onClose}><Link href="./../imoveis">Imóveis</Link></li>
+                <li onClick={onClose}><Link href="./../contato">Contato</Link></li>
+                <li onClick={onClose}><Link href="./../regioes">Regiões</Link></li>
+                <li onClick={onClose}><Link href="./../sobre">Sobre</Link></li>
             </div>
             <div className="menu-mobile-secondary">
-                <li>Frente mar</li>
-                <li>Praia brava</li>
-                <li>Penthouses</li>
+                <li onClick={onClose}><Link href="./../imoveis?page=1&property_localization=Frente mar">Frente mar</Link></li>
+                <li onClick={onClose}><Link href="./../imoveis?page=1&property_localization=Praia brava">Praia brava</Link></li>
+                <li onClick={onClose}><Link href="./../imoveis?page=1&property_localization=Penthouses">Penthouses</Link></li>
             </div>
             <div className="menu-mobile-foot">
-                <p><IoLogoInstagram />geminni_imoveis</p>
+            <Link href='https://instagram.com/geminni_imoveis' target="_blank"><p><IoLogoInstagram />geminni_imoveis</p></Link>
             </div>
         </div>
     </div>

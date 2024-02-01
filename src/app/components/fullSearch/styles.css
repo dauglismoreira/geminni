@@ -16,9 +16,8 @@
 
 .container-search{
     max-width:1600px;
-    height:473px;
     @apply
-    w-full mx-auto px-4 lg:px-0 pt-12 lg:pt-0
+    w-full mx-auto px-4 lg:px-8 pt-12 lg:pt-0
 }
 
 .full-search-bar{
@@ -73,7 +72,7 @@
 
 .container-result h3{
     @apply
-    text-xl text-primary pt-4 pb-2 font-novelinBold
+    text-xl text-primary pb-2 font-novelinBold
 }
 
 .container-result a{

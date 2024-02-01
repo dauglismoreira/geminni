@@ -23,12 +23,6 @@ export default async function Enterprises(context: any) {
   const data = await fetchData(`property?${context.searchParams}`)
   const configs = await fetchData('configs')
 
-  if (typeof context.searchParams === 'object' && context.searchParams !== null) {
-    const queryParams = Object.entries(context.searchParams)
-      .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value as string)}`)
-      .join('&');
-  }
-
   return (
     <main>
       <div className="enterprise-container">

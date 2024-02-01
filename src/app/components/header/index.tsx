@@ -8,12 +8,14 @@ import FullSearch from "../fullSearch";
 import MobileMenu from "../headerMenuMobile";
 import DesktopMenu from "../headerMenuDesktop";
 import Link from "next/link";
+import { headerMenu } from '@/app/mock';
 
 interface FooterProps {
     data?:any;
+    fixedLink?:any;
 }
 
-export const Header = ({data}: FooterProps) => {
+export const Header = ({data, fixedLink}: FooterProps) => {
 
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const [openFullSearch, setOpenFullSearch] = useState(false);
@@ -105,6 +107,7 @@ export const Header = ({data}: FooterProps) => {
                         openSubMenu={openSubMenu}
                         handleOpenSubMenu={handleOpenSubMenu}
                         handleCloseSubMenu={handleCloseSubMenu}
+                        fixedLink={headerMenu}
                     />
                 </div>
                 <div className="col-right">
@@ -117,7 +120,10 @@ export const Header = ({data}: FooterProps) => {
             </div>
         </div>
         <div className="h-20 lg:h-24 w-full"></div>
-        <MobileMenu openMobileMenu={openMobileMenu} onClose={handleToggleMobileMenu} />
+        <MobileMenu
+            openMobileMenu={openMobileMenu} onClose={handleToggleMobileMenu}
+            fixedLink={headerMenu}
+        />
         <FullSearch openFullSearch={openFullSearch} onClose={handleToggleFullSearch} />
         </>
     )

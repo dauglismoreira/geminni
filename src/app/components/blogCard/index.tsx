@@ -20,7 +20,7 @@ export const BlogCard = ({data}: BlogCard) => {
                 <div className="card-footer">
                     <LinkButton
                         text="Ler mais"
-                        link={`/noticias/${data.slug_pt_br}`}
+                        link={`/regioes/${data.slug_pt_br}`}
                         color={`bg-white text-primary border-primary`}
                         hover={`hover:bg-primary hover:text-white`}
                     />
