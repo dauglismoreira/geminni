@@ -29,6 +29,7 @@ export default async function Home() {
   const data = await fetchData('home')
   const configs = await fetchData('configs')
   const properties = await fetchData('property')
+  const phone = configs.data[0]?.configs.filter((item: { key: string }) => item.key === 'phone')[0]?.description
 
   return (
     <main>
@@ -44,6 +45,7 @@ export default async function Home() {
         title={data.data.components[1]}
       />
       <BannerSection
+        phone={phone}
         data={data.data.components[2]}/>
       <PropertiesSection
         data={properties.data.properties.data}
@@ -51,6 +53,7 @@ export default async function Home() {
         buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0]?.enumeration.items}
       />
       <BannerSection
+        phone={phone}
         data={data.data.components[4]}
       />
       <PropertiesSection
