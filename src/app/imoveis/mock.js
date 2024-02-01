@@ -143,3 +143,11 @@ export const searchButtons2 = [
         ]
     },
 ]
+
+export const orderOptions = [
+    {name_pt_br:'Mais recentes', slug:'order=created_at&by=asc'},
+    {name_pt_br:'Mais antigos', slug:'order=created_at&by=desc'},
+    {name_pt_br:'Maior valor', slug:'order=price&by=desc'},
+    {name_pt_br:'Menor valor', slug:'order=price&by=asc'},
+    {name_pt_br:'Ordem alfabética', slug:'order=name&by=asc'},
+]

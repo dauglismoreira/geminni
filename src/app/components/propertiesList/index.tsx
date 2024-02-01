@@ -87,7 +87,7 @@ export default function Properties({data, configs}:PropertiesFiltersProps) {
         <div className="enterprise-search-bar">
             <FullFilters
                 fetchDataFields={fetchDataFields}
-                data={configs.data.filter((configs:any) => configs.name === 'Filtro rápido')[0]}
+                data={configs.data}
             />
         </div>
         <div className="enterprise-search-list">

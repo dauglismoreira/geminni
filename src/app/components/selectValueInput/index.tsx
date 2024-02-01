@@ -7,7 +7,7 @@ interface ErrorProps {
     error:string;
 }
   
-interface SelectProps {
+interface SelectValueProps {
     id: string
     label?: string
     sendInput: (input: { name: string; value: string }) => void
@@ -27,16 +27,31 @@ interface SelectProps {
     }[];
 }
 
-export const SelectInput = ({param, numberValue, label, options,defaultOption, sendInput, id, old}: SelectProps) => {
+export const SelectValueInput = ({param, numberValue, label, options,defaultOption, sendInput, id, old}: SelectValueProps) => {
     const [inputValue, setInputValue] = useState<string>(old || '');
 
     function handleChange(value: string) {
         setInputValue(value)
     
-        sendInput({
-          name: id,
-          value: value
-        })
+        if(value.startsWith('Acima')){
+            sendInput({
+                name: 'max_value',
+                value: value.replace(/\D+/g, '')
+              })
+              sendInput({
+                name: id,
+                value: ''
+              })
+        }else{
+            sendInput({
+                name: id,
+                value: value.replace(/\D+/g, '')
+              })
+              sendInput({
+                name: 'max_value',
+                value: ''
+              })
+        }
       }
 
     return(
@@ -47,7 +62,7 @@ export const SelectInput = ({param, numberValue, label, options,defaultOption, s
                     {defaultOption && <option value={defaultOption.slug}>{defaultOption.name_pt_br}</option>}
                     {options?.map((option : any, index : number) => (
                         <option key={index} value={
-                            param ? option[param] : numberValue ? parseInt(option.name_pt_br.replace(/\D+/g, '')) : option.name_pt_br
+                            param ? option[param] : option.name_pt_br
                         }>{option.name_pt_br}</option>
                     ))}
                 </select>

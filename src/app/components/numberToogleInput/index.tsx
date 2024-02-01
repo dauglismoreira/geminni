@@ -15,7 +15,10 @@ interface SelectProps {
     disabled?: boolean
     old?:any
     placeholder?: string
-    options:string[];
+    options:{
+        name_pt_br:string;
+        slug:string;
+    }[];
 }
 
 export const NumberToogleInput = ({label, options, sendInput, id, old}: SelectProps) => {
@@ -34,12 +37,12 @@ export const NumberToogleInput = ({label, options, sendInput, id, old}: SelectPr
         <div className="select-container">
             <label>{label}</label>
             <div className="container-options">
-                {options.map((option, index) => (
+                {options?.map((option, index) => (
                     <div
                         key={index}
-                        onClick={() => handleChange(option)}
-                        className={`option ${inputValue === option && 'active'}`}
-                    >{option}</div>
+                        onClick={() => handleChange(option.name_pt_br)}
+                        className={`option ${inputValue === option.name_pt_br && 'active'}`}
+                    >{option.name_pt_br}</div>
                 ))}
             </div>
         </div>

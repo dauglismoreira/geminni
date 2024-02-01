@@ -71,3 +71,22 @@
         lg:px-20 lg:py-12 rounded-md overflow-auto h-full lg:h-auto
     }
 }
+
+.checkboxfilters h5{
+    font-size:11px;
+    @apply
+    text-soft uppercase font-bold mt-4 mb-2
+}
+
+.more-filter-modal::-webkit-scrollbar {
+    width: .5em;
+}
+
+.more-filter-modal::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.more-filter-modal::-webkit-scrollbar-thumb {
+    background-color: #987F6A;
+    outline: none;
+}

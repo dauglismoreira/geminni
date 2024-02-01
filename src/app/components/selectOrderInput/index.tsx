@@ -7,7 +7,7 @@ interface ErrorProps {
     error:string;
 }
   
-interface SelectProps {
+interface SelectOrderProps {
     id: string
     label?: string
     sendInput: (input: { name: string; value: string }) => void
@@ -27,17 +27,27 @@ interface SelectProps {
     }[];
 }
 
-export const SelectInput = ({param, numberValue, label, options,defaultOption, sendInput, id, old}: SelectProps) => {
+export const SelectOrderInput = ({param, numberValue, label, options,defaultOption, sendInput, id, old}: SelectOrderProps) => {
     const [inputValue, setInputValue] = useState<string>(old || '');
 
     function handleChange(value: string) {
-        setInputValue(value)
+        setInputValue(value);
+    
+        const paramsObject = Object.fromEntries(value.split(/[&=]/).map((part, index, array) => (index % 2 === 0) ? [] : array.slice(index - 1, index + 1)));
+    
+        const orderValue = paramsObject['order'];
+        const byValue = paramsObject['by'];
     
         sendInput({
-          name: id,
-          value: value
-        })
-      }
+            name: id,
+            value: orderValue || ''
+        });
+    
+        sendInput({
+            name: 'by',
+            value: byValue || ''
+        });
+    }
 
     return(
         <div className="select-container">

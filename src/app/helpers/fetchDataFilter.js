@@ -5,7 +5,8 @@ export default function fetchDataFilter(path, params, page) {
 
         Object.entries(params).forEach(([key, value]) => {
           if (value !== '') {
-            queryParams.set(key, encodeURIComponent(value));
+            const encodedValue = encodeURIComponent(decodeURIComponent(value));
+            queryParams.set(key, encodedValue);
           } else {
             queryParams.delete(key);
           }
@@ -18,7 +19,7 @@ export default function fetchDataFilter(path, params, page) {
   
         const queryString = queryParams.toString();
   
-        fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}${path}?${queryString}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}${path}?${queryString.replaceAll('%252C', ',')}`, {
           next: { revalidate: 10 },
           headers: {
             'app-authorization': `${process.env.NEXT_PUBLIC_API_TOKEN}`,
