@@ -18,7 +18,7 @@ interface ContactFormProps{
 
 export default function ContactForm({data, accept, id, style} : ContactFormProps) {
 
-    const [acceptTems, setAcceptTerms] = useState(false)
+    const [acceptTerms, setAcceptTerms] = useState(false)
 
     const {fields, handleFields} = useFields({
         interest:data ? data[0]?.name : '',
@@ -90,9 +90,9 @@ export default function ContactForm({data, accept, id, style} : ContactFormProps
                         type='checkbox'
                         onChange={(e) => setAcceptTerms(e.target.checked)}
                     ></input>
-                    {accept && <label dangerouslySetInnerHTML={{ __html: accept.long_text_pt_br ?? '' }} />}
+                    {accept && <label dangerouslySetInnerHTML={{ __html: accept.long_text_pt_br ?? '<div></div>' }} />}
                 </div>
-                {acceptTems ?
+                {acceptTerms ?
                     <button>Enviar Mensagem</button>
                     :
                     <button disabled>Enviar Mensagem</button>
