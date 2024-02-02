@@ -27,7 +27,7 @@ export default function ContactHeader({data, info}: ContactHeaderProps) {
                 <p className="text-xs">{info[3].description}</p>
             </div>
             <div className="contact-instagram">
-                <Link href={`https://instagram.com/${info[3].description}`} target="_blank"><IoLogoInstagram />{info[3].description}</Link>
+                <Link href={`https://instagram.com/${info[5].description}`} target="_blank"><IoLogoInstagram />{info[5].description}</Link>
             </div>
         </div>
     </>

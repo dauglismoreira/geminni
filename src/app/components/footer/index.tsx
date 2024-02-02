@@ -62,10 +62,10 @@ export const Footer = ({data, menu1, menu2}: FooterProps) => {
                     <p className="footer-phone">{data[0]?.configs[2]?.description}</p>
                     <p className="footer-instagram">
                         <Link
-                            href={`https://instagram.com/${data[0]?.configs[3]?.description}`}
+                            href={`https://instagram.com/${data[0]?.configs[5]?.description}`}
                             target="_blank"
                         >
-                            <IoLogoInstagram />{data[0]?.configs[3]?.description}
+                            <IoLogoInstagram />{data[0]?.configs[5]?.description}
                         </Link>
                     </p>
                 </div>

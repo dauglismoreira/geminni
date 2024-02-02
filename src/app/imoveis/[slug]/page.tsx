@@ -33,6 +33,7 @@ export async function generateMetadata(context:any) {
 
 export default async function Enterprise(context: any) {
     const data = await fetchData(`property/${context.params.slug}`)
+    const configs = await fetchData(`configs`)
 
   return (
     <main>
@@ -54,7 +55,7 @@ export default async function Enterprise(context: any) {
                         <EnterpriseContact enterprise={enterprise}/>
                     </div>
                     <div className="enterprise-sidebar">
-                        <PriceContainer data={data.data?.property}/>
+                        <PriceContainer configs={configs} data={data.data?.property}/>
                     </div>
                 </div>
                 <div className="carousel-container">

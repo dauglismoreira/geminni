@@ -111,7 +111,7 @@ export const Header = ({data, fixedLink}: FooterProps) => {
                     />
                 </div>
                 <div className="col-right">
-                    <a href={`https://instagram.com/${data[0]?.configs[3].description}`} target="_blank"><IoLogoInstagram className="instagram-link"/></a>
+                    <a href={`https://instagram.com/${data[0]?.configs[5].description}`} target="_blank"><IoLogoInstagram className="instagram-link"/></a>
                     <IoSearchOutline
                         className="full-search-action"
                         onClick={() => setOpenFullSearch(!openFullSearch)}

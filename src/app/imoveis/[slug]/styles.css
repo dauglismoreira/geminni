@@ -15,13 +15,23 @@
 }
 
 .enterprise-content .enterprise-body{
-    flex:2;
+    width:70%;
 }
 
 .enterprise-content .enterprise-sidebar{
-    flex:1;
+    width:30%;
     @apply
     relative
+}
+
+@media(max-width:1024px){
+    .enterprise-content .enterprise-body{
+        width:100%;
+    }
+    
+    .enterprise-content .enterprise-sidebar{
+        width:100%;
+    }
 }
 
 .enterprise-anchor{

@@ -48,7 +48,12 @@
 
 .price-container .contact-buttons button.wht-button{
     @apply
-    bg-wht text-white flex items-center justify-center gap-2 hover:bg-white hover:text-wht
+    bg-wht text-white  hover:bg-white hover:text-wht
+}
+
+.price-container .contact-buttons button.wht-button a{
+    @apply
+    flex items-center justify-center gap-2
 }
 
 .price-container .contact-buttons button.wht-button svg{
