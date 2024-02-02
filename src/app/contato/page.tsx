@@ -69,7 +69,7 @@ export default async function Contact() {
         </svg>
       </div>
       <div className="map-container">
-        <div dangerouslySetInnerHTML={{ __html: data.data.components[4]?.iframe ?? '' }} />
+        <div dangerouslySetInnerHTML={{ __html: data.data.components[4]?.iframe }} />
       </div>
     </main>
   )
