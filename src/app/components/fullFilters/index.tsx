@@ -37,6 +37,7 @@ export default function FullFilters({data, fetchDataFields}: FullFiltersProps) {
         property_type: getUrlParam('property_type') || '',
         region: getUrlParam('region') || '',
         property_status: getUrlParam('property_status') || '',
+        localization_type: getUrlParam('localization_type') || '',
         suites: getUrlParam('suites') || '',
         rooms: getUrlParam('rooms') || '',
         bathrooms: getUrlParam('bathrooms') || '',
@@ -91,6 +92,7 @@ export default function FullFilters({data, fetchDataFields}: FullFiltersProps) {
 
     useEffect(() => {
         fetchDataFields(fields);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fields])
 
     useEffect(() => {

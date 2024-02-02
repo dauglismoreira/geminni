@@ -1,5 +1,5 @@
 import './styles.css'
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import ErrorMessage from "../error";
 import { IoSearchOutline } from 'react-icons/io5';
 
@@ -16,9 +16,10 @@ interface TextInputProps {
   old?: any
   placeholder: string
   className?:string
+  clear?:boolean
 }
 
-export const TextSearchInput = ({id, className, placeholder, label, sendInput, disabled, errors, old}: TextInputProps) => {
+export const TextSearchInput = ({id, clear, className, placeholder, label, sendInput, disabled, errors, old}: TextInputProps) => {
   const [inputValue, setInputValue] = useState<string>(old || '');
 
   function handleChange(value: string) {
@@ -29,6 +30,13 @@ export const TextSearchInput = ({id, className, placeholder, label, sendInput, d
       value: value
     })
   }
+
+  useEffect(() => {
+    if(clear){
+      handleChange('')
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clear])
 
   return (
     <fieldset className={className}>

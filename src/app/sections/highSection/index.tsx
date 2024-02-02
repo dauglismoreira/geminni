@@ -34,13 +34,15 @@ export const HighSection = ({data, title}: HighSectionProps) => {
     };
 
     return(
+        <>
         <SectionContainer
-            extraClass={"pt-52 lg:pt-16"}
+            extraClass={"pt-52 lg:pt-16 relative z-30"}
             title={title}
             bg="bg-secondary"
             color={"text-soft"}
             hover={"text-white"}
             border={"border-soft"}
+            link={'/imoveis'}
         >
             <div className="carousel-container">
                 <Swiper
@@ -97,5 +99,6 @@ export const HighSection = ({data, title}: HighSectionProps) => {
                 </defs>
             </svg>
         </SectionContainer>
+        </>
     )
 }

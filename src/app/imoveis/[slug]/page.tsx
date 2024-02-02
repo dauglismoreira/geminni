@@ -51,8 +51,14 @@ export default async function Enterprise(context: any) {
                         <div id="tour"><EnterpriseTour data={data.data?.property?.tour_iframe}/></div>
                         <div id="video"><EnterpriseVideo data={data.data?.property?.video}/></div>
                         <div id="emprendimento"><EnterpriseConstructionSkills data={data.data?.property?.enterprise}/></div>
-                        <div id="localizacao"><EnterpriseLocal nearby={data.data?.property?.enumeration_nearby?.items} data={data.data?.property?.address}/></div>
-                        <EnterpriseContact enterprise={enterprise}/>
+                        <div id="localizacao"><EnterpriseLocal
+                          nearby={data.data?.property?.enumeration_nearby?.items}
+                          data={data.data?.property?.address}
+                        /></div>
+                        <EnterpriseContact
+                          enterprise={enterprise}
+                          accept={configs.data[0].configs[6]}
+                        />
                     </div>
                     <div className="enterprise-sidebar">
                         <PriceContainer configs={configs} data={data.data?.property}/>

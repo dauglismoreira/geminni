@@ -28,6 +28,8 @@ export async function generateMetadata() {
 export default async function Home() {
   const data = await fetchData('home')
   const configs = await fetchData('configs')
+  const propertiesHigh = await fetchData('property?page=1&highlight=1')
+  const propertiesFacingSea = await fetchData(`property?page&localization_type=${encodeURIComponent('Frente mar')}`)
   const properties = await fetchData('property')
   const phone = configs.data[0]?.configs.filter((item: { key: string }) => item.key === 'phone')[0]?.description
 
@@ -41,14 +43,14 @@ export default async function Home() {
         data={configs.data}
       />
       <HighSection
-        data={properties.data.properties.data}
+        data={propertiesHigh.data.properties.data}
         title={data.data.components[1]}
       />
       <BannerSection
         phone={phone}
         data={data.data.components[2]}/>
       <PropertiesSection
-        data={properties.data.properties.data}
+        data={propertiesFacingSea.data.properties.data}
         title={data.data.components[3]}
         buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0]?.enumeration.items}
       />
@@ -61,7 +63,7 @@ export default async function Home() {
         title={data.data.components[5]}
       />
       <BlogSection
-        buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0]?.enumeration.items}
+        buttons={data.data.components[6]?.enumeration?.items}
         data={data.data.components[6]}
       />
     </main>

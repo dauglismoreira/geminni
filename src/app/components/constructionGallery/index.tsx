@@ -7,6 +7,7 @@ import Fancybox from '@/app/utils/Fancybox'
 interface ConstructionGalleryProps{
     gallery:{
         src:string;
+        alt_pt_br?:string
     }[]
 }
 
@@ -24,7 +25,13 @@ export default function ConstructionGallery({gallery}: ConstructionGalleryProps)
                         href={photo.src}
                         delegate="[data-fancybox='gallery']"
                     >
-                        <img src={photo.src} data-fancybox="gallery" data-src={photo.src} />
+                        {/*eslint-disable-next-line @next/next/no-img-element*/}
+                        <img
+                            src={photo.src}
+                            data-fancybox="gallery"
+                            data-src={photo.src}
+                            alt={photo.alt_pt_br}
+                        />
                     </Fancybox>
                 ))}
             </div>

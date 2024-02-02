@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './styles.css';
 
 interface ErrorProps {
@@ -20,6 +20,7 @@ interface SelectValueProps {
     }
     old?:any
     numberValue?:boolean
+    clear?:boolean
     param?:string
     options:{
         name_pt_br:string;
@@ -27,7 +28,7 @@ interface SelectValueProps {
     }[];
 }
 
-export const SelectValueInput = ({param, numberValue, label, options,defaultOption, sendInput, id, old}: SelectValueProps) => {
+export const SelectValueInput = ({param, clear, numberValue, label, options,defaultOption, sendInput, id, old}: SelectValueProps) => {
     const [inputValue, setInputValue] = useState<string>(old || '');
 
     function handleChange(value: string) {
@@ -53,6 +54,13 @@ export const SelectValueInput = ({param, numberValue, label, options,defaultOpti
               })
         }
       }
+
+      useEffect(() => {
+        if(clear){
+          handleChange('')
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [clear])
 
     return(
         <div className="select-container">

@@ -9,8 +9,18 @@
     w-full
 }
 
+.enterprise-video-container video{
+    height:600px;
+    @apply
+    w-full
+}
+
 @media(max-width:1024px){
     .enterprise-video-container iframe{
+        height:240px;
+    }
+
+    .enterprise-video-container video{
         height:240px;
     }
 }

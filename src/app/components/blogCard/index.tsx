@@ -1,6 +1,7 @@
 import getStorageFile from '@/app/helpers/getStorageFile';
 import { LinkButton } from '../linkButton';
 import './styles.css';
+import Link from 'next/link';
 
 interface BlogCard {
     data?:any;
@@ -9,7 +10,7 @@ interface BlogCard {
 export const BlogCard = ({data}: BlogCard) => {
 
     return(
-        <div className="card-container">
+        <Link className="card-container" href={`/regioes/${data.slug_pt_br}`}>
             <div className="card-image" style={{
                 backgroundImage: `url("${data.square_image?.src ? getStorageFile(data.square_image?.src) : './placeholder.jpg'}")`
             }}>
@@ -20,12 +21,12 @@ export const BlogCard = ({data}: BlogCard) => {
                 <div className="card-footer">
                     <LinkButton
                         text="Ler mais"
-                        link={`/regioes/${data.slug_pt_br}`}
+                        // link={`/regioes/${data.slug_pt_br}`}
                         color={`bg-white text-primary border-primary`}
                         hover={`hover:bg-primary hover:text-white`}
                     />
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

@@ -28,7 +28,7 @@ export const BlogSection = ({data, buttons}: BlogSectionProps) => {
                 <div className="regions-list">
                     {data && <p>{data.description_pt_br}</p>}
                     {buttons && buttons.map((region: any, index: number) => (
-                        <Link key={index} href={region.link || '#'}><span>{region.name_pt_br}<HiArrowLongRight /></span></Link>
+                        <a key={index} href={'./../regioes?page=1&region=' + encodeURIComponent(region.name_pt_br) || '#'}><span>{region.name_pt_br}<HiArrowLongRight /></span></a>
                     ))}
                 </div>
                 <div

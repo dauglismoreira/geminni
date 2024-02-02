@@ -81,5 +81,11 @@
 
 .search-bar-container.expand .search-more-results{
     @apply
-    text-left lg:text-right mb-4 pb-4 border-b block
+    mb-4 pb-4 border-b flex justify-center lg:justify-end
+}
+
+.clearButton{
+    @apply
+    mx-4 cursor-pointer font-semibold text-regularLight hover:text-primary
+    flex gap-2 items-center
 }

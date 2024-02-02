@@ -8,6 +8,7 @@ import { TextAreaInput } from '../textAreaInput';
 import { PhoneInput } from '../phoneInput';
 import { useEffect, useState } from 'react';
 import { SelectInput } from '../selectInput';
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactFormProps{
     data?:any;
@@ -19,6 +20,7 @@ interface ContactFormProps{
 export default function ContactForm({data, accept, id, style} : ContactFormProps) {
 
     const [acceptTems, setAcceptTerms] = useState(false)
+    const [recaptchaValue, setRecaptchaValue] = useState<any>(null);
 
     const {fields, handleFields} = useFields({
         interest:data ? data[0]?.name : '',
@@ -28,9 +30,9 @@ export default function ContactForm({data, accept, id, style} : ContactFormProps
         message:'',
     })
 
-    useEffect(() => {
+    const sendMessage = () => {
         console.log(fields)
-    }, [fields])
+    }
 
     return (
         <form className={`${style}`}>
@@ -84,16 +86,22 @@ export default function ContactForm({data, accept, id, style} : ContactFormProps
                     />
                 </div>
             </div>
+
+            <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_API_RECAPTCHA || ''}
+                onChange={(value) => setRecaptchaValue(value)}
+            />
+
             <div className="form-row checkbox">
                 <div className="checkbox-input">
                     <input
                         type='checkbox'
                         onChange={(e) => setAcceptTerms(e.target.checked)}
                     ></input>
-                    {accept && <label dangerouslySetInnerHTML={{ __html: accept.long_text_pt_br }} />}
+                    {accept && <label dangerouslySetInnerHTML={{ __html: accept.description }} />}
                 </div>
                 {acceptTems ?
-                    <button>Enviar Mensagem</button>
+                    <button onClick={sendMessage} disabled={!recaptchaValue}>Enviar Mensagem</button>
                     :
                     <button disabled>Enviar Mensagem</button>
                 }

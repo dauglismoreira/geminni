@@ -1,6 +1,7 @@
 import getStorageFile from '@/app/helpers/getStorageFile';
 import { LinkButton } from '../linkButton';
 import './styles.css';
+import Link from 'next/link';
 
 interface PostCard {
     data?:any;
@@ -9,7 +10,7 @@ interface PostCard {
 export const PostMiniCard = ({data}: PostCard) => {
 
     return(
-        <div className="card-mini-container">
+        <Link className="card-mini-container" href={`/regioes/${data?.slug_pt_br}`}>
             <div className="card-mini-image" style={{
                 backgroundImage: `url("${getStorageFile(data.square_image?.src)}")`
             }}>
@@ -20,12 +21,12 @@ export const PostMiniCard = ({data}: PostCard) => {
                 <div className="card-mini-footer">
                     <LinkButton
                         text="Detalhes"
-                        link={`/regioes/${data?.slug_pt_br}`}
+                        // link={`/regioes/${data?.slug_pt_br}`}
                         color={`text-primary`}
                         hover={`hover:text-soft`}
                     />
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

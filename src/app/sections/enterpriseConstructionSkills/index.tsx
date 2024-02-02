@@ -80,11 +80,13 @@ export default function EnterpriseConstructionSkills({data}: EnterpriseConstruct
                                 href={photo.image}
                                 delegate="[data-fancybox='gallery']"
                             >
+                                {/*eslint-disable-next-line @next/next/no-img-element*/}
                                 <img
                                     className="enterprise-photo"
                                     src={photo.image}
                                     data-fancybox="gallery"
                                     data-src={photo.image}
+                                    alt={photo.alt_pt_br}
                                 ></img>
                             </Fancybox>
 

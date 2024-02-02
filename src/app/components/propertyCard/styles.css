@@ -38,12 +38,14 @@
 
 .container-details{
     @apply
-    flex gap-2
+    flex gap-1
 }
 
 .container-details span{
+    font-size:13px;
+    
     @apply
-    text-sm border-r pr-3 text-gray-500
+    border-r pr-3 text-regularLight 
 }
 
 .container-details span:last-child{
@@ -58,7 +60,7 @@
 
 .card-footer span{
     @apply
-    text-xs text-gray-500
+    text-xs text-regularLight
 }
 
 .card-tag{

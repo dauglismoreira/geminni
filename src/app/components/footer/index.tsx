@@ -72,14 +72,14 @@ export const Footer = ({data, menu1, menu2}: FooterProps) => {
                 <div className="menu">
                     <ul>
                         {menu1?.map((item, index) => (
-                            <li key={index}><Link href={'./../' + item.link || ''}>{item.name_pt_br}</Link></li>
+                            <li key={index}><Link href={'./../' + item.link.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase() || ''}>{item.name_pt_br}</Link></li>
                         ))}
                     </ul>
                 </div>
                 <div className="menu">
                     <ul>
                         {menu2?.map((item, index) => (
-                            <li key={index}><Link href={'./../' + item.link || ''}>{item.name_pt_br}</Link></li>
+                            <li key={index}><Link href={'./../regioes?page=1&region=' + encodeURIComponent(item.link) || ''}>{item.name_pt_br}</Link></li>
                         ))}
                     </ul>
                 </div>

@@ -79,8 +79,6 @@ export default function PriceContainer({data, configs}: PriceContainerProps) {
         }
     }, [width])
 
-    console.log(configs.data[0].configs[2].description.replace(/[\s-]/g, ''))
-
   return (
     <div className="price-box">
         <div

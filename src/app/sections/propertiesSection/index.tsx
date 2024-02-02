@@ -54,6 +54,7 @@ export const PropertiesSection = ({data, title, buttons}: PropertiesSectionProps
             hover={"text-soft"}
             bg={'bg-ultralight'}
             border={"border-primary"}
+            link={'/imoveis'}
         >
             {buttons && <div className="container-region-filter">
                 <div className="region-filter-title">

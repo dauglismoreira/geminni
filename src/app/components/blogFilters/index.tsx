@@ -25,6 +25,7 @@ export default function BlogFilters({data, fetchDataFields}:BlogFiltersProps) {
 
     useEffect(() => {
         fetchDataFields(fields);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fields])
 
   return (

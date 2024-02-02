@@ -55,6 +55,7 @@ export default function EnterprisePlant({data}: EnterprisePlantProps) {
                           href={photo.src}
                           delegate="[data-fancybox='gallery']"
                       >
+                        {/*eslint-disable-next-line @next/next/no-img-element*/}
                           <img
                               className="enterprise-photo"
                               src={photo.src}

@@ -38,3 +38,8 @@
     @apply
     border-none p-0 underline
 }
+
+.card-mini-footer a{
+    @apply
+    text-primary
+}

@@ -20,7 +20,7 @@ export const PropertyCard = ({data}: PropertyCard) => {
                 {data?.residential_property_type?.name_pt_br && <h4>{data?.residential_property_type?.name_pt_br}</h4>}
                 <h3>{data.name_pt_br}</h3>
                 <div className="container-details">
-                    <span>{data.util_area} m²</span>
+                    <span>{parseInt(data.util_area)} m²</span>
                     <span>{data.rooms} dorm</span>
                     <span>{data.suites} suíte</span>
                     <span>{data.parking_spaces} vagas</span>
@@ -29,7 +29,7 @@ export const PropertyCard = ({data}: PropertyCard) => {
                 <div className="card-footer">
                     <LinkButton
                         text="Detalhes"
-                        link={`/imoveis/${data?.slug_pt_br}`}
+                        // link={`/imoveis/${data?.slug_pt_br}`}
                         color={`bg-white text-primary border-primary`}
                         hover={`hover:bg-primary hover:text-white`}
                     />

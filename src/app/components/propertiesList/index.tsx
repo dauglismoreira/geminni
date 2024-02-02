@@ -60,7 +60,7 @@ export default function Properties({data, configs}:PropertiesFiltersProps) {
           if (windowBottom >= triggerPosition && !finalPage && !loading) {
             setPage((prevPage) => prevPage + 1)
             setLoading(true)
-            fetchDataFilter('property', filters, page)
+            fetchDataFilter('property', filters, page + 1)
             .then((data) => {
                 setProperties((prevProperties:any) => [...prevProperties, ...data.data.properties.data]);
                 if(!data.data.properties.next_page_url){
@@ -80,6 +80,7 @@ export default function Properties({data, configs}:PropertiesFiltersProps) {
         return () => {
           window.removeEventListener("scroll", handleScroll);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [loading]);  
 
   return (
