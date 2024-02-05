@@ -11,7 +11,7 @@ export const PropertyHighCard = ({data}: PropertyHighCard) => {
     return(
         <div className="card-high-container">
             <div className="card-high-image" style={{
-                backgroundImage: `url("${getStorageFile(data.image_primary.src)}")`
+                backgroundImage: `url("${data.image_primary?.src ? getStorageFile(data.image_primary?.src) : './placeholder.jpg'}")`
             }}></div>
             <div className="card-high-info">
             <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">

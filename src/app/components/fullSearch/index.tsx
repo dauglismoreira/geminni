@@ -75,7 +75,7 @@ const FullSearch = ({ openFullSearch, onClose }:FullSearchProps) => {
         </div>
         <div className={`container-result ${openFullSearch ? 'open' : 'close'}`}>
             {properties.length > 0 && <h3>{search}({(postsTotal !== 0 || propertiesTotal !== 0) && postsTotal + propertiesTotal})</h3>}
-            {properties.length > 0 && <p>Imóveis</p>}
+            {properties.length > 0 && <p className="mb-4 mt-4">Imóveis</p>}
             <div className="container-properties">
                 {properties.slice(0,4).map((property, index) => (
                     <PropertyMiniCard key={index} data={property}/>
@@ -85,13 +85,14 @@ const FullSearch = ({ openFullSearch, onClose }:FullSearchProps) => {
                 }
             </div>
             <Link href="/imoveis" className="mt-4">Clique aqui para ver todos os empreendimentos</Link>
-            {posts.length > 0 && <p>Posts</p>}
+            <span className="mt-4 mb-8 w-full border-ultralight border-b block"></span>
+            {posts.length > 0 && <p className="mb-4">Regiões</p>}
             <div className="container-properties">
                 {posts.slice(0,4).map((post, index) => (
                     <PostMiniCard key={index} data={post}/>
                 ))}
             </div>
-            <Link href="/regioes" className="mb-4">Clique aqui para ver todos os posts</Link>
+            <Link href="/regioes" className="mb-4">Clique aqui para ver todas as regiões</Link>
         </div>
       </div>
     </div>
