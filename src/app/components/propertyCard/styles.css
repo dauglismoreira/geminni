@@ -2,12 +2,19 @@
     height:587px;
 
     @apply
-    bg-white max-w-sm hover:shadow-md transition
+    bg-white hover:shadow-md transition w-full
 }
 
 @media(min-width:1024px){
     .card-container{
-        min-width:370px;
+        min-width:360px;
+    }
+}
+
+@media(max-width:1024px){
+    .card-container{
+        min-width:calc(100% - 40px);
+        max-width:calc(100% - 40px);
     }
 }
 

@@ -14,7 +14,7 @@
 
 .regions-list{
     @apply
-    flex flex-col lg:pt-12
+    flex flex-col lg:pt-12 px-4 lg:px-0
 }
 
 .regions-list p{
@@ -33,7 +33,7 @@
     overflow: hidden;
 
     @apply
-    bg-primary px-4 lg:-mt-96 flex items-center justify-center relative font-novelinBold
+    bg-primary px-4 lg:-mt-80 flex items-center justify-center relative font-novelinBold
 }
 
 .region-blog-footer .slogan{

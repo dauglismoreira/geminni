@@ -14,9 +14,8 @@
 }
 
 .container-posts{
-    max-width:1600px;
     @apply
-    lg:border-t border-soft w-full py-8 flex gap-4
+    w-full py-8 flex gap-4
 }
 
 .aboutSwiper .button-container-left{
@@ -69,4 +68,11 @@
     .aboutSwiper .button-container-right{
         top: 130px;
     }
+}
+
+.about-divider{
+    max-width:1600px;
+
+    @apply
+    lg:border-t border-soft w-full block mb-4 mx-auto
 }

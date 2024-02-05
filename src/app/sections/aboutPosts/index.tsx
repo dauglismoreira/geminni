@@ -34,6 +34,7 @@ export const AboutPosts = ({ blogCards, subtitle }: AboutPostsProps) => {
     <div className="about-posts">
         <div className="vertical-line"></div>
         <h3 className="subtitle">{subtitle.name_pt_br}</h3>
+        <span className="about-divider"></span>
         <div className="container-posts">
           <Swiper
               slidesPerView={4}

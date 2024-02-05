@@ -43,6 +43,8 @@
 @media(max-width:560px){
     .enterprise-search-list .card-container{
         width:100%;
+        max-width:none;
+        min-width: none;
     }
 }
 

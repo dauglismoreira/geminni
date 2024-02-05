@@ -16,6 +16,9 @@ export async function generateMetadata() {
         url: getStorageFile(data?.data?.page?.square_image?.src) ?? '',
       },]
     },
+    twitter: {
+      image: getStorageFile(data?.data?.page?.square_image?.src) ?? ''
+    },
   }
 }
 

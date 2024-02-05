@@ -41,5 +41,5 @@
 
 .enterprise-container .carousel-container{
     @apply
-    flex flex-col
+    flex flex-col pb-8
 }

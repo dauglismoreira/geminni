@@ -24,6 +24,7 @@
 .price-container h3{
     @apply
     text-3xl font-novelinBold text-white py-3
+    max-[400px]:text-2xl
 }
 
 .price-container .line{
@@ -44,6 +45,7 @@
 .price-container .contact-buttons button.info-button{
     @apply
     border border-white hover:bg-white hover:text-soft
+    max-[400px]:text-sm
 }
 
 .price-container .contact-buttons button.wht-button{

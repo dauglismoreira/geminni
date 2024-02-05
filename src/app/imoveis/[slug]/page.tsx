@@ -25,8 +25,11 @@ export async function generateMetadata(context: any) {
       title: data?.data?.property?.name_seo_pt_br ?? '',
       description: data?.data?.property?.description_seo_pt_br ?? '',
       images: [{
-        url: getStorageFile(data?.data?.image_primary?.src) ?? '',
+        url: getStorageFile(data?.data?.property?.image_primary?.src) ?? '',
       },]
+    },
+    twitter: {
+      image: getStorageFile(data?.data?.property?.image_primary?.src) ?? ''
     },
   }
 }
@@ -67,8 +70,8 @@ export default async function Enterprise(context: any) {
           </div>
         </div>
         <div className="carousel-container">
-            <RelatedProperties title="Na mesma região" id={data.data?.property?.id}/>
-          </div>
+          <RelatedProperties title="Na mesma região" id={data.data?.property?.id}/>
+        </div>
       </div>
     </main>
   )

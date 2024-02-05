@@ -1,4 +1,4 @@
-.carousel-container{
+.carousel-container.properties{
     @apply
     flex gap-8 py-12
 }
@@ -46,18 +46,18 @@
 
 .propertiesSwiper .custom-prev-button{
     @apply
-    left-0
+    left-2 lg:left-4
 }
 
 .propertiesSwiper .custom-next-button{
     @apply
-    right-0
+    right-2 lg:right-4
 }
 
 .propertiesSwiper{
     width: 100%;
     @apply
-    px-4 lg:px-16 max-w-full py-4
+    px-0 lg:px-16 max-w-full py-4
 }
 
 .propertiesSwiper .swiper-wrapper{

@@ -12,10 +12,11 @@ import {useEffect, useState} from 'react'
 
 interface RelatedPropertiesProps{
     title:string;
-    id:any;
+    id?:any;
+    region?:any;
 }
 
-export default function RelatedProperties({title, id}: RelatedPropertiesProps) {
+export default function RelatedProperties({title, id, region}: RelatedPropertiesProps) {
     const [relatedProperties, setRelatedProperties] = useState<any[]>([])
     const swiper = useSwiper();
 
@@ -32,8 +33,9 @@ export default function RelatedProperties({title, id}: RelatedPropertiesProps) {
     };
 
     useEffect(() => {
-        fetchData(`property/related-property?region_id=1&residential_property_id=` + id)
+        fetchData(`property/related-property?region_id=${region ? region : 1}${id ? `&residential_property_id=${id}` : ''}`)
         .then((data) => setRelatedProperties(data.data))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
 
   return (

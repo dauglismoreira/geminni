@@ -23,6 +23,12 @@
     flex:2;
 }
 
+@media(max-width:560px){
+    .post-content .post-body{
+        width:100%;
+    }
+}
+
 .post-content .post-sidebar{
     flex:1;
 }
@@ -71,4 +77,9 @@
         @apply
         hidden
     }
+}
+
+.post-container .carousel-container{
+    @apply
+    m-auto pb-8
 }

@@ -65,7 +65,7 @@ export const Header = ({data, fixedLink}: FooterProps) => {
                         onClick={() => setOpenFullSearch(!openFullSearch)}
                     />
                     }
-                    <Link href='./'><svg className="header-logo" width="248" height="41" viewBox="0 0 248 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <Link href='./../../'><svg className="header-logo" width="248" height="41" viewBox="0 0 248 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_670_421)">
                         <path d="M205.141 34.0148H205.641V40.0862H205.141V34.0148Z" fill="#3C2222"/>
                         <path d="M207.775 34.0148H208.197L211.383 37.8399L214.591 34.0148H214.996V40.0862H214.496V34.8951L211.468 38.5177H211.301L208.273 34.8951V40.0862H207.773V34.0148H207.775Z" fill="#3C2222"/>

@@ -14,7 +14,7 @@
     height:calc(504px - 18rem);
 
     @apply
-    p-4 flex justify-between flex-col
+    p-4 flex justify-between flex-col bg-white
 }
 
 .card-info h3{

@@ -28,9 +28,10 @@
     w-full border-y border-mediumLight py-6 my-4 flex justify-between items-center
 }
 
-.enterprise-title-container .enterprise-details span{
+.enterprise-title-con.enterprise-phototainer .enterprise-details span{
     @apply
     text-xl font-novelinBold text-primary w-2/4 lg:w-auto
+    max-[400px]:text-sm
 }
 
 @media(max-width:1024px){

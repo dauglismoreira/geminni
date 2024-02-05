@@ -22,6 +22,9 @@ export async function generateMetadata() {
             url: getStorageFile(data?.data?.square_image?.src) ?? '',
           },]
         },
+        twitter: {
+          image: getStorageFile(data?.data?.square_image?.src) ?? ''
+        },
     }
   }
 
@@ -43,7 +46,7 @@ export default async function Home() {
         data={configs.data}
       />
       <HighSection
-        noPad={false}
+        noPad={true}
         data={propertiesHigh.data.properties.data}
         title={data.data.components[1]}
       />
@@ -66,6 +69,7 @@ export default async function Home() {
         title={data.data.components[5]}
       />
       <BlogSection
+        noPad={true}
         buttons={data.data.components[6]?.enumeration?.items}
         data={data.data.components[6]}
       />

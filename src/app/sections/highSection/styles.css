@@ -1,16 +1,16 @@
-.carousel-container{
+.carousel-container.high{
     @apply
-    flex gap-8 py-12
+    flex gap-8 py-12 px-4 lg:px-0
 }
 
 .highPropertiesSwiper .button-container-left{
     @apply
-    absolute z-20 inset-y-0 w-16 lg:bg-secondary left-0
+    absolute z-20 inset-y-0 w-20 lg:bg-secondary left-0
 }
 
 .highPropertiesSwiper .button-container-right{
     @apply
-    absolute z-20 inset-y-0 w-16 lg:bg-secondary right-0
+    absolute z-20 inset-y-0 w-20 lg:bg-secondary right-0
 }
 
 .highPropertiesSwiper .custom-button{
@@ -30,18 +30,18 @@
 
 .highPropertiesSwiper .custom-prev-button{
     @apply
-    left-0
+    -left-2 lg:left-4
 }
 
 .highPropertiesSwiper .custom-next-button{
     @apply
-    right-0
+    -right-2 lg:right-4
 }
 
 .highPropertiesSwiper{
     width: 100%;
     @apply
-    px-0 lg:px-16 max-w-full
+    px-0 lg:px-20 max-w-full
 }
 
 .highPropertiesSwiper .swiper-wrapper{
@@ -52,6 +52,7 @@
 .mobile-link{
     @apply
     flex lg:hidden w-full justify-center -mt-4 pb-8 text-soft uppercase underline hover:text-white cursor-pointer
+    relative z-20
 }
 
 .section-container svg.bg-detail{

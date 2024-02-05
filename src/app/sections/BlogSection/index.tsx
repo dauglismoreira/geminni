@@ -10,9 +10,10 @@ interface BlogSectionProps {
         name_pt_br:string;
         link:string;
     }[];
+    noPad:boolean;
 }
 
-export const BlogSection = ({data, buttons}: BlogSectionProps) => {
+export const BlogSection = ({data, noPad, buttons}: BlogSectionProps) => {
 
     return(
         <>
@@ -23,6 +24,7 @@ export const BlogSection = ({data, buttons}: BlogSectionProps) => {
             hover={"soft"}
             border={"border-secondary"}
             bg={'bg-ultralight'}
+            noPad={noPad}
         >
             <div className="region-blog">
                 <div className="regions-list">

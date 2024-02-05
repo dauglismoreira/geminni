@@ -74,7 +74,7 @@ export const PropertiesSection = ({data, title, noPad, buttons}: PropertiesSecti
                     ))}
                 </div>
             </div>}
-            <div className="carousel-container">
+            <div className="carousel-container properties">
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={20}
@@ -87,7 +87,7 @@ export const PropertiesSection = ({data, title, noPad, buttons}: PropertiesSecti
                     breakpoints={{
                         300: {
                         slidesPerView: 1,
-                        spaceBetween: 20,
+                        spaceBetween: 0,
                         },
                         768: {
                         slidesPerView: 2,

@@ -1,6 +1,6 @@
 .section-container{
     @apply
-    w-full pt-20 pb-0 lg:p-20 relative
+    w-full pt-20 pb-0 relative
 }
 
 .section-container .content{

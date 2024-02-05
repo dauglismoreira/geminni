@@ -1,7 +1,14 @@
 .related-title{
+    max-width:1600px;
     @apply
     text-xl lg:text-2xl font-novelinBold uppercase text-primary -mt-4 lg:mt-8 lg:mt-16 mb-8
-    border-b border-primary pb-4 mx-4
+    border-b border-primary pb-4 w-full mx-auto
+}
+
+@media(max-width:1024px){
+    .related-title{
+        max-width:calc(100% - 40px);
+    }
 }
 
 .related-carousel-container{
@@ -36,12 +43,12 @@
 
 .relatedPropertiesSwiper .custom-prev-button{
     @apply
-    left-0
+    left-2 lg:left-4
 }
 
 .relatedPropertiesSwiper .custom-next-button{
     @apply
-    right-0
+    right-2 lg:right-4
 }
 
 .relatedPropertiesSwiper{
@@ -56,6 +63,11 @@
 
 .relatedPropertiesSwiper .swiper-wrapper{
     max-width:1600px;
+}
+
+.relatedPropertiesSwiper .swiper{
+    @apply
+    mx-0
 }
 
 @media(max-width:768px){

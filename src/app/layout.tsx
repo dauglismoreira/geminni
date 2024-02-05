@@ -1,17 +1,22 @@
-import type {Metadata} from 'next'
 import './globals.css'
 import {Header} from './components/header'
 import {Footer} from './components/footer'
 import fetchData from './helpers/fetchData';
 import {ChatWhatsapp} from "@/app/components/chatWhatsapp";
 import {ReactNode} from "react";
+import ScriptInjector from './helpers/scriptInjector';
 
 export default async function RootLayout({children}: { children: ReactNode }) {
   const data = await fetchData('configs')
   const phone = data.data[0]?.configs.filter((item: { key: string }) => item.key === 'phone')[0]?.description
 
+  const dataScript = data?.data[0]?.configs?.filter((config:any) => config.key === 'google-gtm')[0]?.description
+
   return (
     <html lang="en">
+    {dataScript && (
+      <ScriptInjector scriptContent={dataScript} />
+    )}
     <body className={`font-novelinLight font-novelinRegular font-novelinBold font-novelinHeavy`}>
     <Header
       data={data.data}

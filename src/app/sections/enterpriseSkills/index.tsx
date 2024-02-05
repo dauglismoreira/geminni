@@ -30,7 +30,7 @@ export default function EnterpriseSkills({description, data}: EnterpriseTitlePro
             <div
                 className="view-more"
                 onClick={() => setViewMore(!viewMore)}
-            >Ver {!viewMore ? 'mais' : 'menos'}</div>
+            >{!viewMore ? 'Continuar' : 'Ver menos'}</div>
         </div>
     )
 }

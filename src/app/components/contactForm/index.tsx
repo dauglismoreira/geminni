@@ -100,7 +100,7 @@ export default function ContactForm({data, accept, id, style} : ContactFormProps
                     {accept && <label dangerouslySetInnerHTML={{ __html: accept?.description ?? '<div></div>' }} />}
                 </div>
                 {acceptTerms ?
-                    <button>Enviar Mensagem</button>
+                    <button className="accept">Enviar Mensagem</button>
                     :
                     <button disabled>Enviar Mensagem</button>
                 }

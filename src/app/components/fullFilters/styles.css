@@ -27,7 +27,7 @@
 .filter-container-high button{
     @apply
     bg-primary text-white flex h-12 px-4 justify-between uppercase font-novelinBold items-center mt-6 flex-1
-    hover:bg-soft hover:text-primary
+    hover:bg-soft hover:text-primary text-xs lg:text-base
 }
 
 .filter-container label{
@@ -47,5 +47,5 @@
 
 .filter-container-high{
     @apply
-    w-full flex gap-2
+    w-full flex gap-2 items-end
 }
