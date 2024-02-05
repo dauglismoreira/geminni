@@ -11,7 +11,7 @@ type LinkWhatsProps = {
 }
 
 export default function LinkWhats({children, phone, initialMessage}: LinkWhatsProps) {
-  let text = initialMessage ?? 'Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es.'
+  let text = initialMessage ? 'Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre: ' + encodeURIComponent(initialMessage) : 'Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es.'
 
   const link = `https://${isMobile() ? 'api' : 'web'}.whatsapp.com/send?phone=${onlyNumbers(phone)}&text=${text}`
 
