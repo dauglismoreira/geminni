@@ -16,9 +16,10 @@ interface HighSectionProps {
         link_label_pt_br?: string;
         link?:string;
     };
+    noPad?:boolean
 }
 
-export const HighSection = ({data, title}: HighSectionProps) => {
+export const HighSection = ({data, title, noPad}: HighSectionProps) => {
     const swiper = useSwiper();
 
     const handlePrevClick = () => {
@@ -38,6 +39,7 @@ export const HighSection = ({data, title}: HighSectionProps) => {
         <SectionContainer
             extraClass={"pt-52 lg:pt-16 relative z-30"}
             title={title}
+            noPad={noPad}
             bg="bg-secondary"
             color={"text-soft"}
             hover={"text-white"}

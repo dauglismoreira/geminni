@@ -65,10 +65,10 @@ export default async function Enterprise(context: any) {
               <PriceContainer configs={configs} data={data.data?.property}/>
             </div>
           </div>
-          <div className="carousel-container">
+        </div>
+        <div className="carousel-container">
             <RelatedProperties title="Na mesma região" id={data.data?.property?.id}/>
           </div>
-        </div>
       </div>
     </main>
   )

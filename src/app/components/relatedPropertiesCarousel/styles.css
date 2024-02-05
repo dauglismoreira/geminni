@@ -1,7 +1,7 @@
 .related-title{
     @apply
     text-xl lg:text-2xl font-novelinBold uppercase text-primary -mt-4 lg:mt-8 lg:mt-16 mb-8
-    border-b border-primary pb-4
+    border-b border-primary pb-4 mx-4
 }
 
 .related-carousel-container{

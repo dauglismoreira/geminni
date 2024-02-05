@@ -15,15 +15,16 @@ interface SectionContainerProps {
         link_label_pt_br?: string;
         link?:string;
     }
+    noPad?:boolean
 }
 
-export const SectionContainer = ({ children, link, border, extraClass, title, bg, color, hover }: SectionContainerProps) => {
+export const SectionContainer = ({ children, noPad, link, border, extraClass, title, bg, color, hover }: SectionContainerProps) => {
     const containerClasses = `content ${extraClass}`;
 
     return (
-        <div className={`section-container ${bg}`}>
+        <div className={`section-container ${bg} ${noPad ? 'px-0' : 'px-4'}`}>
             <div className={containerClasses}>
-                <SectionTitle link={link} title={title} border={border} color={color} hover={hover}/>
+                <SectionTitle noPad={noPad} link={link} title={title} border={border} color={color} hover={hover}/>
             </div>
             {children}
         </div>

@@ -43,6 +43,7 @@ export default async function Home() {
         data={configs.data}
       />
       <HighSection
+        noPad={false}
         data={propertiesHigh.data.properties.data}
         title={data.data.components[1]}
       />
@@ -50,6 +51,7 @@ export default async function Home() {
         phone={phone}
         data={data.data.components[2]}/>
       <PropertiesSection
+        noPad={true}
         data={propertiesFacingSea.data.properties.data}
         title={data.data.components[3]}
         buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0]?.enumeration.items}
@@ -59,6 +61,7 @@ export default async function Home() {
         data={data.data.components[4]}
       />
       <PropertiesSection
+        noPad={true}
         data={properties.data.properties.data}
         title={data.data.components[5]}
       />

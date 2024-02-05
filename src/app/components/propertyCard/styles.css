@@ -5,6 +5,12 @@
     bg-white max-w-sm hover:shadow-md transition
 }
 
+@media(min-width:1024px){
+    .card-container{
+        min-width:370px;
+    }
+}
+
 .card-container:hover{
     transform:scale(1.01);
 }

@@ -12,3 +12,9 @@
     @apply
     text-2xl lg:text-3xl  font-novelinBold
 }
+
+@media(max-width:1024px){
+    .section-title-container.max-margin{
+        width:calc(100% - 40px);
+    }
+}

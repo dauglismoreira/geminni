@@ -29,6 +29,25 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
                                                    handleCloseSubMenu,
                                                  }) => {
 
+  let closeSubMenuTimeout: NodeJS.Timeout | null = null;
+
+  const handleMouseOver = (item: any) => {
+    if (item.subMenu) {
+      handleOpenSubMenu(item.link);
+      clearTimeout(closeSubMenuTimeout as NodeJS.Timeout);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (closeSubMenuTimeout) {
+      clearTimeout(closeSubMenuTimeout);
+    }
+
+    closeSubMenuTimeout = setTimeout(() => {
+      handleCloseSubMenu();
+    }, 200); // Ajuste o tempo conforme necessário
+  };
+
   return (
     <div className="menu-desktop">
       {/* {menu?.map((item, index) => (
@@ -53,13 +72,14 @@ const DesktopMenu: React.FC<DesktopMenuProps> = ({
       {fixedLink?.map((item:any, index:number) => (
         <div
           key={index}
-          onMouseOver={() => item.subMenu && handleOpenSubMenu(item.link)}
+          onMouseOver={() => handleMouseOver(item)}
+          onMouseLeave={handleMouseLeave}
           className={`relative flex justify-between items-center ${openSubMenu === item.value ? "active" : ""}`}
         >
           <Link href={'./../' + item.link}>{item.label}</Link>
           {item.subMenu && <MdKeyboardArrowDown/>}
           {item.subMenu && openSubMenu === item.link && (
-            <div className="header-menu" onMouseLeave={handleCloseSubMenu}>
+            <div className="header-menu" onMouseEnter={() => clearTimeout(closeSubMenuTimeout as NodeJS.Timeout)}>
               {item.subMenu &&
                 item.subMenu.map((subItem: any, subIndex: number) => (
                   <a

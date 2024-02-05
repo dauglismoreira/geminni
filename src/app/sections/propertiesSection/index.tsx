@@ -11,6 +11,7 @@ import { ActionButton } from '@/app/components/actionButton';
 import { PropertyCard } from '@/app/components/propertyCard';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 interface PropertiesSectionProps {
     data?:any;
@@ -24,9 +25,10 @@ interface PropertiesSectionProps {
         link?:string;
         description_pt_br?:string;
     };
+    noPad?:boolean;
 }
 
-export const PropertiesSection = ({data, title, buttons}: PropertiesSectionProps) => {
+export const PropertiesSection = ({data, title, noPad, buttons}: PropertiesSectionProps) => {
     const router = useRouter()
     const swiper = useSwiper();
 
@@ -48,13 +50,13 @@ export const PropertiesSection = ({data, title, buttons}: PropertiesSectionProps
 
     return(
         <SectionContainer
-            extraClass={"pt-0 lg:pt-16"}
+            extraClass={`pt-0 lg:pt-16 px-0 ${noPad ? 'px-0' : 'px-4'}`}
             title={title}
+            noPad={noPad}
             color={"text-primary"}
             hover={"text-soft"}
             bg={'bg-ultralight'}
             border={"border-primary"}
-            link={'/imoveis'}
         >
             {buttons && <div className="container-region-filter">
                 <div className="region-filter-title">
@@ -122,7 +124,7 @@ export const PropertiesSection = ({data, title, buttons}: PropertiesSectionProps
                     </div>
                 </Swiper>
             </div>
-            {title?.link_label_pt_br && <div className="mobile-link">{title?.link_label_pt_br}</div>}
+            {(title?.link_label_pt_br && title?.link) && <div className="mobile-link"><Link href={title.link}>{title?.link_label_pt_br}</Link></div>}
         </SectionContainer>
     )
 }
