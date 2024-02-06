@@ -46,6 +46,7 @@ export default function ContactForm({data, recapKey, property_id, origin_page, d
             name: fields.name,
             phone: fields.phone,
             message: fields.message,
+            interest: fields.interest,
             property_id: property_id ? property_id : null
         }
         postData('contact/send', newFields)
