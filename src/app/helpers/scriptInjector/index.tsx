@@ -1,12 +1,11 @@
 'use client'
 
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 
 const ScriptInjector = ({ scriptContent }:any) => {
   useEffect(() => {
     const script = document.createElement('script');
-    const sanitizedContent = scriptContent.replace(/<\/?script>/g, '');
-    script.innerHTML = sanitizedContent;
+    script.innerHTML = scriptContent.replace(/<\/?script>/g, '');
     document.head.appendChild(script);
     return () => {
       document.head.removeChild(script);
