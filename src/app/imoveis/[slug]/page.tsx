@@ -26,7 +26,9 @@ export async function generateMetadata(context: any) {
       description: data?.data?.property?.description_seo_pt_br ?? '',
       images: [{
         url: getStorageFile(data?.data?.property?.image_primary?.src) ?? '',
-      },]
+        width: 1200,
+        height: 630,
+      }]
     },
     twitter: {
       // @ts-ignore
