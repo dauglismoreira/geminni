@@ -12,7 +12,7 @@ import Dump from "@/app/components/impacte/Dump";
 export async function generateMetadata() {
   const data = await  fetchData('home')
 
-    return {
+  return {
       title: data?.data?.name_pt_br ?? '',
       description: data?.data?.description_pt_br ?? '',
         openGraph: {
@@ -23,6 +23,7 @@ export async function generateMetadata() {
           },]
         },
         twitter: {
+          // @ts-ignore
           image: getStorageFile(data?.data?.square_image?.src) ?? ''
         },
     }
