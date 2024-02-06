@@ -1,7 +1,6 @@
 import { HighSection } from "./sections/highSection";
 import { SearchBar } from "./components/searchBar";
 import { BannerVerticalSlide } from "./components/verticalBannerSlide";
-import {searchButtons} from './mock';
 import { BannerSection } from "./sections/bannerSection";
 import { PropertiesSection } from "./sections/propertiesSection";
 import { BlogSection } from "./sections/BlogSection";
@@ -32,7 +31,7 @@ export default async function Home() {
   const data = await fetchData('home')
   const configs = await fetchData('configs')
   const propertiesHigh = await fetchData('property?page=1&highlight=1')
-  const propertiesFacingSea = await fetchData(`property?page&localization_type=${encodeURIComponent('Frente mar')}`)
+  const propertiesFacingSea = await fetchData(`property?page=1&property_location=Frente%20mar`)
   const properties = await fetchData('property')
   const phone = configs.data[0]?.configs.filter((item: { key: string }) => item.key === 'phone')[0]?.description
 
@@ -55,7 +54,7 @@ export default async function Home() {
         data={data.data.components[2]}/>
       <PropertiesSection
         noPad={true}
-        data={propertiesFacingSea.data.properties.data}
+        data={properties.data.properties.data}
         title={data.data.components[3]}
         buttons={configs.data[1].configs.filter((item:any) => item.key === 'regions')[0]?.enumeration.items}
       />
@@ -65,7 +64,7 @@ export default async function Home() {
       />
       <PropertiesSection
         noPad={true}
-        data={properties.data.properties.data}
+        data={propertiesFacingSea.data.properties.data}
         title={data.data.components[5]}
       />
       <BlogSection

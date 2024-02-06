@@ -8,16 +8,23 @@ import { TextAreaInput } from '../textAreaInput';
 import { PhoneInput } from '../phoneInput';
 import { useEffect, useState } from 'react';
 import { SelectInput } from '../selectInput';
+import Swal from 'sweetalert2'
 import ReCAPTCHA from "react-google-recaptcha";
+import postData from '@/app/helpers/fetchPost';
+import fetchData from '@/app/helpers/fetchData';
 
 interface ContactFormProps{
     data?:any;
     id?:number;
     style?:string;
     accept?:any;
+    property_id?:number
+    origin_page:string
+    department:string
+    recapKey?:string
 }
 
-export default function ContactForm({data, accept, id, style} : ContactFormProps) {
+export default function ContactForm({data, recapKey, property_id, origin_page, department, accept, id, style} : ContactFormProps) {
     const [recaptchaValue, setRecaptchaValue] = useState<any>(null);
     const [acceptTerms, setAcceptTerms] = useState(false)
 
@@ -29,9 +36,55 @@ export default function ContactForm({data, accept, id, style} : ContactFormProps
         message:'',
     })
 
-    const sendMessage = () => {
-        console.log(fields)
+    const sendMessage = (e:any) => {
+        e.preventDefault()
+        
+        const newFields = {
+            origin_page: origin_page,
+            department: department,
+            email: fields.email,
+            name: fields.name,
+            phone: fields.phone,
+            message: fields.message,
+            property_id: property_id ? property_id : null
+        }
+        postData('contact/send', newFields)
+        .then(response => {
+            Swal.fire({
+                title: response.success,
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              setTimeout(() => {
+                    window.location.reload()
+              }, 1300);
+        }).catch(error => {
+          
+            Swal.fire({
+              title: error.message,
+              html: formatErrorMessages(error.errors),
+              icon: 'error',
+              showConfirmButton: false,
+              timer: 2500,
+            })
+          
+        })
     }
+
+    function formatErrorMessages(errors:any) {
+        let errorMessageHtml = '<div>';
+      
+        for (const key in errors) {
+          if (errors.hasOwnProperty(key)) {
+            errorMessageHtml += `<div><strong>${key}:</strong> ${errors[key]}</div>`;
+          }
+        }
+      
+        errorMessageHtml += '</div>';
+      
+        return errorMessageHtml;
+      }
 
     return (
         <form className={`${style}`}>
@@ -86,10 +139,12 @@ export default function ContactForm({data, accept, id, style} : ContactFormProps
                 </div>
             </div>
 
-            <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_API_RECAPTCHA || ''}
-                onChange={(value) => setRecaptchaValue(value)}
-            />
+            {recapKey &&
+                <ReCAPTCHA
+                    sitekey={recapKey}
+                    onChange={(value) => setRecaptchaValue(value)}
+                />
+            }
 
             <div className="form-row checkbox">
                 <div className="checkbox-input">
@@ -99,8 +154,8 @@ export default function ContactForm({data, accept, id, style} : ContactFormProps
                     ></input>
                     {accept && <label dangerouslySetInnerHTML={{ __html: accept?.description ?? '<div></div>' }} />}
                 </div>
-                {acceptTerms ?
-                    <button className="accept">Enviar Mensagem</button>
+                {(acceptTerms && recaptchaValue) ?
+                    <button className="accept" onClick={(e) => sendMessage(e)}>Enviar Mensagem</button>
                     :
                     <button disabled>Enviar Mensagem</button>
                 }

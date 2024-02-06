@@ -19,7 +19,7 @@ export default function fetchDataFilter(path, params, page) {
   
         const queryString = queryParams.toString();
   
-        fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}${path}?${queryString.replaceAll('%252C', ',')}`, {
+        fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}${path}?${queryString.replaceAll('%252C', ',').replaceAll('25', '')}`, {
           next: { revalidate: 10 },
           headers: {
             'app-authorization': `${process.env.NEXT_PUBLIC_API_TOKEN}`,

@@ -39,7 +39,13 @@ export default async function Contact() {
                 <h3>{data.data.components[1]?.name_pt_br}</h3>
               </div>
               <p>{data.data.components[1]?.description_pt_br}</p>
-              <ContactForm data={form} accept={configs.data[0].configs[6]}/>
+              <ContactForm
+                origin_page={data.data.name_pt_br}
+                department={configs.data[0].configs[3].description}
+                data={form}
+                recapKey={configs.data[0].configs[7].description}
+                accept={configs.data[0].configs[6]}
+              />
             </div>
           </div>
           <div className="contact-slogan-container">
@@ -72,7 +78,9 @@ export default async function Contact() {
         </svg>
       </div>
       <div className="map-container">
-        {data.data.components[4]?.iframe && <div dangerouslySetInnerHTML={{ __html: data.data.components[4]?.iframe }} />}
+        {data.data.components &&
+          <div dangerouslySetInnerHTML={{ __html: data.data.components.filter((config: any) => config.name_pt_br === 'Mapa')[0]?.iframe }} />
+        }
       </div>
     </main>
   )

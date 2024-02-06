@@ -62,6 +62,10 @@ export default async function Enterprise(context: any) {
               <EnterpriseContact
                 enterprise={enterprise}
                 accept={configs.data[0].configs[6]}
+                origin_page={data.data?.property?.name_pt_br}
+                department={configs.data[0].configs[4].description}
+                property_id={data.data?.property?.id}
+                recapKey={configs.data[0].configs[7].description}
               />
             </div>
             <div className="enterprise-sidebar">
