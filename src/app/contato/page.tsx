@@ -19,6 +19,7 @@ export async function generateMetadata() {
           },]
         },
         twitter: {
+          // @ts-ignore
           image: getStorageFile(data?.data?.square_image?.src) ?? ''
         },
     }

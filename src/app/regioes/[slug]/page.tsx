@@ -22,6 +22,7 @@ export async function generateMetadata(context: any) {
         },]
       },
       twitter: {
+        // @ts-ignore
         image: getStorageFile(data?.data?.post?.square_image?.src) ?? ''
       },
     }

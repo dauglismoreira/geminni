@@ -1,6 +1,6 @@
 .footer{
     @apply
-    bg-primary pb-4 pt-12
+    bg-primary sm:pb-20 lg:pb-4 pt-12
 }
 
 .footer-info{
