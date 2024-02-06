@@ -29,7 +29,7 @@ export default function ContactForm({data, recapKey, property_id, origin_page, d
     const [acceptTerms, setAcceptTerms] = useState(false)
 
     const {fields, handleFields} = useFields({
-        interest:data ? data[0]?.name : '',
+        interest:'',
         name: '',
         email: '',
         phone:'',
@@ -96,6 +96,7 @@ export default function ContactForm({data, recapKey, property_id, origin_page, d
                             key={index}
                             id="interest"
                             label={select?.name}
+                            defaultOption={{name_pt_br:'Selecione', slug:''}}
                             options={select.options}
                             sendInput={handleFields}
                         />
