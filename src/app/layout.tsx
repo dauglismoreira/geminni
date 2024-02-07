@@ -4,6 +4,7 @@ import {Footer} from './components/footer'
 import fetchData from './helpers/fetchData';
 import {ChatWhatsapp} from "@/app/components/chatWhatsapp";
 import {ReactNode} from "react";
+import ScriptInjector from './helpers/scriptInjector';
 
 export default async function RootLayout({children}: { children: ReactNode }) {
   const data = await fetchData('configs')
@@ -14,8 +15,10 @@ export default async function RootLayout({children}: { children: ReactNode }) {
 
   return (
     <html lang="en">
-    {dataHeadScript && <head dangerouslySetInnerHTML={{ __html: dataHeadScript }} />}
+    {/* {dataHeadScript && <head dangerouslySetInnerHTML={{ __html: dataHeadScript }} />} */}
+    {dataHeadScript && <ScriptInjector scriptContent={dataHeadScript}/>}
     <body className={`font-novelinLight font-novelinRegular font-novelinBold font-novelinHeavy`}>
+    {dataBodyScript && <script dangerouslySetInnerHTML={{ __html: dataBodyScript }} />}
     <Header
       data={data.data}
     />
@@ -31,7 +34,6 @@ export default async function RootLayout({children}: { children: ReactNode }) {
         <ChatWhatsapp.Button/>
       </ChatWhatsapp.Link>
     }
-    {dataBodyScript && <script dangerouslySetInnerHTML={{ __html: dataBodyScript }} />}
     </body>
     </html>
   )
