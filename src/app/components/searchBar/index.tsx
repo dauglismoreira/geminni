@@ -71,6 +71,7 @@ export const SearchBar = ({data}: SearchBarProps) => {
                 setTotalProperties(response.data.properties.total)
                 if(response.data.properties.data.length > 0){
                     setNoResults(false)
+                    scrollTo(0,0)
                 }else{
                     setNoResults(true)
                 }

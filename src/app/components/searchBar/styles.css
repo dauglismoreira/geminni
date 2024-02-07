@@ -1,7 +1,8 @@
 .search-bar-container{
     transform:translate(-50%, 0);
+    z-index:39;
     @apply
-    w-11/12 lg:w-full h-auto lg:h-auto py-4 px-8 bg-white m-auto -mt-28 absolute z-20 max-w-6xl mx-auto left-2/4
+    w-11/12 lg:w-full h-auto lg:h-auto py-4 px-8 bg-white m-auto -mt-28 absolute max-w-6xl mx-auto left-2/4
 }
 
 .search-bar-container.expand{
