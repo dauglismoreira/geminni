@@ -128,7 +128,7 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     sendInput={handleFields}
                     label={fast.configs.filter((configs:any) => configs.key === 'region')[0].value}
                     old={fields.region}
-                    defaultOption={{name_pt_br:'Todas regiões', slug:''}}
+                    defaultOption={{name_pt_br:'Selecione', slug:''}}
                     options={
                         fast.configs.filter((configs:any) => configs.key === 'region')[0]?.enumeration.items
                     }
@@ -139,7 +139,7 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     sendInput={handleFields}
                     label={advanced.configs.filter((configs:any) => configs.key === 'property_type')[0].value}
                     old={fields.property_type}
-                    defaultOption={{name_pt_br:'Todos tipos', slug:''}}
+                    defaultOption={{name_pt_br:'Selecione', slug:''}}
                     options={
                         advanced.configs.filter((configs:any) => configs.key === 'property_type')[0]?.enumeration.items
                     }
@@ -150,7 +150,7 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     sendInput={handleFields}
                     label={fast.configs.filter((configs:any) => configs.key === 'property_status')[0].value}
                     old={fields.property_status}
-                    defaultOption={{name_pt_br:'Todos status', slug:''}}
+                    defaultOption={{name_pt_br:'Selecione', slug:''}}
                     options={
                         fast.configs.filter((configs:any) => configs.key === 'property_status')[0]?.enumeration.items
                     }
@@ -161,7 +161,7 @@ export const SearchBar = ({data}: SearchBarProps) => {
                     sendInput={handleFields}
                     label={fast.configs.filter((configs:any) => configs.key === 'min_value')[0].value}
                     old={fields.min_value}
-                    defaultOption={{name_pt_br:'Todos preços', slug:''}}
+                    defaultOption={{name_pt_br:'Selecione', slug:''}}
                     options={
                         fast.configs.filter((configs:any) => configs.key === 'min_value')[0]?.enumeration.items
                     }
