@@ -39,7 +39,7 @@
     animation-delay: 8s;
 
     @apply
-    fixed z-50 right-4 bottom-4 p-4 shadow-lg transition duration-300 transform hover:scale-110
+    fixed z-50 right-4 bottom-8 p-4 shadow-lg transition duration-300 transform hover:scale-110
     text-mediumLight bg-primary border-2 border-mediumLight rounded-full
 }
 
