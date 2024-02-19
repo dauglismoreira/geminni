@@ -12,7 +12,7 @@ export const BlogCard = ({data}: BlogCard) => {
     return(
         <Link className="card-container" href={`/regioes/${data.slug_pt_br}`}>
             <div className="card-image" style={{
-                backgroundImage: `url("${data.square_image?.src ? getStorageFile(data.square_image?.src) : './placeholder.jpg'}")`
+                backgroundImage: `url("${data.square_image?.src ? getStorageFile(data.square_image?.src) : '/placeholder.jpg'}")`
             }}>
             </div>
             <div className="card-info">

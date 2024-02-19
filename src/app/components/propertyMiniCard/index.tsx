@@ -12,7 +12,7 @@ export const PropertyMiniCard = ({data}: PropertyCard) => {
     return(
         <Link className="card-mini-container" href={`/imoveis/${data?.slug_pt_br}`}>
             <div className="card-mini-image" style={{
-                backgroundImage: `url("${data.image_primary?.src ? getStorageFile(data.image_primary?.src) : './placeholder.jpg'}")`
+                backgroundImage: `url("${data.image_primary?.src ? getStorageFile(data.image_primary?.src) : '/placeholder.jpg'}")`
             }}>
             </div>
             <div className="card-mini-info">

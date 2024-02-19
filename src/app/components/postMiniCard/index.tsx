@@ -12,7 +12,7 @@ export const PostMiniCard = ({data}: PostCard) => {
     return(
         <Link className="card-mini-container" href={`/regioes/${data?.slug_pt_br}`}>
             <div className="card-mini-image" style={{
-                backgroundImage: `url("${data.square_image?.src ? getStorageFile(data.square_image?.src) : './placeholder.jpg'}")`
+                backgroundImage: `url("${data.square_image?.src ? getStorageFile(data.square_image?.src) : '/placeholder.jpg'}")`
             }}>
             </div>
             <div className="card-mini-info">

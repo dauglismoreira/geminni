@@ -49,3 +49,8 @@
     @apply
     w-full flex gap-2 items-end
 }
+
+.filter-container-high .select-container select{
+    @apply
+    text-sm lg:text-base
+}

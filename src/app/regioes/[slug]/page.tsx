@@ -43,10 +43,10 @@ export default async function Post(context: any) {
                     <div className="post-body">
                         <h1>{data.data.post.title_pt_br}</h1>
                         <div
-                            style={{backgroundImage:`url("${data?.data?.post?.square_image ? getStorageFile(data?.data?.post?.square_image.src) : './placeholder.jpg'}")`}}
+                            style={{backgroundImage:`url("${data?.data?.post?.square_image ? getStorageFile(data?.data?.post?.square_image.src) : '/placeholder.jpg'}")`}}
                             className="post-image">
                         </div>
-                        {data?.data?.post?.content_pt_br && <div dangerouslySetInnerHTML={{ __html: data?.data?.post?.content_pt_br }} />}
+                        {data?.data?.post?.content_pt_br && <div className="post-description" dangerouslySetInnerHTML={{ __html: data?.data?.post?.content_pt_br }} />}
                         <ShareIcons/>
                     </div>
                     <div className="post-sidebar">

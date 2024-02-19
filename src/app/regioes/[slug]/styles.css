@@ -80,6 +80,16 @@
 }
 
 .post-container .carousel-container{
+    max-width:1730px;
     @apply
     m-auto pb-8
+}
+
+.post-description div{
+    display:block!important;
+}
+
+.post-description img{
+    width:100%!important;
+    max-width:100%!important;
 }

@@ -59,7 +59,7 @@ export default function MoreFilterModal({ handleCheckEntFields, handleCheckPropF
                     }
                 />}
                 {!isLargeScreen && <SelectValueInput
-                    id={'property_type'}
+                    id={'min_value'}
                     sendInput={handleFields}
                     label={fast.configs.filter((configs:any) => configs.key === 'min_value')[0].value}
                     old={fields.min_value}
