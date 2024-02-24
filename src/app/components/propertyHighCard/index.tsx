@@ -1,6 +1,7 @@
 import getStorageFile from '@/app/helpers/getStorageFile';
 import { LinkButton } from '../linkButton';
 import './styles.css';
+import Link from 'next/link';
 
 interface PropertyHighCard {
     data?:any;
@@ -9,7 +10,7 @@ interface PropertyHighCard {
 export const PropertyHighCard = ({data}: PropertyHighCard) => {
 
     return(
-        <div className="card-high-container">
+        <Link className="card-high-container" href={`/imoveis/${data?.slug_pt_br}`}>
             <div className="card-high-image" style={{
                 backgroundImage: `url("${data.image_primary?.src ? getStorageFile(data.image_primary?.src) : '/placeholder.jpg'}")`
             }}></div>
@@ -29,13 +30,13 @@ export const PropertyHighCard = ({data}: PropertyHighCard) => {
                 <div className="card-high-footer">
                     <LinkButton
                         text="Detalhes"
-                        link={`/imoveis/${data.slug_pt_br}`}
+                        // link={`/imoveis/${data.slug_pt_br}`}
                         color={`bg-soft text-white`}
                         hover={`hover:bg-white hover:text-soft`}
                     />
                     <span>Cód. {data.sku}</span>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

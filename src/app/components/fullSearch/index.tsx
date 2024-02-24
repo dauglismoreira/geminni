@@ -58,6 +58,12 @@ const FullSearch = ({ openFullSearch, onClose }:FullSearchProps) => {
       }
     }, [search])
 
+    const resultSelect = () => {
+      setTimeout(() => {
+        onClose()
+      }, 500);
+    }
+
   return (
     <div className={`full-search ${openFullSearch ? 'open' : 'close'}`}>
       <div className={`full-search-close ${openFullSearch ? 'open' : 'close'}`}>
@@ -78,21 +84,25 @@ const FullSearch = ({ openFullSearch, onClose }:FullSearchProps) => {
             {properties.length > 0 && <p className="mb-4 mt-4">Imóveis</p>}
             <div className="container-properties">
                 {properties.slice(0,4).map((property, index) => (
-                    <PropertyMiniCard key={index} data={property}/>
+                  <div onClick={resultSelect} key={index}>
+                    <PropertyMiniCard data={property}/>
+                  </div>
                 ))}
                 {search !== '' && (properties.length === 0 && posts.length === 0) &&
                   <p>Não foram encontrados resultados.</p>
                 }
             </div>
-            <Link href="/imoveis" className="mt-4">Clique aqui para ver todos os empreendimentos</Link>
+            {properties.length > 0 && <Link href="/imoveis" className="mt-4">Clique aqui para ver todos os empreendimentos</Link>}
             <span className="mt-4 mb-8 w-full border-ultralight border-b block"></span>
             {posts.length > 0 && <p className="mb-4">Regiões</p>}
             <div className="container-properties">
                 {posts.slice(0,4).map((post, index) => (
-                    <PostMiniCard key={index} data={post}/>
+                  <div onClick={resultSelect} key={index}>
+                    <PostMiniCard data={post}/>
+                  </div>
                 ))}
             </div>
-            <Link href="/regioes" className="mb-4">Clique aqui para ver todas as regiões</Link>
+            {posts.length > 0 && <Link href="/regioes" className="mb-4">Clique aqui para ver todas as regiões</Link>}
         </div>
       </div>
     </div>
