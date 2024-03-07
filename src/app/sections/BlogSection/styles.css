@@ -2,7 +2,7 @@
     max-width:1600px;
 
     @apply
-    flex gap-4 mx-auto my-4 justify-between relative z-20
+    flex gap-4 mx-auto my-4 justify-between relative z-20 lg:px-4
 }
 
 .region-image{

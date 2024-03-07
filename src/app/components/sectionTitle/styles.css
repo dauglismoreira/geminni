@@ -1,6 +1,6 @@
 .section-title-container{
     @apply
-    flex justify-between border-b pb-4 lg:pb-8 items-end w-full
+    flex justify-between border-b pb-4 lg:pb-8 items-end w-full lg:px-4
 }
 
 .section-title-container span{

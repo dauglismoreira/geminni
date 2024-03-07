@@ -1,6 +1,6 @@
 .header{
     @apply
-    w-full h-20 lg:h-24 border-b border-primary fixed z-40 bg-ultralight px-4 lg:px-0
+    w-full h-20 lg:h-24 border-b border-primary fixed z-40 bg-ultralight px-4 lg:px-4
 }
 
 .header-container{

@@ -2,7 +2,7 @@
     max-width:1600px;
     @apply
     text-xl lg:text-2xl font-novelinBold uppercase text-primary -mt-4 lg:mt-8 lg:mt-16 mb-8
-    border-b border-primary pb-4 w-full mx-auto
+    border-b border-primary pb-4 w-full mx-auto lg:px-4
 }
 
 @media(max-width:1024px){
